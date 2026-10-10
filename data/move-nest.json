@@ -823,7 +823,11 @@
       { "icon": "User", "label": "Full Name", "value": "{name}" },
       { "icon": "Briefcase", "label": "Designation", "value": "{role}" },
       { "icon": "Star", "label": "Experience", "value": "8+ Years" },
-      { "icon": "MapPin", "label": "Location", "value": "San Francisco, CA, USA" },
+      {
+        "icon": "MapPin",
+        "label": "Location",
+        "value": "San Francisco, CA, USA"
+      },
       { "icon": "Globe", "label": "Languages", "value": "English, Spanish" },
       { "icon": "Clock", "label": "Availability", "value": "Full Time" }
     ],

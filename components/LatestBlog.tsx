@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FiUser, FiArrowRight } from "react-icons/fi";
@@ -7,6 +10,7 @@ import { Reveal, Stagger, StaggerItem } from "./common/Motion";
 
 export default function LatestBlogSection() {
   const { latestBlog } = data;
+  const [visibleCount, setVisibleCount] = useState(3);
   return (
     <section className="relative w-full py-20 lg:py-24 bg-white overflow-hidden">
       <div className="max-w-[85rem] mx-auto px-4 md:px-8">
@@ -26,9 +30,9 @@ export default function LatestBlogSection() {
           </p>
         </Reveal>
 
-        {/* Blog Cards Grid (3 Cards) */}
-        <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {blogs.map((blog, index) => (
+        {/* Blog Cards Grid */}
+        <Stagger key={visibleCount} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogs.slice(0, visibleCount).map((blog, index) => (
             <StaggerItem
               key={index}
               hoverLift
@@ -89,17 +93,19 @@ export default function LatestBlogSection() {
         </Stagger>
 
         {/* Bottom CTA Button: View More Blogs */}
-        <Reveal className="text-center">
-          <a
-            href={latestBlog.viewMoreUrl}
-            className="inline-flex items-center gap-3 bg-[#f57c00] hover:bg-[#e06d00] text-white font-bold px-9 py-4 rounded-full shadow-lg transition-all duration-300 group"
-          >
-            <span>{latestBlog.viewMoreButton}</span>
-            <span className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center text-white transition-transform group-hover:translate-x-1">
-              <FiArrowRight className="w-4 h-4" />
-            </span>
-          </a>
-        </Reveal>
+        {visibleCount < blogs.length && (
+          <Reveal className="text-center mt-12">
+            <button
+              onClick={() => setVisibleCount((prev) => prev + 3)}
+              className="inline-flex items-center gap-3 bg-[#f57c00] hover:bg-[#e06d00] text-white font-bold px-9 py-4 rounded-full shadow-lg transition-all duration-300 group"
+            >
+              <span>{latestBlog.viewMoreButton}</span>
+              <span className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center text-white transition-transform group-hover:translate-x-1">
+                <FiArrowRight className="w-4 h-4" />
+              </span>
+            </button>
+          </Reveal>
+        )}
       </div>
     </section>
   );

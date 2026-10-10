@@ -26,4 +26,31 @@ export const blogs = [
     description:
       "A complete checklist to help you stay organized and ensure nothing is left behind during your home move.",
   },
+  {
+    date: "01",
+    month: "Sep 2025",
+    image: "/images/Hero.png",
+    title: "Protecting Fragile Items During Transportation",
+    slug: "protecting-fragile-items",
+    description:
+      "Learn the best techniques for packing and moving delicate and valuable items to prevent damage.",
+  },
+  {
+    date: "28",
+    month: "Aug 2025",
+    image: "/images/Hero.png",
+    title: "Tips for Moving with Pets",
+    slug: "moving-with-pets",
+    description:
+      "Relocating can be stressful for animals. Here is how you can keep your furry friends calm and safe.",
+  },
+  {
+    date: "21",
+    month: "Aug 2025",
+    image: "/images/Hero.png",
+    title: "The Ultimate Guide to Office Relocation",
+    slug: "office-relocation-guide",
+    description:
+      "Moving your business? Ensure minimal downtime and smooth transition with this comprehensive guide.",
+  }
 ];
