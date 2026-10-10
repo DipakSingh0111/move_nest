@@ -1,0 +1,147 @@
+"use client";
+
+import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import { FiUsers, FiTruck, FiHome, FiMapPin } from "react-icons/fi";
+import { Stagger, StaggerItem } from "./common/Motion";
+import data from "../data/move-nest.json";
+
+// Custom Hook for smooth animated counter
+function useCounter(end: number, duration = 2000, startAnimation = false) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    if (!startAnimation) return;
+
+    let startTime: number | null = null;
+    const step = (timestamp: number) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const easeOutProgress = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(easeOutProgress * end));
+
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      }
+    };
+
+    window.requestAnimationFrame(step);
+  }, [end, duration, startAnimation]);
+
+  return count;
+}
+
+export default function CounterSection() {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  // Trigger counter animation when scrolled into view
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 },
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  const { counters } = data;
+
+  return (
+    <section
+      ref={sectionRef}
+      className="relative w-full py-20 lg:py-24 overflow-hidden bg-gray-900"
+    >
+      {/* Background Image with Dark Overlay */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={counters.backgroundImage}
+          alt={counters.backgroundAlt}
+          fill
+          className="object-cover object-center"
+        />
+        {/* Dark Blue-Gray Gradient Overlay for rich contrast */}
+        <div className="absolute inset-0 bg-[#0B2525]/85 backdrop-brightness-75"></div>
+      </div>
+
+      {/* Content Container */}
+      <div className="relative z-10 max-w-[85rem] mx-auto px-4 md:px-8">
+        <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-4 items-center">
+          {counters.stats.map((item, index) => (
+            <StaggerItem
+              key={index}
+              direction="zoom"
+              className="flex flex-col items-center text-center relative group py-2"
+            >
+              <CounterItem
+                end={item.end}
+                suffix={item.suffix}
+                label={item.label}
+                icon={item.icon}
+                start={isVisible}
+              />
+
+              {/* Vertical Divider Line matching the reference image (Hidden on mobile and last item) */}
+              {index < counters.stats.length - 1 && (
+                <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-24 bg-white/30"></div>
+              )}
+            </StaggerItem>
+          ))}
+        </Stagger>
+      </div>
+    </section>
+  );
+}
+
+const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+  FiUsers,
+  FiTruck,
+  FiHome,
+  FiMapPin,
+};
+
+function CounterItem({
+  end,
+  suffix,
+  label,
+  icon,
+  start,
+}: {
+  end: number;
+  suffix: string;
+  label: string;
+  icon: string;
+  start: boolean;
+}) {
+  const count = useCounter(end, 2000, start);
+  const Icon = iconMap[icon] ?? FiUsers;
+
+  return (
+    <>
+      {/* Circular White Icon Badge */}
+      <div className="w-20 h-20 bg-white rounded-full shadow-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+        <Icon className="w-7 h-7 text-[#f57c00]" />
+      </div>
+
+      {/* Animated Number in Orange */}
+      <h3 className="text-4xl sm:text-5xl font-extrabold text-[#f57c00] tracking-tight mb-2">
+        {count.toLocaleString()}
+        {suffix}
+      </h3>
+
+      {/* Label in White */}
+      <p className="text-white font-semibold text-base sm:text-lg tracking-wide">
+        {label}
+      </p>
+    </>
+  );
+}
