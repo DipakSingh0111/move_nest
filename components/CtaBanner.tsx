@@ -1,10 +1,26 @@
 import Link from "next/link";
 import { Mail, Phone, Zap } from "lucide-react";
-import data from "../data/move-nest.json";
+import type { CtaBannerData } from "@/types/movenest.types";
+import { getMoveNestSection } from "@/lib/movenest";
 import { Reveal } from "./common/Motion";
 
-export default function TransportCTA() {
-  const { topbar, ctaBanner } = data;
+export default function TransportCTA({ data }: { data?: CtaBannerData }) {
+  const content = data ?? getMoveNestSection("CtaBanner")?.variants?.MoveNestCtaBanner1;
+  const topbar = getMoveNestSection("Topbar")?.variants?.MoveNestTopbar1;
+
+  if (!content) return null;
+
+  const bgImage = content.backgroundImage || "/images/move-next_14.jpg";
+  const badge = content.badge || (content as any).subtitle || "AFFORDABLE & RELIABLE";
+  const titleLine1 = content.heading?.main || (content as any).titleLine1 || "Ready to Experience Hassle-Free";
+  const titleLine2 = content.heading?.highlight || (content as any).titleLine2 || "Packing & Moving?";
+  const buttonLabel = content.button?.label || (content as any).button || "Get a Free Quote";
+  const buttonHref = content.button?.href || (content as any).buttonUrl || "/get-a-quote";
+  const phoneTitle = content.phoneTitle || "Call For Any Query";
+  const emailTitle = content.emailTitle || "Email For Any Query";
+  const phone = topbar?.phone || "+1 00000 00000";
+  const email = topbar?.email || "info@xyz.com";
+
   return (
     <section className="w-full bg-white px-4 py-8 sm:px-6 lg:px-10">
       <Reveal
@@ -22,7 +38,7 @@ export default function TransportCTA() {
             absolute inset-0 bg-cover bg-center bg-no-repeat
           "
           style={{
-            backgroundImage: `url('${ctaBanner.backgroundImage}')`,
+            backgroundImage: `url('${bgImage}')`,
           }}
         />
 
@@ -43,7 +59,7 @@ export default function TransportCTA() {
                 sm:text-sm
               "
             >
-              {ctaBanner.subtitle}
+              {badge}
             </span>
           </div>
 
@@ -57,14 +73,14 @@ export default function TransportCTA() {
               lg:text-[38px]
             "
           >
-            {ctaBanner.titleLine1}
+            {titleLine1}
             <br />
-            {ctaBanner.titleLine2}
+            {titleLine2}
           </h2>
 
           {/* Button */}
           <Link
-            href={ctaBanner.buttonUrl || "/contactUs"}
+            href={buttonHref}
             className="
               mt-5 w-fit rounded-md
               bg-[#ff6333]
@@ -80,7 +96,7 @@ export default function TransportCTA() {
               sm:px-7 sm:py-3.5 sm:text-sm
             "
           >
-            {ctaBanner.button}
+            {buttonLabel}
           </Link>
         </Reveal>
 
@@ -98,15 +114,15 @@ export default function TransportCTA() {
           {/* Phone */}
           <ContactCard
             icon={<Phone size={32} strokeWidth={1.8} />}
-            title={ctaBanner.phoneTitle}
-            value={topbar.phone}
+            title={phoneTitle}
+            value={phone}
           />
 
           {/* Email */}
           <ContactCard
             icon={<Mail size={32} strokeWidth={1.8} />}
-            title={ctaBanner.emailTitle}
-            value={topbar.email}
+            title={emailTitle}
+            value={email}
           />
         </div>
 
@@ -114,15 +130,15 @@ export default function TransportCTA() {
         <div className="relative z-20 flex flex-col gap-4 px-6 pb-8 lg:hidden">
           <ContactCard
             icon={<Phone size={32} strokeWidth={1.8} />}
-            title={ctaBanner.phoneTitle}
-            value={topbar.phone}
+            title={phoneTitle}
+            value={phone}
             mobile
           />
 
           <ContactCard
             icon={<Mail size={32} strokeWidth={1.8} />}
-            title={ctaBanner.emailTitle}
-            value={topbar.email}
+            title={emailTitle}
+            value={email}
             mobile
           />
         </div>

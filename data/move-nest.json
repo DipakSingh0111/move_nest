@@ -1,895 +1,1345 @@
 {
-  "topbar": {
-    "address": "123 Market St, San Francisco, CA, USA",
-    "phone": "+1 00000 00000",
-    "email": "info@xyz.com",
-    "followText": "Follow Us :",
-    "socials": [
-      { "platform": "facebook", "url": "https://www.facebook.com/" },
-      { "platform": "instagram", "url": "https://www.instagram.com/" },
-      { "platform": "linkedin", "url": "https://www.linkedin.com/" },
-      { "platform": "youtube", "url": "https://www.youtube.com/" }
-    ]
-  },
-  "navbar": {
-    "logo": {
-      "text": "Move",
-      "highlight": "Nest",
-      "subtext": "PACKERS & MOVERS",
-      "image": "/images/logo.png",
-      "alt": "MoveNest Logo"
-    },
-    "links": [
-      { "label": "Home", "url": "/" },
-      { "label": "About Us", "url": "/about" },
-      { "label": "Our Services", "url": "/service" },
-      { "label": "Our Team", "url": "/team" },
-      { "label": "Blog", "url": "/blog" },
-      { "label": "Gallery", "url": "/gallery" },
-      { "label": "Contact Us", "url": "/contactUs" }
-    ],
-    "cta": {
-      "label": "Get a Quote",
-      "url": "/get-a-quote"
+  "categories": {
+    "MoveNest": {
+      "templateComponents": {
+        "template-1": {
+          "shared": {
+            "Topbar": "MoveNestTopbar1",
+            "Header": "MoveNestHeader1",
+            "Footer": "MoveNestFooter1"
+          },
+          "pages": {
+            "home": {
+              "components": [
+                {
+                  "key": "Hero",
+                  "component": "MoveNestHeroBanner1"
+                },
+                {
+                  "key": "About",
+                  "component": "MoveNestAboutUs1"
+                },
+                {
+                  "key": "Services",
+                  "component": "MoveNestServices1"
+                },
+                {
+                  "key": "WorkingProcess",
+                  "component": "MoveNestWorkingProcess1"
+                },
+                {
+                  "key": "WhyChooseUs",
+                  "component": "MoveNestWhyChooseUs1"
+                },
+                {
+                  "key": "Stats",
+                  "component": "MoveNestStats1"
+                },
+                {
+                  "key": "CtaBanner",
+                  "component": "MoveNestCtaBanner1"
+                },
+                {
+                  "key": "OurApproach",
+                  "component": "MoveNestOurApproach1"
+                },
+                {
+                  "key": "Testimonials",
+                  "component": "MoveNestTestimonials1"
+                },
+                {
+                  "key": "Faq",
+                  "component": "MoveNestFaq1"
+                },
+                {
+                  "key": "Blog",
+                  "component": "MoveNestBlogNews1"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "sections": {
+        "Global": {
+          "variants": {
+            "MoveNestGlobal1": {
+              "companyName": "MoveNest Packers & Movers",
+              "logo": {
+                "text": "Move",
+                "highlight": "Nest",
+                "subtext": "PACKERS & MOVERS",
+                "image": "/images/logo.png",
+                "alt": "MoveNest Logo"
+              },
+              "whiteLogo": {
+                "src": "/images/white-logo.png",
+                "alt": "MoveNest Packers & Movers"
+              },
+              "contact": {
+                "address": "123 Market St, San Francisco, CA 94105, USA",
+                "phone": "+1 00000 00000",
+                "email": "info@xyz.com"
+              },
+              "socials": [
+                {
+                  "name": "Facebook",
+                  "url": "https://www.facebook.com/",
+                  "icon": "facebook"
+                },
+                {
+                  "name": "Instagram",
+                  "url": "https://www.instagram.com/",
+                  "icon": "instagram"
+                },
+                {
+                  "name": "LinkedIn",
+                  "url": "https://www.linkedin.com/",
+                  "icon": "linkedin"
+                },
+                {
+                  "name": "Youtube",
+                  "url": "https://www.youtube.com/",
+                  "icon": "youtube"
+                }
+              ]
+            }
+          }
+        },
+        "Topbar": {
+          "variants": {
+            "MoveNestTopbar1": {
+              "address": "123 Market St, San Francisco, CA 94105, USA",
+              "phone": "+1 00000 00000",
+              "email": "info@xyz.com",
+              "followText": "Follow Us :",
+              "socials": [
+                {
+                  "platform": "facebook",
+                  "url": "https://www.facebook.com/"
+                },
+                {
+                  "platform": "instagram",
+                  "url": "https://www.instagram.com/"
+                },
+                {
+                  "platform": "linkedin",
+                  "url": "https://www.linkedin.com/"
+                },
+                {
+                  "platform": "youtube",
+                  "url": "https://www.youtube.com/"
+                }
+              ]
+            }
+          }
+        },
+        "Header": {
+          "variants": {
+            "MoveNestHeader1": {
+              "logo": {
+                "text": "Move",
+                "highlight": "Nest",
+                "subtext": "PACKERS & MOVERS",
+                "image": "/images/logo.png",
+                "alt": "MoveNest Logo"
+              },
+              "menu": [
+                {
+                  "label": "Home",
+                  "href": "/"
+                },
+                {
+                  "label": "About Us",
+                  "href": "/about"
+                },
+                {
+                  "label": "Our Services",
+                  "href": "/service"
+                },
+                {
+                  "label": "Our Team",
+                  "href": "/team"
+                },
+                {
+                  "label": "Blog",
+                  "href": "/blog"
+                },
+                {
+                  "label": "Gallery",
+                  "href": "/gallery"
+                },
+                {
+                  "label": "Contact Us",
+                  "href": "/contactUs"
+                }
+              ],
+              "cta": {
+                "label": "Get a Quote",
+                "href": "/get-a-quote"
+              }
+            }
+          }
+        },
+        "PageBanners": {
+          "variants": {
+            "MoveNestPageBanners1": {
+              "defaultImage": "/images/Hero.png",
+              "homeLabel": "Home",
+              "breadcrumbLabel": "Breadcrumb"
+            }
+          }
+        },
+        "HeroBanner": {
+          "variants": {
+            "MoveNestHeroBanner1": {
+              "image": {
+                "src": "/images/Hero.png",
+                "alt": "MoveNest Packers & Movers"
+              },
+              "badge": "SAFE • SECURE • STRESS-FREE",
+              "heading": {
+                "main": "Your Trusted",
+                "highlight": "Packers & Movers",
+                "end": "for a Better Tomorrow"
+              },
+              "description": "From home shifting to office relocation, we make every move simple, safe and hassle-free. Trusted by thousands for reliable and professional moving services.",
+              "primaryButton": {
+                "label": "Get a Quote",
+                "href": "/get-a-quote"
+              },
+              "secondaryButton": {
+                "label": "Our Services",
+                "href": "/service"
+              },
+              "features": [
+                {
+                  "icon": "truck",
+                  "title": "On-Time Delivery"
+                },
+                {
+                  "icon": "shield",
+                  "title": "Safe & Secure Handling"
+                },
+                {
+                  "icon": "team",
+                  "title": "Professional Team"
+                },
+                {
+                  "icon": "rupee",
+                  "title": "Affordable Pricing"
+                }
+              ]
+            }
+          }
+        },
+        "AboutUs": {
+          "variants": {
+            "MoveNestAboutUs1": {
+              "images": {
+                "main": {
+                  "src": "/images/move-next_04.jpg",
+                  "alt": "MoveNest Packers & Movers Team"
+                },
+                "preview": {
+                  "src": "/images/move-next_13.jpg",
+                  "alt": "Moving process preview"
+                }
+              },
+              "badge": "ABOUT US",
+              "heading": {
+                "main": "Your Trusted Packers & Movers",
+                "middle": "for a",
+                "highlight": "Better Tomorrow"
+              },
+              "description": "Since 1995, MoveNest has been delivering reliable and professional packing and moving solutions for homes, offices and businesses. With 29+ years of experience, we have successfully relocated thousands of families and organizations with care, precision and commitment.",
+              "list": [
+                {
+                  "title": "Experienced Team",
+                  "description": "A skilled and trained team to handle your move with care.",
+                  "icon": "FiUsers"
+                },
+                {
+                  "title": "Quality Packing",
+                  "description": "High-quality packing materials for maximum safety.",
+                  "icon": "FiBox"
+                },
+                {
+                  "title": "Customer Satisfaction",
+                  "description": "Thousands of happy customers trust our services.",
+                  "icon": "FiCheckCircle"
+                },
+                {
+                  "title": "Nationwide Service",
+                  "description": "Trusted moving services across all major cities in the USA.",
+                  "icon": "FiMapPin"
+                }
+              ],
+              "cta": {
+                "label": "About More",
+                "href": "/about"
+              },
+              "experience": {
+                "value": "29+",
+                "label": "Years Of Experience"
+              }
+            }
+          }
+        },
+        "Services": {
+          "variants": {
+            "MoveNestServices1": {
+              "badge": "OUR SERVICES",
+              "heading": {
+                "main": "Reliable Moving Services Built",
+                "highlight": "Around You"
+              },
+              "description": "We offer a comprehensive range of packing and moving solutions tailored to your needs, ensuring safe transit and a seamless relocation experience.",
+              "readMore": "Read More",
+              "list": [
+                {
+                  "title": "Home Shifting",
+                  "description": "Safe and secure home relocation services.",
+                  "slug": "home-shifting",
+                  "icon": "FaHome",
+                  "image": "/images/move-next_22.jpg"
+                },
+                {
+                  "title": "Office Relocation",
+                  "description": "Minimize downtime with expert office moves.",
+                  "slug": "office-relocation",
+                  "icon": "FaBuilding",
+                  "image": "/images/move-next_20.jpg"
+                },
+                {
+                  "title": "Local Moving",
+                  "description": "Quick and efficient local moving services within the city limits.",
+                  "slug": "local-moving",
+                  "icon": "FaMapMarkerAlt",
+                  "image": "/images/move-next_05.jpg"
+                },
+                {
+                  "title": "Intercity Moving",
+                  "description": "Reliable long-distance moving solutions.",
+                  "slug": "intercity-moving",
+                  "icon": "FaGlobe",
+                  "image": "/images/move-next_10.jpg"
+                },
+                {
+                  "title": "Packing & Unpacking",
+                  "description": "Professional packing to ensure safety.",
+                  "slug": "packing-unpacking",
+                  "icon": "FaBoxOpen",
+                  "image": "/images/move-next_18.jpg"
+                },
+                {
+                  "title": "Land Freight Services",
+                  "description": "Streamline globals freights with our seamless international shipping solutions.",
+                  "slug": "land-freight",
+                  "icon": "FaTruck",
+                  "image": "/images/move-next_14.jpg"
+                }
+              ],
+              "serviceDetails": {
+                "defaultSlug": "ocean-freight",
+                "defaultTitle": "Ocean Freight Services",
+                "sidebarTitle": "Services",
+                "sidebarServices": [
+                  {
+                    "name": "Global Freight Services",
+                    "slug": "global-freight"
+                  },
+                  {
+                    "name": "Ocean Freight Services",
+                    "slug": "ocean-freight"
+                  },
+                  {
+                    "name": "Land Freight Services",
+                    "slug": "land-freight"
+                  },
+                  {
+                    "name": "Residential Moving",
+                    "slug": "residential-moving"
+                  },
+                  {
+                    "name": "Office Relocation",
+                    "slug": "office-relocation"
+                  },
+                  {
+                    "name": "Packing & Unpacking",
+                    "slug": "packing-unpacking"
+                  }
+                ],
+                "help": {
+                  "image": {
+                    "src": "/images/move-next_05.jpg",
+                    "alt": "Transport Services"
+                  },
+                  "title": "Find Top-Rated Transport Services",
+                  "callText": "Need Help? Call Now",
+                  "phone": "+1 00000 00000"
+                },
+                "mainImage": "/images/move-next_14.jpg",
+                "introParagraphs": [
+                  "Our {title} offer comprehensive solutions for all your shipping needs, ensuring your cargo is transported efficiently and safely across the seas, giving you peace of mind and the best results for your business. With our {title}, we handle all aspects of your sea shipping needs, from documentation to delivery. With our {title}, we handle all aspects of your sea shipping needs.",
+                  "With our {title}, we handle all aspects of your sea shipping needs, from documentation to delivery, ensuring your goods arrive on time and in excellent condition, allowing you to focus on your core business operations, helping you navigate the complexities of international trade."
+                ],
+                "valuesTitle": "Tranzit Values",
+                "valuesDescription": "Three core values define the spirit of our culture at Go Tranzit.",
+                "values": [
+                  "Ocean freight offers predictable transit times and schedules.",
+                  "It remains one of the most economical ways to transport.",
+                  "Despite its scale, modern shipping companies are increasingly."
+                ],
+                "galleryImages": [
+                  {
+                    "src": "/images/move-next_19.jpg",
+                    "alt": "Cargo Ship Top View"
+                  },
+                  {
+                    "src": "/images/move-next_11.jpg",
+                    "alt": "Cargo Ship Front View"
+                  }
+                ],
+                "middleParagraphs": [
+                  "Freight forwarders often offer consolidated cargo services, which combine smaller shipments from multiple companies into full containers for specific destinations. This offers cost advantages similar to FCL but without needing a full container yourself.",
+                  "This is a cost-effective option for smaller shipments. Your goods are consolidated with other shippers' cargo to fill a container. This can take longer as it involves additional han"
+                ],
+                "videoImage": {
+                  "src": "/images/move-next_03.jpg",
+                  "alt": "Video Placeholder"
+                },
+                "closingParagraphs": [
+                  "Freight forwarders often offer consolidated cargo services, which combine smaller shipments from multiple companies into full containers for specific destinations. This offers cost advantages similar to FCL but without needing a full container yourself.",
+                  "This is a cost-effective option for smaller shipments. Your goods are consolidated with other shippers' cargo to fill a container. This can take longer as it involves additional han"
+                ]
+              }
+            }
+          }
+        },
+        "WorkingProcess": {
+          "variants": {
+            "MoveNestWorkingProcess1": {
+              "image": {
+                "src": "/images/relocation_photo.png",
+                "alt": "Couple carrying moving boxes"
+              },
+              "badge": "HOW IT WORKS",
+              "heading": {
+                "main": "Simple Process For",
+                "highlight": "A Smooth Move"
+              },
+              "description": "We follow a simple and well-organized process to make your relocation safe, smooth and hassle-free from start to finish.",
+              "list": [
+                {
+                  "stepNumber": "01",
+                  "title": "Request a Free Quote",
+                  "description": "Share your moving details with us and get a fast, accurate and transparent estimate.",
+                  "icon": "FileText"
+                },
+                {
+                  "stepNumber": "02",
+                  "title": "We Pack & Prepare",
+                  "description": "Our skilled team carefully packs your belongings using high-quality materials to ensure complete safety.",
+                  "icon": "Package"
+                },
+                {
+                  "stepNumber": "03",
+                  "title": "We Move Your Items Safely",
+                  "description": "Your goods are loaded and transported with proper care using well-maintained vehicles and trained staff.",
+                  "icon": "Truck"
+                },
+                {
+                  "stepNumber": "04",
+                  "title": "Unload & Set Up",
+                  "description": "We safely unload your items at the destination and help with basic setup as needed, so you can settle in quickly.",
+                  "icon": "House"
+                }
+              ],
+              "features": [
+                {
+                  "title": "Trained",
+                  "subtitle": "Professionals",
+                  "icon": "ShieldCheck"
+                },
+                {
+                  "title": "Quality",
+                  "subtitle": "Packing Materials",
+                  "icon": "Package"
+                },
+                {
+                  "title": "End-to-End",
+                  "subtitle": "Support",
+                  "icon": "Headphones"
+                }
+              ]
+            }
+          }
+        },
+        "WhyChooseUs": {
+          "variants": {
+            "MoveNestWhyChooseUs1": {
+              "image": {
+                "src": "/images/move-next_08.jpg",
+                "alt": "Professional movers packing boxes"
+              },
+              "badge": "WHY CHOOSE US",
+              "heading": {
+                "main": "We Deliver",
+                "highlight": "Trust & Quality"
+              },
+              "description": "Choosing the right moving company makes all the difference. We pride ourselves on delivering top-notch service with a focus on safety, reliability, and customer satisfaction.",
+              "badgeCard": {
+                "subtitle": "Best Moving Company",
+                "line1": "Safe • Fast •",
+                "line2": "Stress-Free"
+              },
+              "list": [
+                {
+                  "title": "100% Safe & Secure",
+                  "description": "We use premium packing materials and handled with utmost care.",
+                  "icon": "FiShield"
+                },
+                {
+                  "title": "Transparent Pricing",
+                  "description": "No hidden fees or surprise charges. What we quote is what you pay.",
+                  "icon": "FiDollarSign"
+                },
+                {
+                  "title": "On-Time Delivery",
+                  "description": "We respect your time and ensure strict adherence to schedules.",
+                  "icon": "FiClock"
+                }
+              ]
+            }
+          }
+        },
+        "Stats": {
+          "variants": {
+            "MoveNestStats1": {
+              "background": {
+                "src": "/images/move-next_21.jpg",
+                "alt": "MoveNest background"
+              },
+              "list": [
+                {
+                  "end": 10000,
+                  "suffix": "+",
+                  "label": "Happy Customers",
+                  "icon": "FiUsers"
+                },
+                {
+                  "end": 25000,
+                  "suffix": "+",
+                  "label": "Successful Moves",
+                  "icon": "FiTruck"
+                },
+                {
+                  "end": 29,
+                  "suffix": "+",
+                  "label": "Years Of Experience",
+                  "icon": "FiHome"
+                },
+                {
+                  "end": 500,
+                  "suffix": "+",
+                  "label": "Cities Covered",
+                  "icon": "FiMapPin"
+                }
+              ]
+            }
+          }
+        },
+        "CtaBanner": {
+          "variants": {
+            "MoveNestCtaBanner1": {
+              "backgroundImage": "/images/move-next_15.jpg",
+              "badge": "Trusted Transport Service",
+              "heading": {
+                "main": "Transport & Logistics Projects",
+                "highlight": "That We Provide"
+              },
+              "button": {
+                "label": "Contact Support",
+                "href": "/contactUs"
+              },
+              "phoneTitle": "Call For Inquiry",
+              "emailTitle": "Send Us Email"
+            }
+          }
+        },
+        "GetQuote": {
+          "variants": {
+            "MoveNestGetQuote1": {
+              "image": {
+                "src": "/images/move-next_01.jpg",
+                "alt": "Professional movers loading boxes"
+              },
+              "heading": {
+                "main": "Safe &",
+                "highlight": "Hassle-Free Moving"
+              },
+              "description": "Get a customized quote for your home or office move. Our team ensures a smooth, safe and on-time relocation.",
+              "list": [
+                {
+                  "title": "Affordable Pricing",
+                  "icon": "Truck"
+                },
+                {
+                  "title": "Safe & Secure",
+                  "icon": "ShieldCheck"
+                },
+                {
+                  "title": "On-Time Delivery",
+                  "icon": "Clock"
+                },
+                {
+                  "title": "Professional Team",
+                  "icon": "Users"
+                }
+              ],
+              "form": {
+                "badge": "GET A QUOTE",
+                "heading": {
+                  "main": "Request a",
+                  "highlight": "Moving Quote"
+                },
+                "description": "Fill out the form below and our team will get back to you with the best offer for your moving requirements.",
+                "fields": {
+                  "fullName": {
+                    "label": "Full Name",
+                    "placeholder": "Enter your full name"
+                  },
+                  "phone": {
+                    "label": "Phone Number",
+                    "placeholder": "Enter your phone number"
+                  },
+                  "email": {
+                    "label": "Email Address",
+                    "placeholder": "Enter your email address"
+                  },
+                  "movingDate": {
+                    "label": "Moving Date"
+                  },
+                  "movingFrom": {
+                    "label": "Moving From",
+                    "placeholder": "Enter pickup location"
+                  },
+                  "movingTo": {
+                    "label": "Moving To",
+                    "placeholder": "Enter destination location"
+                  },
+                  "typeOfMove": {
+                    "label": "Type of Move",
+                    "placeholder": "Select move type"
+                  },
+                  "houseSize": {
+                    "label": "House Size",
+                    "placeholder": "Select house size"
+                  },
+                  "additionalDetails": {
+                    "label": "Additional Details",
+                    "placeholder": "Tell us more about your move"
+                  }
+                },
+                "optionalText": "(Optional)",
+                "moveTypes": [
+                  "Home Relocation",
+                  "Office Relocation",
+                  "Vehicle Shifting",
+                  "Warehouse Shifting"
+                ],
+                "houseSizes": [
+                  "1 BHK",
+                  "2 BHK",
+                  "3 BHK",
+                  "4+ BHK / Villa",
+                  "Commercial Office"
+                ],
+                "buttonText": "Get a Quote Now",
+                "successMessage": "Moving Quote Request Submitted Successfully!"
+              }
+            }
+          }
+        },
+        "OurApproach": {
+          "variants": {
+            "MoveNestOurApproach1": {
+              "images": [
+                {
+                  "src": "/images/move-next_09.jpg",
+                  "alt": "Packer holding moving box"
+                },
+                {
+                  "src": "/images/move-next_07.jpg",
+                  "alt": "Delivery man near moving truck"
+                }
+              ],
+              "stats": {
+                "subtitle": "Trusted By",
+                "value": "3500+",
+                "label": "Happy Customers"
+              },
+              "badge": "OUR APPROACH",
+              "heading": {
+                "main": "Discover the Heart of",
+                "highlight": "Our Mission"
+              },
+              "description": "Our approach is simple – we focus on people, safety and efficiency. We understand that every move is unique, so we plan, pack and deliver with care to make your relocation smooth and stress-free.",
+              "list": [
+                {
+                  "title": "Our Mission",
+                  "description": "Our mission is to provide hassle-free, customized moving services with a focus on care, safety and efficiency.",
+                  "icon": "Target"
+                },
+                {
+                  "title": "Our Vision",
+                  "description": "Our vision is to redefine the moving experience by prioritizing customer satisfaction and innovative solutions.",
+                  "icon": "Eye"
+                }
+              ]
+            }
+          }
+        },
+        "Faq": {
+          "variants": {
+            "MoveNestFaq1": {
+              "image": {
+                "src": "/images/move-next_06.jpg",
+                "alt": "Movers holding box"
+              },
+              "help": {
+                "title": "Still Have Questions?",
+                "description": "Our team is here to help you. Contact us anytime."
+              },
+              "badge": "FAQ",
+              "heading": {
+                "main": "Frequently Asked",
+                "highlight": "Questions"
+              },
+              "description": "Find answers to the most common questions about our moving services, pricing, booking process and more.",
+              "list": [
+                {
+                  "question": "Do movers need to do an in-person survey to give an estimate?",
+                  "answer": "Not always. For smaller moves, a virtual video call or detailed item list is sufficient. However, for larger homes or complex relocations, an in-person survey ensures the most accurate pricing."
+                },
+                {
+                  "question": "What happens if my new home isn't ready on moving day?",
+                  "answer": "We offer secure, climate-controlled temporary storage facilities where your belongings can be safely kept until your new home is ready for delivery."
+                },
+                {
+                  "question": "What should I do if my belongings are damaged or lost?",
+                  "answer": "All our relocations come with basic transit insurance coverage. In the rare event of damage, you can submit a claim with photos, and our claims team will process reimbursement promptly."
+                },
+                {
+                  "question": "Do you provide packing materials?",
+                  "answer": "Yes! We bring high-quality bubble wrap, heavy-duty carton boxes, stretch film, mattress covers, and corrugated sheets to keep your items 100% safe."
+                },
+                {
+                  "question": "Can you move fragile or valuable items like pianos or antiques?",
+                  "answer": "Absolutely. Our specialized team uses custom wooden crating and specialized padding for fragile, high-value items, artwork, and musical instruments."
+                },
+                {
+                  "question": "Do you offer storage facilities if needed?",
+                  "answer": "Yes, we provide both short-term and long-term secure warehouse storage with 24/7 CCTV surveillance and climate monitoring."
+                }
+              ]
+            }
+          }
+        },
+        "Gallery": {
+          "variants": {
+            "MoveNestGallery1": {
+              "badge": "OUR GALLERY",
+              "heading": {
+                "main": "Our Moving",
+                "highlight": "Gallery"
+              },
+              "description": "Take a look at some of our recent moving projects. From home relocations to office moves, we handle every move with care and professionalism.",
+              "labels": {
+                "counterSeparator": "of",
+                "close": "Close image modal",
+                "previous": "Previous image",
+                "next": "Next image"
+              },
+              "list": [
+                {
+                  "id": 1,
+                  "title": "Sofa Wrapping & Moving",
+                  "category": "Home Relocation",
+                  "src": "/images/move-next_22.jpg"
+                },
+                {
+                  "id": 2,
+                  "title": "Packed Boxes in Living Room",
+                  "category": "Packing",
+                  "src": "/images/move-next_18.jpg"
+                },
+                {
+                  "id": 3,
+                  "title": "Taping Carton Box",
+                  "category": "Secure Packing",
+                  "src": "/images/move-next_13.jpg"
+                },
+                {
+                  "id": 4,
+                  "title": "Moving Truck Loading",
+                  "category": "Transportation",
+                  "src": "/images/move-next_15.jpg"
+                },
+                {
+                  "id": 5,
+                  "title": "Staircase Sofa Carrying",
+                  "category": "Heavy Lifting",
+                  "src": "/images/move-next_03.jpg"
+                },
+                {
+                  "id": 6,
+                  "title": "Cardboard Boxes Stacked",
+                  "category": "Office Relocation",
+                  "src": "/images/move-next_24.jpg"
+                },
+                {
+                  "id": 7,
+                  "title": "Staff with Big Box",
+                  "category": "Teamwork",
+                  "src": "/images/move-next_09.jpg"
+                },
+                {
+                  "id": 8,
+                  "title": "Office Desks Shifting",
+                  "category": "Commercial Move",
+                  "src": "/images/move-next_20.jpg"
+                },
+                {
+                  "id": 9,
+                  "title": "Plastic Wrapped Couch",
+                  "category": "Furniture Protection",
+                  "src": "/images/move-next_08.jpg"
+                },
+                {
+                  "id": 10,
+                  "title": "MoveNest Delivery Truck",
+                  "category": "Fleet",
+                  "src": "/images/move-next_10.jpg"
+                },
+                {
+                  "id": 11,
+                  "title": "Box Sealing",
+                  "category": "Packing",
+                  "src": "/images/move-next_23.jpg"
+                },
+                {
+                  "id": 12,
+                  "title": "Mattress Plastic Wrapping",
+                  "category": "Protection",
+                  "src": "/images/move-next_16.jpg"
+                }
+              ]
+            }
+          }
+        },
+        "Testimonials": {
+          "variants": {
+            "MoveNestTestimonials1": {
+              "image": {
+                "src": "/images/move-next_17.jpg",
+                "alt": "Movers planning and checking list"
+              },
+              "badge": "OUR CLIENTS SAY",
+              "heading": {
+                "main": "What Our Customer's",
+                "highlight": "Talking",
+                "end": "About Us"
+              },
+              "autoplayInterval": 5000,
+              "labels": {
+                "previous": "Previous review",
+                "next": "Next review"
+              },
+              "list": [
+                {
+                  "rating": 5,
+                  "review": "The team was incredibly professional and handled our entire home shifting with great care. Everything arrived on time and in perfect condition. Highly recommended!",
+                  "authorName": "Priya Sharma",
+                  "authorLocation": "Gurgaon, Haryana"
+                },
+                {
+                  "rating": 5,
+                  "review": "We shifted our complete office over a weekend with zero downtime. Every system, file and desk was labelled and set up exactly as planned. Truly outstanding work!",
+                  "authorName": "Rahul Verma",
+                  "authorLocation": "New Delhi, Delhi"
+                },
+                {
+                  "rating": 5,
+                  "review": "I was nervous about my glassware and antiques, but they packed everything with multi-layer protection. Not a single scratch after a 1,200 km move.",
+                  "authorName": "Neha Kapoor",
+                  "authorLocation": "Faridabad, Haryana"
+                },
+                {
+                  "rating": 5,
+                  "review": "Transparent pricing with no hidden charges. The crew was polite, on time and even helped us arrange furniture at the new place. Great value for money.",
+                  "authorName": "Amit Yadav",
+                  "authorLocation": "Noida, Uttar Pradesh"
+                },
+                {
+                  "rating": 5,
+                  "review": "My car and household goods reached Bengaluru safely and before the promised date. Regular tracking updates kept us stress-free throughout the journey.",
+                  "authorName": "Sneha Patel",
+                  "authorLocation": "Bengaluru, Karnataka"
+                }
+              ],
+              "experience": {
+                "value": "29+",
+                "label": "Years of Experience"
+              },
+              "page": {
+                "badge": "Client Feedback",
+                "heading": {
+                  "main": "What Our Clients",
+                  "highlight": "Say"
+                },
+                "description": "Real stories from real people who trusted us with their move. Their satisfaction inspires us to deliver even better service every day.",
+                "itemsPerPage": 6,
+                "labels": {
+                  "previous": "Previous Page",
+                  "next": "Next Page"
+                },
+                "list": [
+                  {
+                    "rating": 5,
+                    "review": "Excellent service! The team was very professional, handled our household items with great care and delivered everything on time. Highly recommended!",
+                    "name": "Rahul Verma",
+                    "location": "New Delhi, India",
+                    "tag": "Home Relocation",
+                    "image": "/images/move-next_06.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Smooth and hassle-free experience from start to finish. The staff was polite, and all our office equipment was delivered safely without any damage.",
+                    "name": "Priya Sharma",
+                    "location": "Gurgaon, India",
+                    "tag": "Office Relocation",
+                    "image": "/images/move-next_20.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Very reliable and affordable service. They provided proper packing, timely updates and delivered my bike safely. Great experience overall!",
+                    "name": "Amit Yadav",
+                    "location": "Noida, India",
+                    "tag": "Vehicle Transportation",
+                    "image": "/images/move-next_10.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "I was worried about moving fragile items, but the team handled everything professionally. No damage, no delays. Truly a trustworthy company!",
+                    "name": "Neha Kapoor",
+                    "location": "Faridabad, India",
+                    "tag": "Home Relocation",
+                    "image": "/images/move-next_08.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Great support and communication throughout the process. They made our warehouse shifting easy and organized. Will definitely use their service again.",
+                    "name": "Vikram Singh",
+                    "location": "Ghaziabad, India",
+                    "tag": "Warehouse Shifting",
+                    "image": "/images/move-next_19.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Affordable pricing, professional staff and on-time delivery. My car was transported safely across cities. Highly satisfied with their service!",
+                    "name": "Sneha Patel",
+                    "location": "Bengaluru, India",
+                    "tag": "Car Transportation",
+                    "image": "/images/move-next_15.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Outstanding packing quality! They wrapped every piece of furniture with multi-layer bubble wrap. Extremely satisfied with MoveNest.",
+                    "name": "Karan Malhotra",
+                    "location": "Chandigarh, India",
+                    "tag": "Home Relocation",
+                    "image": "/images/move-next_22.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Shifted our corporate office over the weekend without any downtime. Pure professionalism and punctual execution by the whole team.",
+                    "name": "Ananya Roy",
+                    "location": "Kolkata, India",
+                    "tag": "Office Relocation",
+                    "image": "/images/move-next_16.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Transferred my SUV from Pune to Jaipur. Zero scratches, live GPS tracking updates provided daily. Fantastic service!",
+                    "name": "Deepak Joshi",
+                    "location": "Pune, India",
+                    "tag": "Vehicle Transportation",
+                    "image": "/images/move-next_14.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Quick and responsive customer care. They answered all my queries patiently and provided a transparent quote with no hidden fees.",
+                    "name": "Pooja Hegde",
+                    "location": "Hyderabad, India",
+                    "tag": "Home Relocation",
+                    "image": "/images/move-next_02.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Heavy machinery and inventory moving was done seamlessly. Highly experienced crew for industrial and warehouse moves.",
+                    "name": "Suresh Nambiar",
+                    "location": "Chennai, India",
+                    "tag": "Warehouse Shifting",
+                    "image": "/images/move-next_11.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Moved from Mumbai to Ahmedabad. On-time delivery and complete unboxing support at the destination. Super happy!",
+                    "name": "Meera Shah",
+                    "location": "Ahmedabad, India",
+                    "tag": "Car Transportation",
+                    "image": "/images/move-next_21.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Top-notch packing materials and very gentle handling of electronics and glassware. Recommended to all my friends!",
+                    "name": "Rohan Gupta",
+                    "location": "Lucknow, India",
+                    "tag": "Home Relocation",
+                    "image": "/images/move-next_13.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Very professional IT equipment packing. Servers and monitors reached our new branch safely without a single glitch.",
+                    "name": "Shalini Pandey",
+                    "location": "Indore, India",
+                    "tag": "Office Relocation",
+                    "image": "/images/move-next_24.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Hassle-free bike shifting from Delhi to Bangalore. Delivered before time. Excellent experience!",
+                    "name": "Manish Tiwari",
+                    "location": "Bangalore, India",
+                    "tag": "Vehicle Transportation",
+                    "image": "/images/move-next_07.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Budget-friendly prices and top tier execution. The supervisors are polite and very cooperative.",
+                    "name": "Divya Rathi",
+                    "location": "Jaipur, India",
+                    "tag": "Home Relocation",
+                    "image": "/images/move-next_18.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Fast loading and unloading. They systematically labeled all storage boxes which made unpacking super quick.",
+                    "name": "Alok Kumar",
+                    "location": "Patna, India",
+                    "tag": "Warehouse Shifting",
+                    "image": "/images/move-next_23.jpg"
+                  },
+                  {
+                    "rating": 5,
+                    "review": "Great customer response and polite drivers. Vehicle transport was completely stress-free.",
+                    "name": "Ritu Saxena",
+                    "location": "Bhopal, India",
+                    "tag": "Car Transportation",
+                    "image": "/images/move-next_05.jpg"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "ContactPage": {
+          "variants": {
+            "MoveNestContactPage1": {
+              "form": {
+                "badge": "CONTACT US",
+                "heading": {
+                  "main": "Get in",
+                  "highlight": "Touch"
+                },
+                "description": "Have questions or need a moving quote? Fill out the form below and our team will get back to you shortly.",
+                "placeholders": {
+                  "name": "Your Name *",
+                  "email": "Your Email *",
+                  "phone": "Your Phone *",
+                  "movingService": "Moving Service *",
+                  "movingFrom": "Moving From *",
+                  "movingTo": "Moving To *",
+                  "additionalDetails": "Additional Details (Optional)"
+                },
+                "serviceOptions": [
+                  "Home Relocation",
+                  "Office Relocation",
+                  "Vehicle Transportation",
+                  "Warehouse Shifting"
+                ],
+                "recaptchaLabel": "I'm not a robot",
+                "recaptchaBrand": "reCAPTCHA",
+                "submitButton": "Send Message",
+                "recaptchaAlert": "Please verify that you are not a robot.",
+                "successMessage": "Message Sent Successfully!"
+              },
+              "backgroundImage": "/images/move-next_12.jpg",
+              "info": {
+                "badge": "OUR CONTACT DETAIL",
+                "heading": {
+                  "main": "Need Any",
+                  "highlight": "Assistance?"
+                },
+                "description": "Our team is always ready to help you with your moving requirements. Reach out to us through any of the below channels.",
+                "labels": {
+                  "call": "Call Us",
+                  "email": "Email Us",
+                  "location": "Our Location"
+                },
+                "socialTitle": "Follow Us :"
+              },
+              "map": {
+                "title": "Google Map San Francisco Location",
+                "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d-122.3989386846818!3d37.79469507975549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064bfd4e167%3A0xc5458ce3dd40bd!2sMarket%20St%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2susa!4v1650000000000!5m2!1sen!2susa",
+                "cardTitle": "123 Market St, San Francisco, CA 94105, USA",
+                "linkText": "View on Google Maps",
+                "linkUrl": "https://maps.google.com"
+              }
+            }
+          }
+        },
+        "Team": {
+          "variants": {
+            "MoveNestTeam1": {
+              "badge": "OUR EXPERTS",
+              "heading": {
+                "main": "Meet Our",
+                "highlight": "Team"
+              },
+              "viewProfileLabel": "View profile for",
+              "details": {
+                "badge": "Our Team",
+                "bio": "{name} is an experienced {role} with over 8 years of expertise in handling home and office relocations. He ensures every move is completed safely, efficiently, and with utmost care. Known for his leadership skills and customer-friendly approach, {firstName} makes the relocation process smooth and stress-free for our clients.",
+                "stats": [
+                  {
+                    "icon": "Truck",
+                    "value": "8+ Years",
+                    "label": "Experience"
+                  },
+                  {
+                    "icon": "Users",
+                    "value": "500+",
+                    "label": "Happy Clients"
+                  },
+                  {
+                    "icon": "ShieldCheck",
+                    "value": "100%",
+                    "label": "Safe Handling"
+                  },
+                  {
+                    "icon": "Star",
+                    "value": "Top Rated",
+                    "label": "Team Leader"
+                  }
+                ],
+                "contactTitle": "Contact Information",
+                "contact": [
+                  {
+                    "icon": "Phone",
+                    "value": "+1 00000 00000"
+                  },
+                  {
+                    "icon": "Mail",
+                    "value": "info@xyz.com"
+                  },
+                  {
+                    "icon": "MapPin",
+                    "value": "123 Market St, San Francisco, CA 94105, USA"
+                  }
+                ],
+                "followTitle": "Follow Me",
+                "socials": [
+                  {
+                    "platform": "facebook",
+                    "url": "https://www.facebook.com/"
+                  },
+                  {
+                    "platform": "instagram",
+                    "url": "https://www.instagram.com/"
+                  },
+                  {
+                    "platform": "linkedin",
+                    "url": "https://www.linkedin.com/"
+                  },
+                  {
+                    "platform": "youtube",
+                    "url": "https://www.youtube.com/"
+                  }
+                ],
+                "button": {
+                  "label": "Get in Touch"
+                },
+                "personalInfoTitle": "Personal Information",
+                "personalInfo": [
+                  {
+                    "icon": "User",
+                    "label": "Full Name",
+                    "value": "{name}"
+                  },
+                  {
+                    "icon": "Briefcase",
+                    "label": "Designation",
+                    "value": "{role}"
+                  },
+                  {
+                    "icon": "Star",
+                    "label": "Experience",
+                    "value": "8+ Years"
+                  },
+                  {
+                    "icon": "MapPin",
+                    "label": "Location",
+                    "value": "San Francisco, CA, USA"
+                  },
+                  {
+                    "icon": "Globe",
+                    "label": "Languages",
+                    "value": "English, Spanish"
+                  },
+                  {
+                    "icon": "Clock",
+                    "label": "Availability",
+                    "value": "Full Time"
+                  }
+                ],
+                "skillsTitle": "Skills & Expertise",
+                "skills": [
+                  {
+                    "label": "Team Management",
+                    "value": 95
+                  },
+                  {
+                    "label": "Packing & Handling",
+                    "value": 90
+                  },
+                  {
+                    "label": "Customer Support",
+                    "value": 85
+                  },
+                  {
+                    "label": "Logistics Coordination",
+                    "value": 92
+                  },
+                  {
+                    "label": "Problem Solving",
+                    "value": 89
+                  }
+                ],
+                "certificationsTitle": "Certifications",
+                "certifications": [
+                  {
+                    "icon": "Briefcase",
+                    "title": "Professional Moving Training",
+                    "description": "Certified in relocation and handling safety procedures."
+                  },
+                  {
+                    "icon": "ShieldCheck",
+                    "title": "Safety & Equipment Handling",
+                    "description": "Trained in safe use of packing and moving equipment."
+                  },
+                  {
+                    "icon": "Star",
+                    "title": "Customer Service Excellence",
+                    "description": "Certified for delivering outstanding customer support."
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "BlogNews": {
+          "variants": {
+            "MoveNestBlogNews1": {
+              "badge": "Latest Blog",
+              "heading": {
+                "main": "Latest News &",
+                "highlight": "Helpful Tips"
+              },
+              "description": "Discover useful moving tips, packing guides and expert advice to make your relocation simple, safe and stress-free.",
+              "authorLabel": "Admin",
+              "readMore": "Read More",
+              "cta": {
+                "label": "View More Blogs",
+                "href": "/blog"
+              },
+              "details": {
+                "authorLabel": "Admin",
+                "paragraphs": [
+                  "The whimsically named Egg Canvas is the brainchild of Erica Choi, a design director and photo grapher based in York. Why the name \"Egg Canvas\"? Erica was inspired by her Korean childhood nickname, which means egg, while \"canvas\" medium with which art is created. \"Egg Canvas\" therefore, is her life—creating beautiful things each day a blank canvas.",
+                  "We have covered many special events such as fireworks, fairs, parades, races, walks, awards ceremonies, fashion shows, sporting events, and even a memorial service.",
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate vestibulum rhon cus, dolor eget viverra pretium, dolor tellus aliquet nunc, vitae ultricies erat elit eu lacus. Vestibulum non justo fun consectetur, cursus ante, tincidunt sapien. Nulla quis diam sit amet turpis interdum enim. Vivamus fauc ex sed nibh egestas elementum. Mauris et bibendum."
+                ],
+                "quote": {
+                  "text": "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the",
+                  "author": "John Mohedi"
+                },
+                "subheading": "Let our investment management team",
+                "list": [
+                  "Lorem ipsum generators on the tend to repeat.",
+                  "If you are going to use a passage.",
+                  "Lorem ipsum generators on the tend to repeat.",
+                  "If you are going to use a passage.",
+                  "Lorem ipsum generators on the tend to repeat."
+                ],
+                "sideImage": {
+                  "src": "/images/move-next_21.jpg",
+                  "alt": "Transportation team"
+                }
+              }
+            }
+          }
+        },
+        "Footer": {
+          "variants": {
+            "MoveNestFooter1": {
+              "logo": {
+                "src": "/images/white-logo.png",
+                "alt": "MoveNest Packers & Movers"
+              },
+              "backgroundImage": "/images/move-next_14.jpg",
+              "description": "We provide safe, reliable and affordable packing and moving services for homes, offices and more. Your belongings are our responsibility.",
+              "titles": {
+                "quickLinks": "Quick Links",
+                "services": "Our Services",
+                "contact": "Contact Information"
+              },
+              "contactLabels": {
+                "call": "Call Us",
+                "email": "Email Us",
+                "location": "Our Location",
+                "hours": "Working Hours"
+              },
+              "services": [
+                "Home Shifting",
+                "Office Relocation",
+                "Local Moving",
+                "Intercity Moving",
+                "Packing & Unpacking",
+                "Furniture Handling",
+                "Loading & Unloading"
+              ],
+              "workingHours": {
+                "weekdays": "Mon - Sat: 9:00 AM - 7:00 PM",
+                "weekend": "Sunday: Closed"
+              },
+              "copyright": "Copyright© 2026. All Rights Reserved.Powered by Lewtow."
+            }
+          }
+        }
+      }
     }
-  },
-  "footer": {
-    "logo": "/images/white-logo.png",
-    "logoAlt": "MoveNest Packers & Movers",
-    "backgroundImage": "/images/move-next_14.jpg",
-    "description": "We provide safe, reliable and affordable packing and moving services for homes, offices and more. Your belongings are our responsibility.",
-    "quickLinksTitle": "Quick Links",
-    "servicesTitle": "Our Services",
-    "contactTitle": "Contact Information",
-    "contactLabels": {
-      "call": "Call Us",
-      "email": "Email Us",
-      "location": "Our Location",
-      "hours": "Working Hours"
-    },
-    "services": [
-      "Home Shifting",
-      "Office Relocation",
-      "Local Moving",
-      "Intercity Moving",
-      "Packing & Unpacking",
-      "Furniture Handling"
-    ],
-    "workingHours": {
-      "weekdays": "Mon - Sat: 9:00 AM - 7:00 PM",
-      "weekend": "Sunday: Closed"
-    },
-    "copyright": "Copyright © 2026. All Rights Reserved. Powered by Lestow."
-  },
-  "pageBanner": {
-    "defaultImage": "/images/Hero.png",
-    "homeLabel": "Home",
-    "breadcrumbLabel": "Breadcrumb"
-  },
-  "hero": {
-    "image": "/images/Hero.png",
-    "imageAlt": "MoveNest Packers & Movers",
-    "badge": "SAFE \u2022 SECURE \u2022 STRESS-FREE",
-    "titlePart1": "Your Trusted",
-    "titleHighlight": "Packers & Movers",
-    "titlePart2": "for a Better Tomorrow",
-    "description": "From home shifting to office relocation, we make every move simple, safe and hassle-free. Trusted by thousands for reliable and professional moving services.",
-    "primaryButton": "Get a Quote",
-    "primaryButtonUrl": "/get-a-quote",
-    "secondaryButton": "Our Services",
-    "secondaryButtonUrl": "/service"
-  },
-  "about": {
-    "mainImage": "/images/move-next_04.jpg",
-    "mainImageAlt": "MoveNest Packers & Movers Team",
-    "previewImage": "/images/move-next_13.jpg",
-    "previewImageAlt": "Moving process preview",
-    "subtitle": "ABOUT US",
-    "titlePart1": "Your Trusted Packers & Movers",
-    "titleConnector": "for a",
-    "titleHighlight": "Better Tomorrow",
-    "titlePart2": "",
-    "description1": "Since 1995, MoveNest has been delivering reliable and professional packing and moving solutions for homes, offices and businesses. With 29+ years of experience, we have successfully relocated thousands of families and organizations with care, precision and commitment.",
-    "description2": "",
-    "features": [
-      {
-        "title": "Experienced Team",
-        "description": "A skilled and trained team to handle your move with care.",
-        "icon": "FiUsers"
-      },
-      {
-        "title": "Quality Packing",
-        "description": "High-quality packing materials for maximum safety.",
-        "icon": "FiBox"
-      },
-      {
-        "title": "Customer Satisfaction",
-        "description": "Thousands of happy customers trust our services.",
-        "icon": "FiCheckCircle"
-      },
-      {
-        "title": "Nationwide Service",
-        "description": "Trusted moving services across all major cities in the USA.",
-        "icon": "FiMapPin"
-      }
-    ],
-    "button": "About More",
-    "buttonUrl": "/about",
-    "experienceYears": "29+",
-    "experienceText": "Years Of Experience"
-  },
-  "ourServices": {
-    "subtitle": "OUR SERVICES",
-    "titlePart1": "Reliable Moving Services Built",
-    "titleHighlight": "Around You",
-    "description": "We offer a comprehensive range of packing and moving solutions tailored to your needs, ensuring safe transit and a seamless relocation experience.",
-    "readMore": "Read More",
-    "services": [
-      {
-        "title": "Home Shifting",
-        "description": "Safe and secure home relocation services.",
-        "slug": "home-shifting",
-        "icon": "FaHome",
-        "image": "/images/move-next_22.jpg"
-      },
-      {
-        "title": "Office Relocation",
-        "description": "Minimize downtime with expert office moves.",
-        "slug": "office-relocation",
-        "icon": "FaBuilding",
-        "image": "/images/move-next_20.jpg"
-      },
-      {
-        "title": "Local Moving",
-        "description": "Quick and efficient local moving services within the city limits.",
-        "slug": "local-moving",
-        "icon": "FaMapMarkerAlt",
-        "image": "/images/move-next_05.jpg"
-      },
-      {
-        "title": "Intercity Moving",
-        "description": "Reliable long-distance moving solutions.",
-        "slug": "intercity-moving",
-        "icon": "FaGlobe",
-        "image": "/images/move-next_10.jpg"
-      },
-      {
-        "title": "Packing & Unpacking",
-        "description": "Professional packing to ensure safety.",
-        "slug": "packing-unpacking",
-        "icon": "FaBoxOpen",
-        "image": "/images/move-next_18.jpg"
-      },
-      {
-        "title": "Land Freight Services",
-        "description": "Streamline globals freights with our seamless international shipping solutions.",
-        "slug": "land-freight",
-        "icon": "FaTruck",
-        "image": "/images/move-next_14.jpg"
-      }
-    ]
-  },
-  "howItWorks": {
-    "image": "/images/relocation_photo.png",
-    "imageAlt": "Couple carrying moving boxes",
-    "subtitle": "HOW IT WORKS",
-    "titlePart1": "Simple Process For",
-    "titleHighlight": "A Smooth Move",
-    "description": "We follow a simple and well-organized process to make your relocation safe, smooth and hassle-free from start to finish.",
-    "steps": [
-      {
-        "stepNumber": "01",
-        "title": "Request a Free Quote",
-        "description": "Share your moving details with us and get a fast, accurate and transparent estimate.",
-        "icon": "FileText"
-      },
-      {
-        "stepNumber": "02",
-        "title": "We Pack & Prepare",
-        "description": "Our skilled team carefully packs your belongings using high-quality materials to ensure complete safety.",
-        "icon": "Package"
-      },
-      {
-        "stepNumber": "03",
-        "title": "We Move Your Items Safely",
-        "description": "Your goods are loaded and transported with proper care using well-maintained vehicles and trained staff.",
-        "icon": "Truck"
-      },
-      {
-        "stepNumber": "04",
-        "title": "Unload & Set Up",
-        "description": "We safely unload your items at the destination and help with basic setup as needed, so you can settle in quickly.",
-        "icon": "House"
-      }
-    ],
-    "features": [
-      {
-        "title": "Trained",
-        "subtitle": "Professionals",
-        "icon": "ShieldCheck"
-      },
-      {
-        "title": "Quality",
-        "subtitle": "Packing Materials",
-        "icon": "Package"
-      },
-      { "title": "End-to-End", "subtitle": "Support", "icon": "Headphones" }
-    ]
-  },
-  "whyChooseUs": {
-    "image": "/images/move-next_08.jpg",
-    "imageAlt": "Professional movers packing boxes",
-    "subtitle": "WHY CHOOSE US",
-    "titlePart1": "We Deliver",
-    "titleHighlight": "Trust & Quality",
-    "titlePart2": "",
-    "description": "Choosing the right moving company makes all the difference. We pride ourselves on delivering top-notch service with a focus on safety, reliability, and customer satisfaction.",
-    "badgeSubtitle": "Best Moving Company",
-    "badgeLine1": "Safe \u2022 Fast \u2022",
-    "badgeLine2": "Stress-Free",
-    "features": [
-      {
-        "title": "100% Safe & Secure",
-        "description": "We use premium packing materials and handled with utmost care.",
-        "icon": "FiShield"
-      },
-      {
-        "title": "Transparent Pricing",
-        "description": "No hidden fees or surprise charges. What we quote is what you pay.",
-        "icon": "FiDollarSign"
-      },
-      {
-        "title": "On-Time Delivery",
-        "description": "We respect your time and ensure strict adherence to schedules.",
-        "icon": "FiClock"
-      }
-    ]
-  },
-  "counters": {
-    "backgroundImage": "/images/move-next_21.jpg",
-    "backgroundAlt": "MoveNest background",
-    "stats": [
-      {
-        "end": 10000,
-        "suffix": "+",
-        "label": "Happy Customers",
-        "icon": "FiUsers"
-      },
-      {
-        "end": 25000,
-        "suffix": "+",
-        "label": "Successful Moves",
-        "icon": "FiTruck"
-      },
-      {
-        "end": 29,
-        "suffix": "+",
-        "label": "Years Of Experience",
-        "icon": "FiHome"
-      },
-      {
-        "end": 500,
-        "suffix": "+",
-        "label": "Cities Covered",
-        "icon": "FiMapPin"
-      }
-    ]
-  },
-  "ctaBanner": {
-    "backgroundImage": "/images/move-next_15.jpg",
-    "subtitle": "Trusted Transport Service",
-    "titleLine1": "Transport & Logistics Projects",
-    "titleLine2": "That We Provide",
-    "button": "Contact Support",
-    "buttonUrl": "/contactUs",
-    "phoneTitle": "Call For Inquiry",
-    "emailTitle": "Send Us Email"
-  },
-  "quoteSection": {
-    "image": "/images/move-next_01.jpg",
-    "imageAlt": "Professional movers loading boxes",
-    "titlePart1": "Safe &",
-    "titleHighlight": "Hassle-Free Moving",
-    "description": "Get a customized quote for your home or office move. Our team ensures a smooth, safe and on-time relocation.",
-    "features": [
-      { "title": "Affordable Pricing", "icon": "Truck" },
-      { "title": "Safe & Secure", "icon": "ShieldCheck" },
-      { "title": "On-Time Delivery", "icon": "Clock" },
-      { "title": "Professional Team", "icon": "Users" }
-    ],
-    "formSubtitle": "GET A QUOTE",
-    "formTitlePart1": "Request a",
-    "formTitleHighlight": "Moving Quote",
-    "formDescription": "Fill out the form below and our team will get back to you with the best offer for your moving requirements.",
-    "fields": {
-      "fullName": {
-        "label": "Full Name",
-        "placeholder": "Enter your full name"
-      },
-      "phone": {
-        "label": "Phone Number",
-        "placeholder": "Enter your phone number"
-      },
-      "email": {
-        "label": "Email Address",
-        "placeholder": "Enter your email address"
-      },
-      "movingDate": { "label": "Moving Date" },
-      "movingFrom": {
-        "label": "Moving From",
-        "placeholder": "Enter pickup location"
-      },
-      "movingTo": {
-        "label": "Moving To",
-        "placeholder": "Enter destination location"
-      },
-      "typeOfMove": {
-        "label": "Type of Move",
-        "placeholder": "Select move type"
-      },
-      "houseSize": {
-        "label": "House Size",
-        "placeholder": "Select house size"
-      },
-      "additionalDetails": {
-        "label": "Additional Details",
-        "placeholder": "Tell us more about your move"
-      }
-    },
-    "optionalText": "(Optional)",
-    "moveTypes": [
-      "Home Relocation",
-      "Office Relocation",
-      "Vehicle Shifting",
-      "Warehouse Shifting"
-    ],
-    "houseSizes": [
-      "1 BHK",
-      "2 BHK",
-      "3 BHK",
-      "4+ BHK / Villa",
-      "Commercial Office"
-    ],
-    "buttonText": "Get a Quote Now",
-    "successMessage": "Moving Quote Request Submitted Successfully!"
-  },
-  "ourApproach": {
-    "images": [
-      { "src": "/images/move-next_09.jpg", "alt": "Packer holding moving box" },
-      {
-        "src": "/images/move-next_07.jpg",
-        "alt": "Delivery man near moving truck"
-      }
-    ],
-    "statsSubtitle": "Trusted By",
-    "statsValue": "3500+",
-    "statsLabel": "Happy Customers",
-    "subtitle": "OUR APPROACH",
-    "titlePart1": "Discover the Heart of",
-    "titleHighlight": "Our Mission",
-    "description": "Our approach is simple – we focus on people, safety and efficiency. We understand that every move is unique, so we plan, pack and deliver with care to make your relocation smooth and stress-free.",
-    "cards": [
-      {
-        "title": "Our Mission",
-        "description": "Our mission is to provide hassle-free, customized moving services with a focus on care, safety and efficiency.",
-        "icon": "Target"
-      },
-      {
-        "title": "Our Vision",
-        "description": "Our vision is to redefine the moving experience by prioritizing customer satisfaction and innovative solutions.",
-        "icon": "Eye"
-      }
-    ]
-  },
-  "faq": {
-    "image": "/images/move-next_06.jpg",
-    "imageAlt": "Movers holding box",
-    "helpTitle": "Still Have Questions?",
-    "helpDescription": "Our team is here to help you. Contact us anytime.",
-    "subtitle": "FAQ",
-    "titlePart1": "Frequently Asked",
-    "titleHighlight": "Questions",
-    "description": "Find answers to the most common questions about our moving services, pricing, booking process and more.",
-    "questions": [
-      {
-        "question": "Do movers need to do an in-person survey to give an estimate?",
-        "answer": "Not always. For smaller moves, a virtual video call or detailed item list is sufficient. However, for larger homes or complex relocations, an in-person survey ensures the most accurate pricing."
-      },
-      {
-        "question": "What happens if my new home isn't ready on moving day?",
-        "answer": "We offer secure, climate-controlled temporary storage facilities where your belongings can be safely kept until your new home is ready for delivery."
-      },
-      {
-        "question": "What should I do if my belongings are damaged or lost?",
-        "answer": "All our relocations come with basic transit insurance coverage. In the rare event of damage, you can submit a claim with photos, and our claims team will process reimbursement promptly."
-      },
-      {
-        "question": "Do you provide packing materials?",
-        "answer": "Yes! We bring high-quality bubble wrap, heavy-duty carton boxes, stretch film, mattress covers, and corrugated sheets to keep your items 100% safe."
-      },
-      {
-        "question": "Can you move fragile or valuable items like pianos or antiques?",
-        "answer": "Absolutely. Our specialized team uses custom wooden crating and specialized padding for fragile, high-value items, artwork, and musical instruments."
-      },
-      {
-        "question": "Do you offer storage facilities if needed?",
-        "answer": "Yes, we provide both short-term and long-term secure warehouse storage with 24/7 CCTV surveillance and climate monitoring."
-      }
-    ]
-  },
-  "gallery": {
-    "subtitle": "OUR GALLERY",
-    "titlePart1": "Our Moving",
-    "titleHighlight": "Gallery",
-    "description": "Take a look at some of our recent moving projects. From home relocations to office moves, we handle every move with care and professionalism.",
-    "counterSeparator": "of",
-    "closeLabel": "Close image modal",
-    "previousLabel": "Previous image",
-    "nextLabel": "Next image",
-    "images": [
-      {
-        "id": 1,
-        "title": "Sofa Wrapping & Moving",
-        "category": "Home Relocation",
-        "src": "/images/move-next_22.jpg"
-      },
-      {
-        "id": 2,
-        "title": "Packed Boxes in Living Room",
-        "category": "Packing",
-        "src": "/images/move-next_18.jpg"
-      },
-      {
-        "id": 3,
-        "title": "Taping Carton Box",
-        "category": "Secure Packing",
-        "src": "/images/move-next_13.jpg"
-      },
-      {
-        "id": 4,
-        "title": "Moving Truck Loading",
-        "category": "Transportation",
-        "src": "/images/move-next_15.jpg"
-      },
-      {
-        "id": 5,
-        "title": "Staircase Sofa Carrying",
-        "category": "Heavy Lifting",
-        "src": "/images/move-next_03.jpg"
-      },
-      {
-        "id": 6,
-        "title": "Cardboard Boxes Stacked",
-        "category": "Office Relocation",
-        "src": "/images/move-next_24.jpg"
-      },
-      {
-        "id": 7,
-        "title": "Staff with Big Box",
-        "category": "Teamwork",
-        "src": "/images/move-next_09.jpg"
-      },
-      {
-        "id": 8,
-        "title": "Office Desks Shifting",
-        "category": "Commercial Move",
-        "src": "/images/move-next_20.jpg"
-      },
-      {
-        "id": 9,
-        "title": "Plastic Wrapped Couch",
-        "category": "Furniture Protection",
-        "src": "/images/move-next_08.jpg"
-      },
-      {
-        "id": 10,
-        "title": "MoveNest Delivery Truck",
-        "category": "Fleet",
-        "src": "/images/move-next_10.jpg"
-      },
-      {
-        "id": 11,
-        "title": "Box Sealing",
-        "category": "Packing",
-        "src": "/images/move-next_23.jpg"
-      },
-      {
-        "id": 12,
-        "title": "Mattress Plastic Wrapping",
-        "category": "Protection",
-        "src": "/images/move-next_16.jpg"
-      }
-    ]
-  },
-  "testimonialsBlock": {
-    "image": "/images/move-next_17.jpg",
-    "imageAlt": "Movers planning and checking list",
-    "subtitle": "OUR CLIENTS SAY",
-    "titlePart1": "What Our Customer's",
-    "titleHighlight": "Talking",
-    "titlePart2": "About Us",
-    "autoplayInterval": 5000,
-    "prevLabel": "Previous review",
-    "nextLabel": "Next review",
-    "reviews": [
-      {
-        "rating": 5,
-        "review": "The team was incredibly professional and handled our entire home shifting with great care. Everything arrived on time and in perfect condition. Highly recommended!",
-        "authorName": "Priya Sharma",
-        "authorLocation": "Gurgaon, Haryana"
-      },
-      {
-        "rating": 5,
-        "review": "We shifted our complete office over a weekend with zero downtime. Every system, file and desk was labelled and set up exactly as planned. Truly outstanding work!",
-        "authorName": "Rahul Verma",
-        "authorLocation": "New Delhi, Delhi"
-      },
-      {
-        "rating": 5,
-        "review": "I was nervous about my glassware and antiques, but they packed everything with multi-layer protection. Not a single scratch after a 1,200 km move.",
-        "authorName": "Neha Kapoor",
-        "authorLocation": "Faridabad, Haryana"
-      },
-      {
-        "rating": 5,
-        "review": "Transparent pricing with no hidden charges. The crew was polite, on time and even helped us arrange furniture at the new place. Great value for money.",
-        "authorName": "Amit Yadav",
-        "authorLocation": "Noida, Uttar Pradesh"
-      },
-      {
-        "rating": 5,
-        "review": "My car and household goods reached Bengaluru safely and before the promised date. Regular tracking updates kept us stress-free throughout the journey.",
-        "authorName": "Sneha Patel",
-        "authorLocation": "Bengaluru, Karnataka"
-      }
-    ],
-    "yearsExperience": "29+",
-    "experienceText": "Years of Experience"
-  },
-  "testimonialsPage": {
-    "subtitle": "Client Feedback",
-    "titlePart1": "What Our Clients",
-    "titleHighlight": "Say",
-    "description": "Real stories from real people who trusted us with their move. Their satisfaction inspires us to deliver even better service every day.",
-    "itemsPerPage": 6,
-    "previousLabel": "Previous Page",
-    "nextLabel": "Next Page",
-    "items": [
-      {
-        "rating": 5,
-        "review": "Excellent service! The team was very professional, handled our household items with great care and delivered everything on time. Highly recommended!",
-        "name": "Rahul Verma",
-        "location": "New Delhi, India",
-        "tag": "Home Relocation",
-        "image": "/images/move-next_06.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Smooth and hassle-free experience from start to finish. The staff was polite, and all our office equipment was delivered safely without any damage.",
-        "name": "Priya Sharma",
-        "location": "Gurgaon, India",
-        "tag": "Office Relocation",
-        "image": "/images/move-next_20.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Very reliable and affordable service. They provided proper packing, timely updates and delivered my bike safely. Great experience overall!",
-        "name": "Amit Yadav",
-        "location": "Noida, India",
-        "tag": "Vehicle Transportation",
-        "image": "/images/move-next_10.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "I was worried about moving fragile items, but the team handled everything professionally. No damage, no delays. Truly a trustworthy company!",
-        "name": "Neha Kapoor",
-        "location": "Faridabad, India",
-        "tag": "Home Relocation",
-        "image": "/images/move-next_08.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Great support and communication throughout the process. They made our warehouse shifting easy and organized. Will definitely use their service again.",
-        "name": "Vikram Singh",
-        "location": "Ghaziabad, India",
-        "tag": "Warehouse Shifting",
-        "image": "/images/move-next_19.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Affordable pricing, professional staff and on-time delivery. My car was transported safely across cities. Highly satisfied with their service!",
-        "name": "Sneha Patel",
-        "location": "Bengaluru, India",
-        "tag": "Car Transportation",
-        "image": "/images/move-next_15.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Outstanding packing quality! They wrapped every piece of furniture with multi-layer bubble wrap. Extremely satisfied with MoveNest.",
-        "name": "Karan Malhotra",
-        "location": "Chandigarh, India",
-        "tag": "Home Relocation",
-        "image": "/images/move-next_22.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Shifted our corporate office over the weekend without any downtime. Pure professionalism and punctual execution by the whole team.",
-        "name": "Ananya Roy",
-        "location": "Kolkata, India",
-        "tag": "Office Relocation",
-        "image": "/images/move-next_16.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Transferred my SUV from Pune to Jaipur. Zero scratches, live GPS tracking updates provided daily. Fantastic service!",
-        "name": "Deepak Joshi",
-        "location": "Pune, India",
-        "tag": "Vehicle Transportation",
-        "image": "/images/move-next_14.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Quick and responsive customer care. They answered all my queries patiently and provided a transparent quote with no hidden fees.",
-        "name": "Pooja Hegde",
-        "location": "Hyderabad, India",
-        "tag": "Home Relocation",
-        "image": "/images/move-next_02.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Heavy machinery and inventory moving was done seamlessly. Highly experienced crew for industrial and warehouse moves.",
-        "name": "Suresh Nambiar",
-        "location": "Chennai, India",
-        "tag": "Warehouse Shifting",
-        "image": "/images/move-next_11.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Moved from Mumbai to Ahmedabad. On-time delivery and complete unboxing support at the destination. Super happy!",
-        "name": "Meera Shah",
-        "location": "Ahmedabad, India",
-        "tag": "Car Transportation",
-        "image": "/images/move-next_21.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Top-notch packing materials and very gentle handling of electronics and glassware. Recommended to all my friends!",
-        "name": "Rohan Gupta",
-        "location": "Lucknow, India",
-        "tag": "Home Relocation",
-        "image": "/images/move-next_13.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Very professional IT equipment packing. Servers and monitors reached our new branch safely without a single glitch.",
-        "name": "Shalini Pandey",
-        "location": "Indore, India",
-        "tag": "Office Relocation",
-        "image": "/images/move-next_24.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Hassle-free bike shifting from Delhi to Bangalore. Delivered before time. Excellent experience!",
-        "name": "Manish Tiwari",
-        "location": "Bangalore, India",
-        "tag": "Vehicle Transportation",
-        "image": "/images/move-next_07.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Budget-friendly prices and top tier execution. The supervisors are polite and very cooperative.",
-        "name": "Divya Rathi",
-        "location": "Jaipur, India",
-        "tag": "Home Relocation",
-        "image": "/images/move-next_18.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Fast loading and unloading. They systematically labeled all storage boxes which made unpacking super quick.",
-        "name": "Alok Kumar",
-        "location": "Patna, India",
-        "tag": "Warehouse Shifting",
-        "image": "/images/move-next_23.jpg"
-      },
-      {
-        "rating": 5,
-        "review": "Great customer response and polite drivers. Vehicle transport was completely stress-free.",
-        "name": "Ritu Saxena",
-        "location": "Bhopal, India",
-        "tag": "Car Transportation",
-        "image": "/images/move-next_05.jpg"
-      }
-    ]
-  },
-  "contactSection": {
-    "formSubtitle": "CONTACT US",
-    "formTitlePart1": "Get in",
-    "formTitleHighlight": "Touch",
-    "formDescription": "Have questions or need a moving quote? Fill out the form below and our team will get back to you shortly.",
-    "placeholders": {
-      "name": "Your Name *",
-      "email": "Your Email *",
-      "phone": "Your Phone *",
-      "movingService": "Moving Service *",
-      "movingFrom": "Moving From *",
-      "movingTo": "Moving To *",
-      "additionalDetails": "Additional Details (Optional)"
-    },
-    "serviceOptions": [
-      "Home Relocation",
-      "Office Relocation",
-      "Vehicle Transportation",
-      "Warehouse Shifting"
-    ],
-    "recaptchaLabel": "I'm not a robot",
-    "recaptchaBrand": "reCAPTCHA",
-    "submitButton": "Send Message",
-    "recaptchaAlert": "Please verify that you are not a robot.",
-    "successMessage": "Message Sent Successfully!",
-    "backgroundImage": "/images/move-next_12.jpg",
-    "infoSubtitle": "OUR CONTACT DETAIL",
-    "infoTitlePart1": "Need Any",
-    "infoTitleHighlight": "Assistance?",
-    "infoDescription": "Our team is always ready to help you with your moving requirements. Reach out to us through any of the below channels.",
-    "contactLabels": {
-      "call": "Call Us",
-      "email": "Email Us",
-      "location": "Our Location"
-    },
-    "socialTitle": "Follow Us :",
-    "map": {
-      "title": "Google Map San Francisco Location",
-      "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d-122.3989386846818!3d37.79469507975549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064bfd4e167%3A0xc5458ce3dd40bd!2sMarket%20St%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2susa!4v1650000000000!5m2!1sen!2susa",
-      "cardTitle": "San Francisco, CA, USA",
-      "linkText": "View on Google Maps",
-      "linkUrl": "https://maps.google.com"
-    }
-  },
-  "experts": {
-    "subtitle": "OUR EXPERTS",
-    "titlePart1": "Meet Our",
-    "titleHighlight": "Team",
-    "viewProfileLabel": "View profile for"
-  },
-  "latestBlog": {
-    "subtitle": "Latest Blog",
-    "titlePart1": "Latest News &",
-    "titleHighlight": "Helpful Tips",
-    "description": "Discover useful moving tips, packing guides and expert advice to make your relocation simple, safe and stress-free.",
-    "authorLabel": "Admin",
-    "readMore": "Read More",
-    "viewMoreButton": "View More Blogs",
-    "viewMoreUrl": "/blog"
-  },
-  "blogDetails": {
-    "authorLabel": "Admin",
-    "paragraphs": [
-      "The whimsically named Egg Canvas is the brainchild of Erica Choi, a design director and photo grapher based in York. Why the name \"Egg Canvas\"? Erica was inspired by her Korean childhood nickname, which means egg, while \"canvas\" medium with which art is created. \"Egg Canvas\" therefore, is her life—creating beautiful things each day a blank canvas.",
-      "We have covered many special events such as fireworks, fairs, parades, races, walks, awards ceremonies, fashion shows, sporting events, and even a memorial service.",
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vulputate vestibulum rhon cus, dolor eget viverra pretium, dolor tellus aliquet nunc, vitae ultricies erat elit eu lacus. Vestibulum non justo fun consectetur, cursus ante, tincidunt sapien. Nulla quis diam sit amet turpis interdum enim. Vivamus fauc ex sed nibh egestas elementum. Mauris et bibendum."
-    ],
-    "quote": {
-      "text": "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma – which is living with the",
-      "author": "John Mohedi"
-    },
-    "subheading": "Let our investment management team",
-    "listItems": [
-      "Lorem ipsum generators on the tend to repeat.",
-      "If you are going to use a passage.",
-      "Lorem ipsum generators on the tend to repeat.",
-      "If you are going to use a passage.",
-      "Lorem ipsum generators on the tend to repeat."
-    ],
-    "sideImage": "/images/move-next_21.jpg",
-    "sideImageAlt": "Transportation team"
-  },
-  "serviceDetails": {
-    "defaultSlug": "ocean-freight",
-    "defaultTitle": "Ocean Freight Services",
-    "sidebarTitle": "Services",
-    "sidebarServices": [
-      { "name": "Global Freight Services", "slug": "global-freight" },
-      { "name": "Ocean Freight Services", "slug": "ocean-freight" },
-      { "name": "Land Freight Services", "slug": "land-freight" },
-      { "name": "Residential Moving", "slug": "residential-moving" },
-      { "name": "Office Relocation", "slug": "office-relocation" },
-      { "name": "Packing & Unpacking", "slug": "packing-unpacking" }
-    ],
-    "help": {
-      "image": "/images/move-next_05.jpg",
-      "imageAlt": "Transport Services",
-      "title": "Find Top-Rated Transport Services",
-      "callText": "Need Help? Call Now",
-      "phone": "+1 00000 00000"
-    },
-    "mainImage": "/images/move-next_14.jpg",
-    "introParagraphs": [
-      "Our {title} offer comprehensive solutions for all your shipping needs, ensuring your cargo is transported efficiently and safely across the seas, giving you peace of mind and the best results for your business. With our {title}, we handle all aspects of your sea shipping needs, from documentation to delivery. With our {title}, we handle all aspects of your sea shipping needs.",
-      "With our {title}, we handle all aspects of your sea shipping needs, from documentation to delivery, ensuring your goods arrive on time and in excellent condition, allowing you to focus on your core business operations, helping you navigate the complexities of international trade."
-    ],
-    "valuesTitle": "Tranzit Values",
-    "valuesDescription": "Three core values define the spirit of our culture at Go Tranzit.",
-    "values": [
-      "Ocean freight offers predictable transit times and schedules.",
-      "It remains one of the most economical ways to transport.",
-      "Despite its scale, modern shipping companies are increasingly."
-    ],
-    "galleryImages": [
-      { "src": "/images/move-next_19.jpg", "alt": "Cargo Ship Top View" },
-      { "src": "/images/move-next_11.jpg", "alt": "Cargo Ship Front View" }
-    ],
-    "middleParagraphs": [
-      "Freight forwarders often offer consolidated cargo services, which combine smaller shipments from multiple companies into full containers for specific destinations. This offers cost advantages similar to FCL but without needing a full container yourself.",
-      "This is a cost-effective option for smaller shipments. Your goods are consolidated with other shippers' cargo to fill a container. This can take longer as it involves additional han"
-    ],
-    "videoImage": "/images/move-next_03.jpg",
-    "videoImageAlt": "Video Placeholder",
-    "closingParagraphs": [
-      "Freight forwarders often offer consolidated cargo services, which combine smaller shipments from multiple companies into full containers for specific destinations. This offers cost advantages similar to FCL but without needing a full container yourself.",
-      "This is a cost-effective option for smaller shipments. Your goods are consolidated with other shippers' cargo to fill a container. This can take longer as it involves additional han"
-    ]
-  },
-  "teamDetails": {
-    "badge": "Our Team",
-    "bio": "{name} is an experienced {role} with over 8 years of expertise in handling home and office relocations. He ensures every move is completed safely, efficiently, and with utmost care. Known for his leadership skills and customer-friendly approach, {firstName} makes the relocation process smooth and stress-free for our clients.",
-    "stats": [
-      { "icon": "Truck", "value": "8+ Years", "label": "Experience" },
-      { "icon": "Users", "value": "500+", "label": "Happy Clients" },
-      { "icon": "ShieldCheck", "value": "100%", "label": "Safe Handling" },
-      { "icon": "Star", "value": "Top Rated", "label": "Team Leader" }
-    ],
-    "contactTitle": "Contact Information",
-    "contact": [
-      { "icon": "Phone", "value": "+1 12345 67890" },
-      { "icon": "Mail", "value": "amit.sharma@xyz.com" },
-      { "icon": "MapPin", "value": "San Francisco, CA, USA" }
-    ],
-    "followTitle": "Follow Me",
-    "socials": [
-      { "platform": "facebook", "url": "https://www.facebook.com/" },
-      { "platform": "instagram", "url": "https://www.instagram.com/" },
-      { "platform": "linkedin", "url": "https://www.linkedin.com/" },
-      { "platform": "youtube", "url": "https://www.youtube.com/" }
-    ],
-    "button": "Get in Touch",
-    "personalInfoTitle": "Personal Information",
-    "personalInfo": [
-      { "icon": "User", "label": "Full Name", "value": "{name}" },
-      { "icon": "Briefcase", "label": "Designation", "value": "{role}" },
-      { "icon": "Star", "label": "Experience", "value": "8+ Years" },
-      {
-        "icon": "MapPin",
-        "label": "Location",
-        "value": "San Francisco, CA, USA"
-      },
-      { "icon": "Globe", "label": "Languages", "value": "English, Spanish" },
-      { "icon": "Clock", "label": "Availability", "value": "Full Time" }
-    ],
-    "skillsTitle": "Skills & Expertise",
-    "skills": [
-      { "label": "Team Management", "value": 95 },
-      { "label": "Packing & Handling", "value": 90 },
-      { "label": "Customer Support", "value": 85 },
-      { "label": "Logistics Coordination", "value": 92 },
-      { "label": "Problem Solving", "value": 89 }
-    ],
-    "certificationsTitle": "Certifications",
-    "certifications": [
-      {
-        "icon": "Briefcase",
-        "title": "Professional Moving Training",
-        "description": "Certified in relocation and handling safety procedures."
-      },
-      {
-        "icon": "ShieldCheck",
-        "title": "Safety & Equipment Handling",
-        "description": "Trained in safe use of packing and moving equipment."
-      },
-      {
-        "icon": "Star",
-        "title": "Customer Service Excellence",
-        "description": "Certified for delivering outstanding customer support."
-      }
-    ]
   }
 }

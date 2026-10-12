@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   FiUsers,
   FiBox,
@@ -7,16 +8,39 @@ import {
   FiArrowRight,
   FiPlay,
 } from "react-icons/fi";
-
-import data from "../../data/move-nest.json";
+import type { AboutUsData } from "@/types/movenest.types";
+import { getMoveNestSection } from "@/lib/movenest";
 import { Float, Reveal, Stagger, StaggerItem } from "./Motion";
 
 type AboutUsProps = {
+  data?: AboutUsData;
   showButton?: boolean;
 };
 
-export default function AboutUsSection({ showButton = true }: AboutUsProps) {
-  const { about } = data;
+export default function AboutUsSection({ data, showButton = true }: AboutUsProps) {
+  const content = data ?? getMoveNestSection("AboutUs")?.variants?.MoveNestAboutUs1;
+
+  if (!content) return null;
+
+  const mainImageSrc = content.images?.main?.src || (content as any).mainImage || "/images/move-next_04.jpg";
+  const mainImageAlt = content.images?.main?.alt || (content as any).mainImageAlt || "MoveNest Packers & Movers Team";
+  const previewImageSrc = content.images?.preview?.src || (content as any).previewImage || "/images/move-next_13.jpg";
+  const previewImageAlt = content.images?.preview?.alt || (content as any).previewImageAlt || "Moving process preview";
+
+  const expValue = content.experience?.value || (content as any).experienceYears || "29+";
+  const expLabel = content.experience?.label || (content as any).experienceText || "Years Of Experience";
+
+  const badge = content.badge || (content as any).subtitle || "ABOUT US";
+  const titlePart1 = content.heading?.main || (content as any).titlePart1 || "Your Trusted Packers & Movers";
+  const titleConnector = content.heading?.middle || (content as any).titleConnector || "for a";
+  const titleHighlight = content.heading?.highlight || (content as any).titleHighlight || "Better Tomorrow";
+
+  const description = content.description || (content as any).description1 || "";
+  const features = content.list || (content as any).features || [];
+
+  const buttonHref = content.cta?.href || (content as any).buttonUrl || "/contactUs";
+  const buttonLabel = content.cta?.label || (content as any).button || "Contact Us";
+
   return (
     <section className="relative w-full py-10 sm:py-14 bg-white overflow-hidden font-sans">
       <div className="max-w-[85rem] mx-auto px-4 md:px-8">
@@ -37,8 +61,8 @@ export default function AboutUsSection({ showButton = true }: AboutUsProps) {
             <div className="relative rounded-3xl overflow-hidden shadow-sm bg-white p-2 border border-gray-100 z-10 w-[90%]">
               <div className="relative w-full h-[450px] sm:h-[500px] rounded-2xl overflow-hidden bg-gray-100">
                 <Image
-                  src={about.mainImage}
-                  alt={about.mainImageAlt}
+                  src={mainImageSrc}
+                  alt={mainImageAlt}
                   fill
                   priority
                   className="object-cover object-center"
@@ -46,7 +70,7 @@ export default function AboutUsSection({ showButton = true }: AboutUsProps) {
               </div>
             </div>
 
-            {/* Top Right Orange Ribbon: 29+ Years Of Experience */}
+            {/* Top Right Orange Ribbon */}
             <Reveal direction="right" delay={0.4} className="absolute top-12 right-0 sm:-right-4 z-20">
               <div className="relative bg-[#f97316] text-white pl-5 pr-8 py-3.5 rounded-l-xl rounded-tr-xl shadow-lg flex items-center gap-3">
                 <div className="w-6 h-6 flex items-center justify-center shrink-0">
@@ -65,7 +89,7 @@ export default function AboutUsSection({ showButton = true }: AboutUsProps) {
                   </svg>
                 </div>
                 <span className="font-semibold text-[15px] sm:text-[17px] tracking-wide whitespace-nowrap">
-                  {about.experienceYears} {about.experienceText}
+                  {expValue} {expLabel}
                 </span>
 
                 {/* Ribbon Fold Triangle */}
@@ -75,21 +99,21 @@ export default function AboutUsSection({ showButton = true }: AboutUsProps) {
 
             {/* Overlapping Bottom-Right Floating Image */}
             <Float className="absolute -bottom-12 right-0 sm:-right-8 z-30">
-            <Reveal direction="zoom" delay={0.6} className="bg-white p-2.5 rounded-2xl shadow-xl border border-gray-100 w-64 sm:w-80">
-              <div className="relative rounded-xl overflow-hidden h-36 sm:h-48 bg-gray-100">
-                <Image
-                  src={about.previewImage}
-                  alt={about.previewImageAlt}
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full bg-white text-[#f97316] flex items-center justify-center shadow-md cursor-pointer hover:scale-105 transition-transform">
-                    <FiPlay className="w-5 h-5 ml-1 fill-current" />
+              <Reveal direction="zoom" delay={0.6} className="bg-white p-2.5 rounded-2xl shadow-xl border border-gray-100 w-64 sm:w-80">
+                <div className="relative rounded-xl overflow-hidden h-36 sm:h-48 bg-gray-100">
+                  <Image
+                    src={previewImageSrc}
+                    alt={previewImageAlt}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black/10 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-full bg-white text-[#f97316] flex items-center justify-center shadow-md cursor-pointer hover:scale-105 transition-transform">
+                      <FiPlay className="w-5 h-5 ml-1 fill-current" />
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Reveal>
+              </Reveal>
             </Float>
           </Reveal>
 
@@ -99,33 +123,38 @@ export default function AboutUsSection({ showButton = true }: AboutUsProps) {
             <div className="flex items-center gap-3 mb-4">
               <span className="w-8 h-[3px] bg-[#f97316] inline-block"></span>
               <span className="text-[13px] font-bold tracking-widest text-[#0c4040] uppercase">
-                {about.subtitle}
+                {badge}
               </span>
             </div>
 
             {/* Main Heading */}
             <h2 className="text-[28px] sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[42px] font-extrabold text-[#0c4040] tracking-tight leading-[1.2] mb-6">
               <span className="inline-block whitespace-nowrap">
-                {about.titlePart1}
+                {titlePart1}
               </span>{" "}
               <br />
-              {about.titleConnector} <span className="text-[#f97316]">{about.titleHighlight}</span>
+              {titleConnector} <span className="text-[#f97316]">{titleHighlight}</span>
             </h2>
 
-            {/* Paragraphs */}
+            {/* Paragraph */}
             <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed mb-4">
-              {about.description1}
+              {description}
             </p>
 
-            {/* 4 Feature Boxes Grid */}
+            {/* Feature Boxes Grid */}
             <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 mb-10">
-              {about.features.map((feature, idx) => (
+              {features.map((feature: any, idx: number) => (
                 <StaggerItem key={idx} className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#fff7ed] text-[#f97316] flex items-center justify-center shrink-0">
-                    {feature.icon === "FiUsers" && <FiUsers className="w-6 h-6" />}
-                    {feature.icon === "FiBox" && <FiBox className="w-6 h-6" />}
-                    {feature.icon === "FiCheckCircle" && <FiCheckCircle className="w-6 h-6" />}
-                    {feature.icon === "FiMapPin" && <FiMapPin className="w-6 h-6" />}
+                    {feature.icon === "FiUsers" || feature.icon === "team" ? (
+                      <FiUsers className="w-6 h-6" />
+                    ) : feature.icon === "FiBox" || feature.icon === "equipment" ? (
+                      <FiBox className="w-6 h-6" />
+                    ) : feature.icon === "FiCheckCircle" ? (
+                      <FiCheckCircle className="w-6 h-6" />
+                    ) : (
+                      <FiMapPin className="w-6 h-6" />
+                    )}
                   </div>
                   <div>
                     <h4 className="font-bold text-[#0c4040] text-[17px] mb-1">
@@ -142,15 +171,15 @@ export default function AboutUsSection({ showButton = true }: AboutUsProps) {
             {/* CTA Button */}
             {showButton && (
               <div>
-                <a
-                  href={about.buttonUrl}
+                <Link
+                  href={buttonHref}
                   className="inline-flex items-center gap-3 bg-[#f97316] hover:bg-[#ea580c] text-white font-semibold text-[15px] pl-7 pr-2 py-2 rounded-full shadow-md transition-all duration-300"
                 >
-                  {about.button}
+                  {buttonLabel}
                   <span className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-[#f97316]">
                     <FiArrowRight className="w-4 h-4" />
                   </span>
-                </a>
+                </Link>
               </div>
             )}
           </Reveal>

@@ -4,17 +4,30 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus, HelpCircle } from "lucide-react";
-import data from "../data/move-nest.json";
+import type { FaqData } from "@/types/movenest.types";
+import { getMoveNestSection } from "@/lib/movenest";
 
-export default function FaqSection() {
-  const { faq } = data;
+export default function FaqSection({ data }: { data?: FaqData }) {
+  const content = data ?? getMoveNestSection("Faq")?.variants?.MoveNestFaq1;
 
   // Open the second FAQ (index 1) by default
   const [openIndex, setOpenIndex] = useState<number | null>(1);
 
+  if (!content) return null;
+
   const toggleFaq = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  const badge = content.badge || (content as any).subtitle || "FREQUENTLY ASKED QUESTIONS";
+  const titlePart1 = content.heading?.main || (content as any).titlePart1 || "Got Questions? We Have";
+  const titleHighlight = content.heading?.highlight || (content as any).titleHighlight || "The Answers";
+  const description = content.description || "";
+  const imageSrc = typeof content.image === "string" ? content.image : content.image?.src || "/images/move-next_10.jpg";
+  const imageAlt = typeof content.image === "string" ? "FAQ Help" : content.image?.alt || "FAQ Help";
+  const helpTitle = content.help?.title || (content as any).helpTitle || "Need Immediate Help?";
+  const helpDescription = content.help?.description || (content as any).helpDescription || "Our relocation specialists are available 24/7.";
+  const questionsList = content.list || (content as any).questions || [];
 
   return (
     <section className="bg-[#faf8f6] py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans relative overflow-hidden">
@@ -30,17 +43,17 @@ export default function FaqSection() {
           <div className="inline-flex items-center space-x-2 text-xs font-bold text-[#ff5100] tracking-widest uppercase">
             <span className="w-6 h-[2px] bg-[#ff5100]"></span>
             <span className="bg-orange-100/80 px-3 py-1 rounded-full text-[11px]">
-              {faq.subtitle}
+              {badge}
             </span>
             <span className="w-6 h-[2px] bg-[#ff5100]"></span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            {faq.titlePart1} <span className="text-[#ff5100]">{faq.titleHighlight}</span>
+            {titlePart1} <span className="text-[#ff5100]">{titleHighlight}</span>
           </h2>
 
           <p className="text-slate-600 text-xs sm:text-sm max-w-xl mx-auto leading-relaxed">
-            {faq.description}
+            {description}
           </p>
         </motion.div>
 
@@ -59,8 +72,8 @@ export default function FaqSection() {
 
             <div className="relative w-full max-w-md h-[420px] sm:h-[480px] rounded-3xl overflow-hidden shadow-xl border-4 border-white bg-slate-100 z-10">
               <Image
-                src={faq.image}
-                alt={faq.imageAlt}
+                src={imageSrc}
+                alt={imageAlt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover object-center"
@@ -79,10 +92,10 @@ export default function FaqSection() {
               </div>
               <div>
                 <h4 className="text-xs font-bold text-slate-900 leading-snug">
-                  {faq.helpTitle}
+                  {helpTitle}
                 </h4>
                 <p className="text-[10px] text-slate-500 font-medium leading-tight mt-0.5">
-                  {faq.helpDescription}
+                  {helpDescription}
                 </p>
               </div>
             </motion.div>
@@ -96,7 +109,7 @@ export default function FaqSection() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 space-y-3"
           >
-            {faq.questions.map((item, index) => {
+            {questionsList.map((item: any, index: number) => {
               const isOpen = openIndex === index;
               return (
                 <div

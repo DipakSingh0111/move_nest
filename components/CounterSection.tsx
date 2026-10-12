@@ -3,8 +3,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { FiUsers, FiTruck, FiHome, FiMapPin } from "react-icons/fi";
+import type { StatsData } from "@/types/movenest.types";
+import { getMoveNestSection } from "@/lib/movenest";
 import { Stagger, StaggerItem } from "./common/Motion";
-import data from "../data/move-nest.json";
 
 // Custom Hook for smooth animated counter
 function useCounter(end: number, duration = 2000, startAnimation = false) {
@@ -31,7 +32,7 @@ function useCounter(end: number, duration = 2000, startAnimation = false) {
   return count;
 }
 
-export default function CounterSection() {
+export default function CounterSection({ data }: { data?: StatsData }) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -54,7 +55,13 @@ export default function CounterSection() {
     return () => observer.disconnect();
   }, []);
 
-  const { counters } = data;
+  const content = data ?? getMoveNestSection("Stats")?.variants?.MoveNestStats1;
+
+  if (!content) return null;
+
+  const bgImage = typeof content.background === "string" ? content.background : content.background?.src || "/images/move-next_14.jpg";
+  const bgAlt = typeof content.background === "string" ? "Stats background" : content.background?.alt || "Stats background";
+  const statsList = content.list || (content as any).stats || [];
 
   return (
     <section
@@ -64,8 +71,8 @@ export default function CounterSection() {
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={counters.backgroundImage}
-          alt={counters.backgroundAlt}
+          src={bgImage}
+          alt={bgAlt}
           fill
           className="object-cover object-center"
         />
@@ -76,7 +83,7 @@ export default function CounterSection() {
       {/* Content Container */}
       <div className="relative z-10 max-w-[85rem] mx-auto px-4 md:px-8">
         <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-4 items-center">
-          {counters.stats.map((item, index) => (
+          {statsList.map((item, index) => (
             <StaggerItem
               key={index}
               direction="zoom"
@@ -90,8 +97,8 @@ export default function CounterSection() {
                 start={isVisible}
               />
 
-              {/* Vertical Divider Line matching the reference image (Hidden on mobile and last item) */}
-              {index < counters.stats.length - 1 && (
+              {/* Vertical Divider Line matching the reference image */}
+              {index < statsList.length - 1 && (
                 <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-24 bg-white/30"></div>
               )}
             </StaggerItem>

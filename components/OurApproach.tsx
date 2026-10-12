@@ -3,11 +3,29 @@
 import React from "react";
 import Image from "next/image";
 import { Truck, Target, Eye, Users } from "lucide-react";
-import data from "../data/move-nest.json";
+import type { OurApproachData } from "@/types/movenest.types";
+import { getMoveNestSection } from "@/lib/movenest";
 import { Float, Reveal, Stagger, StaggerItem } from "./common/Motion";
 
-export default function OurApproach() {
-  const { ourApproach } = data;
+export default function OurApproach({ data }: { data?: OurApproachData }) {
+  const content = data ?? getMoveNestSection("OurApproach")?.variants?.MoveNestOurApproach1;
+
+  if (!content) return null;
+
+  const images = content.images || [];
+  const img1 = images[0] || { src: "/images/move-next_18.jpg", alt: "Packing boxes" };
+  const img2 = images[1] || { src: "/images/move-next_11.jpg", alt: "Delivery driver and moving truck" };
+
+  const statsSubtitle = content.stats?.subtitle || (content as any).statsSubtitle || "SATISFIED CLIENTS";
+  const statsValue = content.stats?.value || (content as any).statsValue || "25k+";
+  const statsLabel = content.stats?.label || (content as any).statsLabel || "Reliable & Fast Moving";
+
+  const badge = content.badge || (content as any).subtitle || "OUR APPROACH";
+  const titlePart1 = content.heading?.main || (content as any).titlePart1 || "Committed To";
+  const titleHighlight = content.heading?.highlight || (content as any).titleHighlight || "Quality Moving Services";
+  const description = content.description || "";
+  const cardsList = content.list || (content as any).cards || [];
+
   return (
     <section className="relative overflow-hidden bg-[#faf8f6] py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans">
       {/* Background Subtle Gradient Blobs & Patterns */}
@@ -18,22 +36,22 @@ export default function OurApproach() {
         {/* Left Column: Image Collage & Floating Orange Badge */}
         <Reveal direction="left" className="lg:col-span-6 relative">
           <div className="grid grid-cols-12 gap-4 items-stretch">
-            {/* Left Image (Tall Box Packing) */}
+            {/* Left Image */}
             <div className="col-span-5 relative h-[320px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md">
               <Image
-                src={ourApproach.images[0].src}
-                alt={ourApproach.images[0].alt}
+                src={img1.src}
+                alt={img1.alt}
                 fill
                 sizes="(max-width: 768px) 45vw, 25vw"
                 className="object-cover object-center hover:scale-105 transition-transform duration-500"
               />
             </div>
 
-            {/* Right Image (Delivery Driver & Truck) */}
+            {/* Right Image */}
             <div className="col-span-7 relative h-[320px] sm:h-[400px] rounded-3xl overflow-hidden shadow-md">
               <Image
-                src={ourApproach.images[1].src}
-                alt={ourApproach.images[1].alt}
+                src={img2.src}
+                alt={img2.alt}
                 fill
                 sizes="(max-width: 768px) 55vw, 30vw"
                 className="object-cover object-center hover:scale-105 transition-transform duration-500"
@@ -43,20 +61,20 @@ export default function OurApproach() {
 
           {/* Floating Orange Customer Stats Card */}
           <Float className="absolute -bottom-6 left-4 sm:left-6">
-          <Reveal direction="zoom" delay={0.4} className="bg-gradient-to-r from-[#ff5100] to-[#ff6a00] text-white py-4 px-6 sm:px-8 rounded-2xl shadow-xl flex items-center space-x-4 border-2 border-white">
-            <div className="bg-white/20 p-3 rounded-xl flex items-center justify-center shrink-0">
-              <Users className="w-8 h-8 text-white" />
-            </div>
-            <div>
-              <p className="text-xs font-semibold tracking-wide uppercase opacity-90">
-                {ourApproach.statsSubtitle}
-              </p>
-              <h4 className="text-2xl sm:text-3xl font-black tracking-tight leading-none my-0.5">
-                {ourApproach.statsValue}
-              </h4>
-              <p className="text-xs font-medium opacity-90">{ourApproach.statsLabel}</p>
-            </div>
-          </Reveal>
+            <Reveal direction="zoom" delay={0.4} className="bg-gradient-to-r from-[#ff5100] to-[#ff6a00] text-white py-4 px-6 sm:px-8 rounded-2xl shadow-xl flex items-center space-x-4 border-2 border-white">
+              <div className="bg-white/20 p-3 rounded-xl flex items-center justify-center shrink-0">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <p className="text-xs font-semibold tracking-wide uppercase opacity-90">
+                  {statsSubtitle}
+                </p>
+                <h4 className="text-2xl sm:text-3xl font-black tracking-tight leading-none my-0.5">
+                  {statsValue}
+                </h4>
+                <p className="text-xs font-medium opacity-90">{statsLabel}</p>
+              </div>
+            </Reveal>
           </Float>
 
           {/* Decorative Dot Matrix Grid (Bottom Left) */}
@@ -72,23 +90,23 @@ export default function OurApproach() {
           {/* Section Sub-tag */}
           <div className="inline-flex items-center space-x-2 bg-orange-100/70 text-orange-700 px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase">
             <Truck className="w-3.5 h-3.5 text-orange-600" />
-            <span>{ourApproach.subtitle}</span>
+            <span>{badge}</span>
           </div>
 
           {/* Main Title */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 leading-tight">
-            {ourApproach.titlePart1} <br />
-            <span className="text-[#ff5100]">{ourApproach.titleHighlight}</span>
+            {titlePart1} <br />
+            <span className="text-[#ff5100]">{titleHighlight}</span>
           </h2>
 
           {/* Subtitle Description */}
           <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-            {ourApproach.description}
+            {description}
           </p>
 
           {/* Cards Container */}
           <Stagger className="space-y-4 pt-2" delay={0.3}>
-            {ourApproach.cards.map((card, idx) => (
+            {cardsList.map((card: any, idx: number) => (
               <StaggerItem key={idx} className="bg-orange-50/50 border border-orange-100/80 rounded-2xl p-5 flex items-start space-x-4 hover:shadow-md transition-shadow duration-300">
                 <div className="w-12 h-12 rounded-full bg-white border border-orange-100 flex items-center justify-center shrink-0 shadow-sm">
                   {card.icon === "Target" && <Target className="w-6 h-6 text-[#ff5100]" />}

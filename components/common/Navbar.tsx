@@ -3,14 +3,19 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import data from "../../data/move-nest.json";
-
 import Image from "next/image";
+import type { HeaderData } from "@/types/movenest.types";
+import { getMoveNestSection } from "@/lib/movenest";
 
-export default function Navbar() {
-  const { navbar } = data;
+export default function Navbar({ data }: { data?: HeaderData }) {
+  const content = data ?? getMoveNestSection("Header")?.variants?.MoveNestHeader1;
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+
+  if (!content) return null;
+
+  const links = content.menu || [];
+  const cta = content.cta;
 
   return (
     <nav className="bg-white shadow-sm font-sans relative z-50">
@@ -19,8 +24,8 @@ export default function Navbar() {
         <div className="flex items-center">
           <Link href="/">
             <Image
-              src={navbar.logo.image}
-              alt={navbar.logo.alt}
+              src={content.logo.image}
+              alt={content.logo.alt}
               width={250}
               height={70}
               className="w-[200px] md:w-[250px] h-auto object-contain"
@@ -29,122 +34,117 @@ export default function Navbar() {
           </Link>
         </div>
 
-      {/* Navigation Links */}
-      <div className="hidden lg:flex items-center gap-6 xl:gap-8">
-        {navbar.links.map((link, index) => {
-          const isActive = pathname === link.url;
-          return (
+        {/* Navigation Links */}
+        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+          {links.map((link, index) => {
+            const href = link.href || (link as any).url || "/";
+            const isActive = pathname === href;
+            return (
+              <Link
+                key={index}
+                href={href}
+                className={`text-[15px] font-medium transition-colors relative pb-1 ${
+                  isActive ? "text-[#F97316]" : "text-[#0c4040] hover:text-[#F97316]"
+                }`}
+              >
+                {link.label}
+                {isActive && (
+                  <motion.span
+                    layoutId="nav-underline"
+                    transition={{ type: "spring", stiffness: 400, damping: 32 }}
+                    className="absolute left-0 bottom-0 w-full h-[2px] bg-[#F97316] rounded-full"
+                  />
+                )}
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* CTA Button */}
+        {cta && (
+          <div className="hidden md:block">
             <Link
-              key={index}
-              href={link.url}
-              className={`text-[15px] font-medium transition-colors relative pb-1 ${
-                isActive ? "text-[#F97316]" : "text-[#0c4040] hover:text-[#F97316]"
-              }`}
+              href={cta.href || (cta as any).url || "/get-a-quote"}
+              className="inline-flex items-center justify-center bg-[#F97316] hover:bg-[#ea580c] text-white text-[15px] font-medium px-6 py-2.5 rounded-md transition-all shadow-sm hover:shadow-md active:scale-95"
             >
-              {link.label}
-              {isActive && (
-                <motion.span
-                  layoutId="nav-underline"
-                  transition={{ type: "spring", stiffness: 400, damping: 32 }}
-                  className="absolute left-0 bottom-0 w-full h-[2px] bg-[#F97316] rounded-full"
+              {cta.label}
+            </Link>
+          </div>
+        )}
+
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden flex items-center">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-[#0c4040] hover:text-[#F97316] p-2 focus:outline-none"
+            aria-label="Toggle navigation menu"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {isOpen ? (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
                 />
               )}
-            </Link>
-          );
-        })}
+            </svg>
+          </button>
+        </div>
       </div>
 
-      {/* CTA Button */}
-      <div className="hidden md:block">
-        <Link
-          href={navbar.cta.url}
-          className="bg-[#F97316] hover:bg-[#ea580c] text-white rounded-full pl-6 pr-2 py-2 flex items-center gap-3 transition-colors text-sm font-semibold shadow-md"
-        >
-          {navbar.cta.label}
-          <div className="bg-white rounded-full p-1.5 flex items-center justify-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4 text-[#F97316]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2.5}
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-            </svg>
-          </div>
-        </Link>
-      </div>
-
-      {/* Mobile Menu Toggle */}
-      <div className="lg:hidden">
-        <button 
-          className="text-[#0c4040] p-2 focus:outline-none" 
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle Menu"
-        >
-          {isOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
-      </div>
-      </div>
-
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Navigation Dropdown */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden bg-white border-t border-slate-100 overflow-hidden absolute w-full left-0 top-full shadow-lg"
+            transition={{ duration: 0.2 }}
+            className="lg:hidden bg-white border-t border-gray-100 px-4 pt-2 pb-6 flex flex-col gap-3 shadow-lg"
           >
-            <div className="flex flex-col px-4 pt-2 pb-6 space-y-1">
-              {navbar.links.map((link, index) => {
-                const isActive = pathname === link.url;
-                return (
-                  <Link
-                    key={index}
-                    href={link.url}
-                    onClick={() => setIsOpen(false)}
-                    className={`text-[15px] font-medium py-3 px-4 rounded-xl transition-colors ${
-                      isActive ? "bg-orange-50 text-[#F97316]" : "text-[#0c4040] hover:bg-slate-50 hover:text-[#F97316]"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-              {/* Mobile CTA */}
-              <div className="pt-4 px-2 md:hidden">
+            {links.map((link, index) => {
+              const href = link.href || (link as any).url || "/";
+              const isActive = pathname === href;
+              return (
                 <Link
-                  href={navbar.cta.url}
+                  key={index}
+                  href={href}
                   onClick={() => setIsOpen(false)}
-                  className="bg-[#F97316] hover:bg-[#ea580c] text-white rounded-full px-6 py-3 flex items-center justify-center gap-3 transition-colors text-sm font-semibold shadow-md w-full"
+                  className={`text-[15px] font-medium py-2 px-3 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-orange-50 text-[#F97316]"
+                      : "text-[#0c4040] hover:bg-gray-50 hover:text-[#F97316]"
+                  }`}
                 >
-                  {navbar.cta.label}
-                  <div className="bg-white rounded-full p-1.5 flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4 text-[#F97316]"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2.5}
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
+                  {link.label}
+                </Link>
+              );
+            })}
+            {cta && (
+              <div className="pt-2">
+                <Link
+                  href={cta.href || (cta as any).url || "/get-a-quote"}
+                  onClick={() => setIsOpen(false)}
+                  className="w-full inline-flex items-center justify-center bg-[#F97316] hover:bg-[#ea580c] text-white text-[15px] font-medium px-6 py-2.5 rounded-md transition-colors shadow-sm"
+                >
+                  {cta.label}
                 </Link>
               </div>
-            </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

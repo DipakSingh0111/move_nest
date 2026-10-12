@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Reveal } from "./Motion";
-import data from "../../data/move-nest.json";
+import type { PageBannersData } from "@/types/movenest.types";
+import { getMoveNestSection } from "@/lib/movenest";
 
 type Crumb = {
   label: string;
@@ -9,6 +10,7 @@ type Crumb = {
 };
 
 type PageBannerProps = {
+  data?: PageBannersData;
   title: string;
   image?: string;
   imageAlt?: string;
@@ -18,6 +20,7 @@ type PageBannerProps = {
 };
 
 export default function PageBanner({
+  data,
   title,
   image,
   imageAlt = "",
@@ -25,19 +28,23 @@ export default function PageBanner({
   overlay = 0.85,
   className = "",
 }: PageBannerProps) {
-  const { pageBanner } = data;
+  const content = data ?? getMoveNestSection("PageBanners")?.variants?.MoveNestPageBanners1;
+  const homeLabel = content?.homeLabel || "Home";
+  const breadcrumbLabel = content?.breadcrumbLabel || "Breadcrumb";
+  const bannerImage = image || content?.defaultImage || "/images/Hero.png";
+
   const crumbs: Crumb[] = breadcrumbs?.length
     ? breadcrumbs
-    : [{ label: pageBanner.homeLabel, href: "/" }, { label: title }];
+    : [{ label: homeLabel, href: "/" }, { label: title }];
 
   return (
     <section
       className={`relative flex min-h-[220px] sm:min-h-[260px] lg:min-h-[300px] items-center overflow-hidden bg-[#0f2f35] text-white ${className}`}
     >
-      {image && (
+      {bannerImage && (
         <Image
-          src={pageBanner.defaultImage}
-          alt={imageAlt}
+          src={bannerImage}
+          alt={imageAlt || title}
           fill
           priority
           sizes="100vw"
@@ -60,41 +67,41 @@ export default function PageBanner({
         </Reveal>
 
         <Reveal delay={0.2}>
-        <nav aria-label={pageBanner.breadcrumbLabel}>
-          <ol className="flex flex-wrap items-center text-[0.95rem] font-semibold">
-            {crumbs.map((c, i) => {
-              const isLast = i === crumbs.length - 1;
-              return (
-                <li
-                  key={`${c.label}-${i}`}
-                  className="inline-flex items-center"
-                >
-                  {isLast || !c.href ? (
-                    <span
-                      className="text-white/70"
-                      aria-current={isLast ? "page" : undefined}
-                    >
-                      {c.label}
-                    </span>
-                  ) : (
-                    <Link
-                      href={c.href}
-                      className="text-white underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                    >
-                      {c.label}
-                    </Link>
-                  )}
-                  {!isLast && (
-                    <span
-                      aria-hidden="true"
-                      className="mx-3.5 inline-block h-0.5 w-4 bg-red-500"
-                    />
-                  )}
-                </li>
-              );
-            })}
-          </ol>
-        </nav>
+          <nav aria-label={breadcrumbLabel}>
+            <ol className="flex flex-wrap items-center text-[0.95rem] font-semibold">
+              {crumbs.map((c, i) => {
+                const isLast = i === crumbs.length - 1;
+                return (
+                  <li
+                    key={`${c.label}-${i}`}
+                    className="inline-flex items-center"
+                  >
+                    {isLast || !c.href ? (
+                      <span
+                        className="text-white/70"
+                        aria-current={isLast ? "page" : undefined}
+                      >
+                        {c.label}
+                      </span>
+                    ) : (
+                      <Link
+                        href={c.href}
+                        className="text-white underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                      >
+                        {c.label}
+                      </Link>
+                    )}
+                    {!isLast && (
+                      <span
+                        aria-hidden="true"
+                        className="mx-3.5 inline-block h-0.5 w-4 bg-red-500"
+                      />
+                    )}
+                  </li>
+                );
+              })}
+            </ol>
+          </nav>
         </Reveal>
       </div>
     </section>

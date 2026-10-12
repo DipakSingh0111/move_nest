@@ -1,6 +1,7 @@
 import PageBanner from "@/components/common/PageBanner";
 import BlogDetailsComponent from "@/components/BlogDetails";
 import TransportCTA from "@/components/CtaBanner";
+import { getMoveNestSections } from "@/lib/movenest";
 import { notFound } from "next/navigation";
 import { blogs } from "@/data/blogs";
 
@@ -10,15 +11,21 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function DynamicBlogDetailsPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function DynamicBlogDetailsPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
-  
-  const blog = blogs.find(b => b.slug === slug);
+  const sections = getMoveNestSections();
+
+  const blog = blogs.find((b) => b.slug === slug);
   if (!blog) return notFound();
 
   return (
     <>
       <PageBanner
+        data={sections.PageBanners?.variants?.MoveNestPageBanners1}
         title="Blog Detail"
         image="/images/Hero.png"
         breadcrumbs={[
@@ -27,10 +34,13 @@ export default async function DynamicBlogDetailsPage({ params }: { params: Promi
           { label: "Blog Detail" },
         ]}
       />
-      
-      <BlogDetailsComponent blog={blog} />
-      
-      <TransportCTA />
+
+      <BlogDetailsComponent
+        blog={blog}
+        data={sections.BlogNews?.variants?.MoveNestBlogNews1?.details}
+      />
+
+      <TransportCTA data={sections.CtaBanner?.variants?.MoveNestCtaBanner1} />
     </>
   );
 }

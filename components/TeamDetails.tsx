@@ -18,8 +18,9 @@ import {
 } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaYoutube } from "react-icons/fa";
 import type { IconType } from "react-icons";
+import type { TeamMemberDetails } from "@/types/movenest.types";
+import { getMoveNestSection } from "@/lib/movenest";
 import { ProgressBar, Reveal, Stagger, StaggerItem } from "./common/Motion";
-import data from "../data/move-nest.json";
 
 interface TeamMember {
   name: string;
@@ -49,8 +50,17 @@ const socialMap: Record<string, { icon: IconType; className: string }> = {
   youtube: { icon: FaYoutube, className: "bg-red-600 hover:bg-red-700" },
 };
 
-export default function TeamDetailsComponent({ member }: { member: TeamMember }) {
-  const { teamDetails } = data;
+export default function TeamDetailsComponent({
+  member,
+  data,
+}: {
+  member: TeamMember;
+  data?: TeamMemberDetails;
+}) {
+  const teamDetails = data ?? getMoveNestSection("Team")?.variants?.MoveNestTeam1?.details;
+
+  if (!teamDetails) return null;
+
   const [firstName, ...rest] = member.name.split(" ");
   const fill = (text: string) =>
     text
@@ -90,7 +100,7 @@ export default function TeamDetailsComponent({ member }: { member: TeamMember })
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-gray-100">
-              {teamDetails.stats.map((stat) => {
+              {teamDetails.stats?.map((stat) => {
                 const Icon = iconMap[stat.icon];
                 return (
                   <div key={stat.label} className="flex flex-col items-center text-center space-y-2 p-4 rounded-2xl bg-[#fff8f5] transition-transform hover:-translate-y-1">
@@ -110,7 +120,7 @@ export default function TeamDetailsComponent({ member }: { member: TeamMember })
             <h3 className="text-xl font-bold text-[#002b36] mb-6">{teamDetails.contactTitle}</h3>
             
             <div className="space-y-5 flex-1">
-              {teamDetails.contact.map((item) => {
+              {teamDetails.contact?.map((item) => {
                 const Icon = iconMap[item.icon];
                 return (
                   <div key={item.value} className="flex items-center gap-4 text-gray-600">
@@ -126,7 +136,7 @@ export default function TeamDetailsComponent({ member }: { member: TeamMember })
             <div className="mt-8 border-t border-gray-100 pt-6">
               <h4 className="font-bold text-[#002b36] mb-4">{teamDetails.followTitle}</h4>
               <div className="flex items-center gap-3 mb-8">
-                {teamDetails.socials.map((social) => {
+                {teamDetails.socials?.map((social) => {
                   const entry = socialMap[social.platform];
                   if (!entry) return null;
                   const Icon = entry.icon;
@@ -147,7 +157,7 @@ export default function TeamDetailsComponent({ member }: { member: TeamMember })
 
               <button className="w-full flex items-center justify-center gap-2 bg-[#ff6333] hover:bg-[#e64f22] text-white font-semibold py-4 px-6 rounded-full transition-all shadow-[0_8px_20px_rgba(255,99,51,0.25)] hover:shadow-none hover:translate-y-0.5">
                 <MessageSquare className="w-5 h-5" />
-                {teamDetails.button}
+                {teamDetails.button?.label || "Send Message"}
                 <ChevronRight className="w-5 h-5 ml-2" />
               </button>
             </div>
@@ -161,7 +171,7 @@ export default function TeamDetailsComponent({ member }: { member: TeamMember })
           <StaggerItem className="bg-slate-50 rounded-3xl p-8">
             <h3 className="text-xl font-bold text-[#002b36] mb-6">{teamDetails.personalInfoTitle}</h3>
             <ul className="space-y-4">
-              {teamDetails.personalInfo.map((info, i) => {
+              {teamDetails.personalInfo?.map((info, i) => {
                 const Icon = iconMap[info.icon];
                 return (
                   <React.Fragment key={info.label}>
@@ -184,7 +194,7 @@ export default function TeamDetailsComponent({ member }: { member: TeamMember })
             <h3 className="text-xl font-bold text-[#002b36] mb-8">{teamDetails.skillsTitle}</h3>
             
             <div className="space-y-6">
-              {teamDetails.skills.map((skill) => (
+              {teamDetails.skills?.map((skill) => (
                 <div key={skill.label}>
                   <div className="flex justify-between text-sm font-bold text-[#002b36] mb-2">
                     <span>{skill.label}</span>
@@ -203,7 +213,7 @@ export default function TeamDetailsComponent({ member }: { member: TeamMember })
             <h3 className="text-xl font-bold text-[#002b36] mb-6">{teamDetails.certificationsTitle}</h3>
             
             <div className="space-y-6">
-              {teamDetails.certifications.map((cert) => {
+              {teamDetails.certifications?.map((cert) => {
                 const Icon = iconMap[cert.icon];
                 return (
                   <div key={cert.title} className="flex gap-4">

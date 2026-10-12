@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { FiCalendar, FiUser } from "react-icons/fi";
 import { FaQuoteRight, FaCheck } from "react-icons/fa";
+import type { BlogDetailsData } from "@/types/movenest.types";
+import { getMoveNestSection } from "@/lib/movenest";
 import { Reveal } from "./common/Motion";
-import data from "../data/move-nest.json";
 
 interface BlogProps {
   title: string;
@@ -11,8 +12,21 @@ interface BlogProps {
   month: string;
 }
 
-export default function BlogDetailsComponent({ blog }: { blog: BlogProps }) {
-  const { blogDetails } = data;
+export default function BlogDetailsComponent({
+  blog,
+  data,
+}: {
+  blog: BlogProps;
+  data?: BlogDetailsData;
+}) {
+  const blogDetails = data ?? getMoveNestSection("BlogNews")?.variants?.MoveNestBlogNews1?.details;
+
+  if (!blogDetails) return null;
+
+  const paragraphs = blogDetails.paragraphs || [];
+  const listItems = blogDetails.list || (blogDetails as any).listItems || [];
+  const sideImg = typeof blogDetails.sideImage === "string" ? blogDetails.sideImage : blogDetails.sideImage?.src || "/images/move-next_21.jpg";
+  const sideAlt = typeof blogDetails.sideImage === "string" ? "Transportation team" : blogDetails.sideImage?.alt || "Transportation team";
 
   return (
     <section className="bg-white py-10 sm:py-14 font-sans">
@@ -29,45 +43,47 @@ export default function BlogDetailsComponent({ blog }: { blog: BlogProps }) {
         </Reveal>
 
         <Reveal>
-        {/* Meta Data */}
-        <div className="flex items-center gap-6 mb-6 text-sm font-semibold text-[#002b36]">
-          <div className="flex items-center gap-2">
-            <FiCalendar className="text-[#ff6333] w-4 h-4" />
-            <span>{blog.date} {blog.month}</span>
+          {/* Meta Data */}
+          <div className="flex items-center gap-6 mb-6 text-sm font-semibold text-[#002b36]">
+            <div className="flex items-center gap-2">
+              <FiCalendar className="text-[#ff6333] w-4 h-4" />
+              <span>{blog.date} {blog.month}</span>
+            </div>
+            <div className="w-px h-4 bg-gray-300"></div>
+            <div className="flex items-center gap-2">
+              <FiUser className="text-[#ff6333] w-4 h-4" />
+              <span>{blogDetails.authorLabel}</span>
+            </div>
           </div>
-          <div className="w-px h-4 bg-gray-300"></div>
-          <div className="flex items-center gap-2">
-            <FiUser className="text-[#ff6333] w-4 h-4" />
-            <span>{blogDetails.authorLabel}</span>
+
+          {/* Title */}
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#002b36] tracking-tight mb-8 leading-tight">
+            {blog.title}
+          </h1>
+
+          {/* Content Paragraphs */}
+          <div className="prose prose-lg max-w-none text-gray-500 leading-relaxed space-y-6">
+            {paragraphs.map((text, i) => (
+              <p key={i}>{text}</p>
+            ))}
           </div>
-        </div>
-
-        {/* Title */}
-        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#002b36] tracking-tight mb-8 leading-tight">
-          {blog.title}
-        </h1>
-
-        {/* Content Paragraphs */}
-        <div className="prose prose-lg max-w-none text-gray-500 leading-relaxed space-y-6">
-          {blogDetails.paragraphs.map((text, i) => (
-            <p key={i}>{text}</p>
-          ))}
-        </div>
         </Reveal>
 
         {/* Blockquote */}
-        <Reveal direction="left" className="my-12 bg-gray-50 p-8 sm:p-12 border-l-4 border-transparent relative">
-          <p className="text-xl sm:text-2xl font-bold text-[#002b36] leading-relaxed mb-6">
-            {blogDetails.quote.text}
-          </p>
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <span className="w-4 h-px bg-[#002b36]"></span>
-              <span className="text-sm font-semibold text-gray-500">{blogDetails.quote.author}</span>
+        {blogDetails.quote && (
+          <Reveal direction="left" className="my-12 bg-gray-50 p-8 sm:p-12 border-l-4 border-transparent relative">
+            <p className="text-xl sm:text-2xl font-bold text-[#002b36] leading-relaxed mb-6">
+              {blogDetails.quote.text}
+            </p>
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className="w-4 h-px bg-[#002b36]"></span>
+                <span className="text-sm font-semibold text-gray-500">{blogDetails.quote.author}</span>
+              </div>
+              <FaQuoteRight className="text-[#ff6333] w-8 h-8 opacity-80" />
             </div>
-            <FaQuoteRight className="text-[#ff6333] w-8 h-8 opacity-80" />
-          </div>
-        </Reveal>
+          </Reveal>
+        )}
 
         {/* Subheading & Features */}
         <Reveal>
@@ -79,7 +95,7 @@ export default function BlogDetailsComponent({ blog }: { blog: BlogProps }) {
         <Reveal className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* List */}
           <ul className="space-y-4">
-            {blogDetails.listItems.map((text, i) => (
+            {listItems.map((text, i) => (
               <li key={i} className="flex items-start gap-3">
                 <div className="mt-1 flex-shrink-0 text-gray-400">
                   <FaCheck className="w-4 h-4" />
@@ -92,8 +108,8 @@ export default function BlogDetailsComponent({ blog }: { blog: BlogProps }) {
           {/* Right Image */}
           <div className="relative w-full h-[250px] sm:h-[300px] bg-slate-100 rounded-lg overflow-hidden">
             <Image
-              src={blogDetails.sideImage}
-              alt={blogDetails.sideImageAlt}
+              src={sideImg}
+              alt={sideAlt}
               fill
               className="object-cover"
             />

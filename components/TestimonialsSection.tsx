@@ -3,16 +3,35 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Star, MapPin, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import type { TestimonialsData } from "@/types/movenest.types";
+import { getMoveNestSection } from "@/lib/movenest";
 import { Reveal, Stagger, StaggerItem } from "./common/Motion";
-import data from "../data/move-nest.json";
 
-
-export default function TestimonialsSection() {
+export default function TestimonialsSection({ data }: { data?: TestimonialsData }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const { testimonialsPage } = data;
-  const allTestimonials = testimonialsPage.items;
-  const itemsPerPage = testimonialsPage.itemsPerPage;
-  const totalPages = Math.ceil(allTestimonials.length / itemsPerPage);
+  const content = data ?? getMoveNestSection("Testimonials")?.variants?.MoveNestTestimonials1;
+
+  if (!content) return null;
+
+  const page = content.page || {
+    badge: "TESTIMONIALS",
+    heading: { main: "What Our Clients Say About", highlight: "Our Services" },
+    description: "Read authentic reviews and real moving stories from our happy customers across various locations.",
+    itemsPerPage: 6,
+    labels: { previous: "Previous", next: "Next" },
+    list: [],
+  };
+
+  const allTestimonials = page.list || [];
+  const itemsPerPage = page.itemsPerPage || 6;
+  const totalPages = Math.max(1, Math.ceil(allTestimonials.length / itemsPerPage));
+
+  const badge = page.badge || (page as any).subtitle || "TESTIMONIALS";
+  const titlePart1 = page.heading?.main || (page as any).titlePart1 || "What Our Clients Say About";
+  const titleHighlight = page.heading?.highlight || (page as any).titleHighlight || "Our Services";
+  const description = page.description || "";
+  const prevLabel = page.labels?.previous || "Previous";
+  const nextLabel = page.labels?.next || "Next";
 
   // Get current page slice
   const indexOfLastItem = currentPage * itemsPerPage;
@@ -35,22 +54,22 @@ export default function TestimonialsSection() {
         <Reveal className="text-center space-y-3">
           {/* Top Pill Tag */}
           <div className="inline-flex items-center bg-orange-100/80 text-[#ff5100] px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase">
-            <span>{testimonialsPage.subtitle}</span>
+            <span>{badge}</span>
           </div>
 
           {/* Main Title */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-            {testimonialsPage.titlePart1}{" "}
-            <span className="text-[#ff5100]">{testimonialsPage.titleHighlight}</span>
+            {titlePart1}{" "}
+            <span className="text-[#ff5100]">{titleHighlight}</span>
           </h2>
 
           {/* Subtitle */}
           <p className="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
-            {testimonialsPage.description}
+            {description}
           </p>
         </Reveal>
 
-        {/* 6 Cards Grid (3 Columns x 2 Rows) */}
+        {/* Cards Grid */}
         <Stagger
           key={currentPage}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
@@ -63,11 +82,11 @@ export default function TestimonialsSection() {
               className="bg-white rounded-3xl p-6 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(255,81,0,0.08)] hover:border-orange-200 transition-[box-shadow,border-color] duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Top Quote Icon & 5-Star Ratings */}
+                {/* Top Quote Icon & Ratings */}
                 <div className="flex items-center justify-between mb-4">
                   <Quote className="w-8 h-8 text-[#ff5100] rotate-180 fill-[#ff5100]/10" />
                   <div className="flex items-center space-x-1">
-                    {[...Array(item.rating)].map((_, i) => (
+                    {[...Array(item.rating || 5)].map((_, i) => (
                       <Star
                         key={i}
                         className="w-4 h-4 fill-[#ff5100] text-[#ff5100]"
@@ -85,14 +104,16 @@ export default function TestimonialsSection() {
               {/* Bottom Author Info */}
               <div className="flex items-center justify-between pt-4 border-t border-slate-50">
                 <div className="flex items-center space-x-3">
-                  <div className="relative w-11 h-11 rounded-full overflow-hidden shrink-0 border border-slate-100">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      sizes="44px"
-                      className="object-cover"
-                    />
+                  <div className="relative w-11 h-11 rounded-full overflow-hidden shrink-0 border border-slate-100 bg-slate-100">
+                    {item.image && (
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        sizes="44px"
+                        className="object-cover"
+                      />
+                    )}
                   </div>
                   <div>
                     <h3 className="text-sm font-bold text-slate-900 leading-snug">
@@ -120,7 +141,7 @@ export default function TestimonialsSection() {
           <button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
-            aria-label={testimonialsPage.previousLabel}
+            aria-label={prevLabel}
             className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all duration-200 ${
               currentPage === 1
                 ? "border-slate-200 text-slate-300 cursor-not-allowed bg-white"
@@ -153,7 +174,7 @@ export default function TestimonialsSection() {
           <button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
-            aria-label={testimonialsPage.nextLabel}
+            aria-label={nextLabel}
             className={`w-9 h-9 rounded-full flex items-center justify-center border transition-all duration-200 ${
               currentPage === totalPages
                 ? "border-slate-200 text-slate-300 cursor-not-allowed bg-white"

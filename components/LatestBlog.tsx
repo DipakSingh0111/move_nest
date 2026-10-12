@@ -5,12 +5,31 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiUser, FiArrowRight } from "react-icons/fi";
 import { blogs } from "@/data/blogs";
-import data from "../data/move-nest.json";
+import type { BlogNewsData } from "@/types/movenest.types";
+import { getMoveNestSection } from "@/lib/movenest";
 import { Reveal, Stagger, StaggerItem } from "./common/Motion";
 
-export default function LatestBlogSection() {
-  const { latestBlog } = data;
-  const [visibleCount, setVisibleCount] = useState(3);
+export default function LatestBlogSection({
+  data,
+  limit,
+}: {
+  data?: BlogNewsData;
+  limit?: number;
+}) {
+  const content = data ?? getMoveNestSection("BlogNews")?.variants?.MoveNestBlogNews1;
+  const initialCount = limit || 3;
+  const [visibleCount, setVisibleCount] = useState(initialCount);
+
+  if (!content) return null;
+
+  const badge = content.badge || (content as any).subtitle || "OUR LATEST BLOG";
+  const titlePart1 = content.heading?.main || (content as any).titlePart1 || "Latest News &";
+  const titleHighlight = content.heading?.highlight || (content as any).titleHighlight || "Helpful Tips";
+  const description = content.description || "";
+  const authorLabel = content.authorLabel || "Admin";
+  const readMore = content.readMore || "Read More";
+  const ctaLabel = content.cta?.label || (content as any).viewMoreButton || "View More Blogs";
+
   return (
     <section className="relative w-full py-10 sm:py-14 bg-white overflow-hidden">
       <div className="max-w-[85rem] mx-auto px-4 md:px-8">
@@ -19,14 +38,14 @@ export default function LatestBlogSection() {
           <div className="inline-flex items-center gap-2 mb-3 bg-orange-50 px-4 py-1.5 rounded-full border border-orange-100">
             <span className="w-2 h-2 bg-[#f57c00] rounded-full inline-block"></span>
             <span className="text-xs sm:text-sm font-bold tracking-widest text-gray-800 uppercase">
-              {latestBlog.subtitle}
+              {badge}
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B2525] tracking-tight mb-4">
-            {latestBlog.titlePart1} <span className="text-[#f57c00]">{latestBlog.titleHighlight}</span>
+            {titlePart1} <span className="text-[#f57c00]">{titleHighlight}</span>
           </h2>
           <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-            {latestBlog.description}
+            {description}
           </p>
         </Reveal>
 
@@ -62,7 +81,7 @@ export default function LatestBlogSection() {
                 {/* Metadata: Author */}
                 <div className="flex items-center gap-2 text-xs font-semibold text-[#f57c00] mb-2 uppercase tracking-wide">
                   <FiUser className="w-3.5 h-3.5" />
-                  <span>{latestBlog.authorLabel}</span>
+                  <span>{authorLabel}</span>
                 </div>
 
                 {/* Blog Title */}
@@ -82,7 +101,7 @@ export default function LatestBlogSection() {
                   href={`/blog-details/${blog.slug}`}
                   className="inline-flex items-center gap-2 text-[#0B2525] hover:text-[#f57c00] font-bold text-sm transition-colors group/btn"
                 >
-                  <span>{latestBlog.readMore}</span>
+                  <span>{readMore}</span>
                   <span className="w-7 h-7 rounded-full bg-[#f57c00] text-white flex items-center justify-center transition-transform group-hover/btn:translate-x-1">
                     <FiArrowRight className="w-3.5 h-3.5" />
                   </span>
@@ -99,7 +118,7 @@ export default function LatestBlogSection() {
               onClick={() => setVisibleCount((prev) => prev + 3)}
               className="inline-flex items-center gap-3 bg-[#f57c00] hover:bg-[#e06d00] text-white font-bold px-9 py-4 rounded-full shadow-lg transition-all duration-300 group"
             >
-              <span>{latestBlog.viewMoreButton}</span>
+              <span>{ctaLabel}</span>
               <span className="w-7 h-7 bg-white/20 rounded-full flex items-center justify-center text-white transition-transform group-hover:translate-x-1">
                 <FiArrowRight className="w-4 h-4" />
               </span>
