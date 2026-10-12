@@ -66,7 +66,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="bg-[#faf8f6] py-16 px-4 sm:px-6 lg:px-8 font-sans">
+    <section className="bg-[#faf8f6] py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-[85rem] mx-auto space-y-12">
         {/* Main Grid: Left Form & Right Info Card */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
@@ -325,6 +325,8 @@ export default function ContactSection() {
                     <a
                       key={social.platform}
                       href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label={social.platform}
                       className="w-9 h-9 rounded-full border border-white/30 flex items-center justify-center hover:bg-[#ff5100] hover:border-[#ff5100] transition-colors group"
                     >

@@ -32,7 +32,7 @@ export default function PageBanner({
 
   return (
     <section
-      className={`relative flex min-h-[clamp(200px,26vw,320px)] items-center overflow-hidden bg-[#0f2f35] text-white ${className}`}
+      className={`relative flex min-h-[220px] sm:min-h-[260px] lg:min-h-[300px] items-center overflow-hidden bg-[#0f2f35] text-white ${className}`}
     >
       {image && (
         <Image
@@ -52,7 +52,7 @@ export default function PageBanner({
         className="absolute inset-0 bg-gradient-to-r from-[#0a262c] via-[#0a262c]/80 to-[#0a262c]/40"
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[85rem] px-4 md:px-8 py-12">
+      <div className="relative z-10 mx-auto w-full max-w-[85rem] px-4 md:px-8 py-12 sm:py-16">
         <Reveal>
           <h1 className="mb-3.5 text-[clamp(2.25rem,6vw,4.25rem)] font-extrabold leading-[1.05] tracking-tight">
             {title}

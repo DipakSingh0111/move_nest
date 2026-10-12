@@ -59,7 +59,7 @@ export default function TeamDetailsComponent({ member }: { member: TeamMember })
       .replaceAll("{firstName}", firstName);
 
   return (
-    <section className="bg-white pt-16 pb-4 sm:pt-24 sm:pb-8 font-sans">
+    <section className="bg-white py-10 sm:py-14 font-sans">
       <div className="max-w-[85rem] mx-auto px-4 md:px-8">
         {/* Top Section */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-8 mb-16">
@@ -134,6 +134,8 @@ export default function TeamDetailsComponent({ member }: { member: TeamMember })
                     <a
                       key={social.platform}
                       href={social.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       aria-label={social.platform}
                       className={`w-10 h-10 rounded-full text-white flex items-center justify-center transition-colors ${entry.className}`}
                     >

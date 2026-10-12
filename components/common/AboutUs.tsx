@@ -11,14 +11,18 @@ import {
 import data from "../../data/move-nest.json";
 import { Float, Reveal, Stagger, StaggerItem } from "./Motion";
 
-export default function AboutUsSection() {
+type AboutUsProps = {
+  showButton?: boolean;
+};
+
+export default function AboutUsSection({ showButton = true }: AboutUsProps) {
   const { about } = data;
   return (
-    <section className="relative w-full py-20 bg-white overflow-hidden font-sans">
+    <section className="relative w-full py-10 sm:py-14 bg-white overflow-hidden font-sans">
       <div className="max-w-[85rem] mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-12 xl:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 xl:gap-16 items-center">
           {/* LEFT SIDE: Images */}
-          <Reveal direction="left" className="relative w-full max-w-xl mx-auto lg:mx-0 lg:max-w-none pt-8 pl-8">
+          <Reveal direction="left" className="relative w-full max-w-xl mx-auto lg:mx-0 lg:max-w-none pt-2 sm:pt-4 pl-4 sm:pl-8">
             {/* Decorative Dot Matrix in Bottom-Left Background */}
             <div className="absolute -bottom-8 -left-2 grid grid-cols-5 gap-2.5 opacity-60 pointer-events-none z-0">
               {Array.from({ length: 30 }).map((_, i) => (
@@ -136,17 +140,19 @@ export default function AboutUsSection() {
             </Stagger>
 
             {/* CTA Button */}
-            <div>
-              <a
-                href={about.buttonUrl}
-                className="inline-flex items-center gap-3 bg-[#f97316] hover:bg-[#ea580c] text-white font-semibold text-[15px] pl-7 pr-2 py-2 rounded-full shadow-md transition-all duration-300"
-              >
-                {about.button}
-                <span className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-[#f97316]">
-                  <FiArrowRight className="w-4 h-4" />
-                </span>
-              </a>
-            </div>
+            {showButton && (
+              <div>
+                <a
+                  href={about.buttonUrl}
+                  className="inline-flex items-center gap-3 bg-[#f97316] hover:bg-[#ea580c] text-white font-semibold text-[15px] pl-7 pr-2 py-2 rounded-full shadow-md transition-all duration-300"
+                >
+                  {about.button}
+                  <span className="w-8 h-8 bg-white rounded-full flex items-center justify-center text-[#f97316]">
+                    <FiArrowRight className="w-4 h-4" />
+                  </span>
+                </a>
+              </div>
+            )}
           </Reveal>
         </div>
       </div>

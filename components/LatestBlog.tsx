@@ -12,7 +12,7 @@ export default function LatestBlogSection() {
   const { latestBlog } = data;
   const [visibleCount, setVisibleCount] = useState(3);
   return (
-    <section className="relative w-full py-20 lg:py-24 bg-white overflow-hidden">
+    <section className="relative w-full py-10 sm:py-14 bg-white overflow-hidden">
       <div className="max-w-[85rem] mx-auto px-4 md:px-8">
         {/* Section Header */}
         <Reveal className="text-center max-w-3xl mx-auto mb-16">

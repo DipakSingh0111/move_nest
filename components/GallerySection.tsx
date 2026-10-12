@@ -40,7 +40,7 @@ export default function GallerySection() {
   };
 
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 lg:px-8 font-sans">
+    <section className="bg-white py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-[85rem] mx-auto space-y-10">
         {/* Section Header */}
         <Reveal className="text-center space-y-3">

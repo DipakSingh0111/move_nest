@@ -15,7 +15,7 @@ export default function BlogDetailsComponent({ blog }: { blog: BlogProps }) {
   const { blogDetails } = data;
 
   return (
-    <section className="bg-white py-16 sm:py-24 font-sans">
+    <section className="bg-white py-10 sm:py-14 font-sans">
       <div className="max-w-[85rem] mx-auto px-4 md:px-8">
         
         {/* Featured Image */}

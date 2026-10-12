@@ -28,18 +28,18 @@ export default function ServicesSection() {
   const { ourServices } = data;
 
   return (
-    <section className="bg-[#f9fafa] py-16 sm:py-20 lg:py-28">
+    <section className="bg-[#f9fafa] py-10 sm:py-14">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
         {/* HEADING SECTION */}
-        <Reveal className="mb-14 flex flex-col items-center text-center">
-          <div className="mb-4 flex items-center gap-3">
+        <Reveal className="mb-8 sm:mb-10 flex flex-col items-center text-center">
+          <div className="mb-2.5 flex items-center gap-3">
             <span className="h-[2px] w-10 bg-[#ff4a17]" />
             <span className="text-sm font-bold uppercase tracking-wider text-[#ff4a17]">
               {ourServices.subtitle}
             </span>
           </div>
 
-          <h2 className="mb-5 text-3xl font-extrabold leading-[1.2] text-[#062c3d] sm:text-4xl lg:text-5xl lg:whitespace-nowrap">
+          <h2 className="mb-3 text-3xl font-extrabold leading-[1.2] text-[#062c3d] sm:text-4xl lg:text-5xl lg:whitespace-nowrap">
             {ourServices.titlePart1}{" "}
             <span className="text-[#ff4a17]">{ourServices.titleHighlight}</span>
           </h2>

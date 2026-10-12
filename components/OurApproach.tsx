@@ -9,7 +9,7 @@ import { Float, Reveal, Stagger, StaggerItem } from "./common/Motion";
 export default function OurApproach() {
   const { ourApproach } = data;
   return (
-    <section className="relative overflow-hidden bg-[#faf8f6] py-16 px-4 sm:px-6 lg:px-8 font-sans">
+    <section className="relative overflow-hidden bg-[#faf8f6] py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans">
       {/* Background Subtle Gradient Blobs & Patterns */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-orange-100/40 rounded-full blur-3xl pointer-events-none -z-0 translate-x-1/3 -translate-y-1/3" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-orange-100/30 rounded-full blur-3xl pointer-events-none -z-0 -translate-x-1/3 translate-y-1/3" />

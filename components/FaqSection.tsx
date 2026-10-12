@@ -17,7 +17,7 @@ export default function FaqSection() {
   };
 
   return (
-    <section className="bg-[#faf8f6] py-16 px-4 sm:px-6 lg:px-8 font-sans relative overflow-hidden">
+    <section className="bg-[#faf8f6] py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans relative overflow-hidden">
       <div className="max-w-[85rem] mx-auto space-y-12 relative z-10">
         {/* Header Section */}
         <motion.div

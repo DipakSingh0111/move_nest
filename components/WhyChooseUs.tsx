@@ -18,7 +18,7 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[#faf8f6] py-2 px-4 sm:px-6 lg:px-8 font-sans">
+    <section className="relative overflow-hidden bg-[#faf8f6] py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans">
       {/* Decorative Background Blur Circles */}
       <div className="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-orange-100/60 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-orange-100/50 rounded-full blur-3xl pointer-events-none" />

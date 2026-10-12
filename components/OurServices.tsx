@@ -20,21 +20,21 @@ export default function OurServicesSection() {
   const { ourServices } = data;
 
   return (
-    <section className="w-full py-20 bg-white overflow-hidden">
+    <section className="w-full py-10 sm:py-14 bg-white overflow-hidden">
       <div className="max-w-[85rem] mx-auto px-4 md:px-8">
         {/* Section Header */}
-        <Reveal className="text-center max-w-5xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 mb-3">
+        <Reveal className="text-center max-w-5xl mx-auto mb-8 sm:mb-10">
+          <div className="inline-flex items-center gap-2 mb-2.5">
             <span className="w-6 h-1.5 bg-[#f97316] rounded-full inline-block"></span>
             <span className="text-xs sm:text-sm font-bold tracking-widest text-[#0c4040] uppercase">
               {ourServices.subtitle}
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-5xl font-extrabold text-[#0c4040] tracking-tight mb-4 lg:whitespace-nowrap">
+          <h2 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-5xl font-extrabold text-[#0c4040] tracking-tight mb-3 lg:whitespace-nowrap">
             {ourServices.titlePart1}{" "}
             <span className="text-[#f97316]">{ourServices.titleHighlight}</span>
           </h2>
-          <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-3xl mx-auto">
+          <p className="text-gray-600 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
             {ourServices.description}
           </p>
         </Reveal>

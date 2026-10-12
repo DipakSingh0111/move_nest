@@ -12,7 +12,7 @@ export default function AboutPage() {
         image="/images/banners/services.jpg"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "About Us" }]}
       />
-      <AboutUs />
+      <AboutUs showButton={false} />
       <OurApproach />
       <WhyChooseUs />
       <HowItWorks />

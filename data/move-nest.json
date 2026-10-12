@@ -5,10 +5,10 @@
     "email": "info@xyz.com",
     "followText": "Follow Us :",
     "socials": [
-      { "platform": "facebook", "url": "#" },
-      { "platform": "instagram", "url": "#" },
-      { "platform": "linkedin", "url": "#" },
-      { "platform": "youtube", "url": "#" }
+      { "platform": "facebook", "url": "https://www.facebook.com/" },
+      { "platform": "instagram", "url": "https://www.instagram.com/" },
+      { "platform": "linkedin", "url": "https://www.linkedin.com/" },
+      { "platform": "youtube", "url": "https://www.youtube.com/" }
     ]
   },
   "navbar": {
@@ -36,7 +36,7 @@
   "footer": {
     "logo": "/images/white-logo.png",
     "logoAlt": "MoveNest Packers & Movers",
-    "backgroundImage": "/images/Hero.png",
+    "backgroundImage": "/images/move-next_14.jpg",
     "description": "We provide safe, reliable and affordable packing and moving services for homes, offices and more. Your belongings are our responsibility.",
     "quickLinksTitle": "Quick Links",
     "servicesTitle": "Our Services",
@@ -75,14 +75,14 @@
     "titlePart2": "for a Better Tomorrow",
     "description": "From home shifting to office relocation, we make every move simple, safe and hassle-free. Trusted by thousands for reliable and professional moving services.",
     "primaryButton": "Get a Quote",
-    "primaryButtonUrl": "#quote",
+    "primaryButtonUrl": "/get-a-quote",
     "secondaryButton": "Our Services",
-    "secondaryButtonUrl": "#services"
+    "secondaryButtonUrl": "/service"
   },
   "about": {
-    "mainImage": "/images/Hero.png",
+    "mainImage": "/images/move-next_04.jpg",
     "mainImageAlt": "MoveNest Packers & Movers Team",
-    "previewImage": "/images/Hero.png",
+    "previewImage": "/images/move-next_13.jpg",
     "previewImageAlt": "Moving process preview",
     "subtitle": "ABOUT US",
     "titlePart1": "Your Trusted Packers & Movers",
@@ -122,7 +122,7 @@
     "subtitle": "OUR SERVICES",
     "titlePart1": "Reliable Moving Services Built",
     "titleHighlight": "Around You",
-    "description": "We offer a comprehensive range of packing and moving solutions tailored to meet your specific needs. From local shifting to international relocation, our expert team ensures a seamless experience.",
+    "description": "We offer a comprehensive range of packing and moving solutions tailored to your needs, ensuring safe transit and a seamless relocation experience.",
     "readMore": "Read More",
     "services": [
       {
@@ -130,47 +130,47 @@
         "description": "Safe and secure home relocation services.",
         "slug": "home-shifting",
         "icon": "FaHome",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_22.jpg"
       },
       {
         "title": "Office Relocation",
         "description": "Minimize downtime with expert office moves.",
         "slug": "office-relocation",
         "icon": "FaBuilding",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_20.jpg"
       },
       {
         "title": "Local Moving",
         "description": "Quick and efficient local moving services within the city limits.",
         "slug": "local-moving",
         "icon": "FaMapMarkerAlt",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_05.jpg"
       },
       {
         "title": "Intercity Moving",
         "description": "Reliable long-distance moving solutions.",
         "slug": "intercity-moving",
         "icon": "FaGlobe",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_10.jpg"
       },
       {
         "title": "Packing & Unpacking",
         "description": "Professional packing to ensure safety.",
         "slug": "packing-unpacking",
         "icon": "FaBoxOpen",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_18.jpg"
       },
       {
         "title": "Land Freight Services",
         "description": "Streamline globals freights with our seamless international shipping solutions.",
         "slug": "land-freight",
         "icon": "FaTruck",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_14.jpg"
       }
     ]
   },
   "howItWorks": {
-    "image": "/images/Hero.png",
+    "image": "/images/relocation_photo.png",
     "imageAlt": "Couple carrying moving boxes",
     "subtitle": "HOW IT WORKS",
     "titlePart1": "Simple Process For",
@@ -217,7 +217,7 @@
     ]
   },
   "whyChooseUs": {
-    "image": "/images/Hero.png",
+    "image": "/images/move-next_08.jpg",
     "imageAlt": "Professional movers packing boxes",
     "subtitle": "WHY CHOOSE US",
     "titlePart1": "We Deliver",
@@ -246,7 +246,7 @@
     ]
   },
   "counters": {
-    "backgroundImage": "/images/Hero.png",
+    "backgroundImage": "/images/move-next_21.jpg",
     "backgroundAlt": "MoveNest background",
     "stats": [
       {
@@ -276,16 +276,17 @@
     ]
   },
   "ctaBanner": {
-    "backgroundImage": "/images/Hero.png",
+    "backgroundImage": "/images/move-next_15.jpg",
     "subtitle": "Trusted Transport Service",
     "titleLine1": "Transport & Logistics Projects",
     "titleLine2": "That We Provide",
     "button": "Contact Support",
+    "buttonUrl": "/contactUs",
     "phoneTitle": "Call For Inquiry",
     "emailTitle": "Send Us Email"
   },
   "quoteSection": {
-    "image": "/images/Hero.png",
+    "image": "/images/move-next_01.jpg",
     "imageAlt": "Professional movers loading boxes",
     "titlePart1": "Safe &",
     "titleHighlight": "Hassle-Free Moving",
@@ -354,8 +355,11 @@
   },
   "ourApproach": {
     "images": [
-      { "src": "/images/Hero.png", "alt": "Packer holding moving box" },
-      { "src": "/images/Hero.png", "alt": "Delivery man near moving truck" }
+      { "src": "/images/move-next_09.jpg", "alt": "Packer holding moving box" },
+      {
+        "src": "/images/move-next_07.jpg",
+        "alt": "Delivery man near moving truck"
+      }
     ],
     "statsSubtitle": "Trusted By",
     "statsValue": "3500+",
@@ -378,7 +382,7 @@
     ]
   },
   "faq": {
-    "image": "/images/Hero.png",
+    "image": "/images/move-next_06.jpg",
     "imageAlt": "Movers holding box",
     "helpTitle": "Still Have Questions?",
     "helpDescription": "Our team is here to help you. Contact us anytime.",
@@ -427,88 +431,118 @@
         "id": 1,
         "title": "Sofa Wrapping & Moving",
         "category": "Home Relocation",
-        "src": "/images/Hero.png"
+        "src": "/images/move-next_22.jpg"
       },
       {
         "id": 2,
         "title": "Packed Boxes in Living Room",
         "category": "Packing",
-        "src": "/images/Hero.png"
+        "src": "/images/move-next_18.jpg"
       },
       {
         "id": 3,
         "title": "Taping Carton Box",
         "category": "Secure Packing",
-        "src": "/images/Hero.png"
+        "src": "/images/move-next_13.jpg"
       },
       {
         "id": 4,
         "title": "Moving Truck Loading",
         "category": "Transportation",
-        "src": "/images/Hero.png"
+        "src": "/images/move-next_15.jpg"
       },
       {
         "id": 5,
         "title": "Staircase Sofa Carrying",
         "category": "Heavy Lifting",
-        "src": "/images/Hero.png"
+        "src": "/images/move-next_03.jpg"
       },
       {
         "id": 6,
         "title": "Cardboard Boxes Stacked",
         "category": "Office Relocation",
-        "src": "/images/Hero.png"
+        "src": "/images/move-next_24.jpg"
       },
       {
         "id": 7,
         "title": "Staff with Big Box",
         "category": "Teamwork",
-        "src": "/images/Hero.png"
+        "src": "/images/move-next_09.jpg"
       },
       {
         "id": 8,
         "title": "Office Desks Shifting",
         "category": "Commercial Move",
-        "src": "/images/Hero.png"
+        "src": "/images/move-next_20.jpg"
       },
       {
         "id": 9,
         "title": "Plastic Wrapped Couch",
         "category": "Furniture Protection",
-        "src": "/images/Hero.png"
+        "src": "/images/move-next_08.jpg"
       },
       {
         "id": 10,
         "title": "MoveNest Delivery Truck",
         "category": "Fleet",
-        "src": "/images/Hero.png"
+        "src": "/images/move-next_10.jpg"
       },
       {
         "id": 11,
         "title": "Box Sealing",
         "category": "Packing",
-        "src": "/images/Hero.png"
+        "src": "/images/move-next_23.jpg"
       },
       {
         "id": 12,
         "title": "Mattress Plastic Wrapping",
         "category": "Protection",
-        "src": "/images/Hero.png"
+        "src": "/images/move-next_16.jpg"
       }
     ]
   },
   "testimonialsBlock": {
-    "image": "/images/Hero.png",
+    "image": "/images/move-next_17.jpg",
     "imageAlt": "Movers planning and checking list",
     "subtitle": "OUR CLIENTS SAY",
     "titlePart1": "What Our Customer's",
     "titleHighlight": "Talking",
     "titlePart2": "About Us",
-    "rating": 5,
-    "review": "The team was incredibly professional and handled our entire home shifting with great care. Everything arrived on time and in perfect condition. Highly recommended!",
-    "authorName": "Priya Sharma",
-    "authorLocation": "Gurgaon, Haryana",
-    "authorImage": "/image_692362.jpg",
+    "autoplayInterval": 5000,
+    "prevLabel": "Previous review",
+    "nextLabel": "Next review",
+    "reviews": [
+      {
+        "rating": 5,
+        "review": "The team was incredibly professional and handled our entire home shifting with great care. Everything arrived on time and in perfect condition. Highly recommended!",
+        "authorName": "Priya Sharma",
+        "authorLocation": "Gurgaon, Haryana"
+      },
+      {
+        "rating": 5,
+        "review": "We shifted our complete office over a weekend with zero downtime. Every system, file and desk was labelled and set up exactly as planned. Truly outstanding work!",
+        "authorName": "Rahul Verma",
+        "authorLocation": "New Delhi, Delhi"
+      },
+      {
+        "rating": 5,
+        "review": "I was nervous about my glassware and antiques, but they packed everything with multi-layer protection. Not a single scratch after a 1,200 km move.",
+        "authorName": "Neha Kapoor",
+        "authorLocation": "Faridabad, Haryana"
+      },
+      {
+        "rating": 5,
+        "review": "Transparent pricing with no hidden charges. The crew was polite, on time and even helped us arrange furniture at the new place. Great value for money.",
+        "authorName": "Amit Yadav",
+        "authorLocation": "Noida, Uttar Pradesh"
+      },
+      {
+        "rating": 5,
+        "review": "My car and household goods reached Bengaluru safely and before the promised date. Regular tracking updates kept us stress-free throughout the journey.",
+        "authorName": "Sneha Patel",
+        "authorLocation": "Bengaluru, Karnataka"
+      }
+    ],
     "yearsExperience": "29+",
     "experienceText": "Years of Experience"
   },
@@ -527,7 +561,7 @@
         "name": "Rahul Verma",
         "location": "New Delhi, India",
         "tag": "Home Relocation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_06.jpg"
       },
       {
         "rating": 5,
@@ -535,7 +569,7 @@
         "name": "Priya Sharma",
         "location": "Gurgaon, India",
         "tag": "Office Relocation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_20.jpg"
       },
       {
         "rating": 5,
@@ -543,7 +577,7 @@
         "name": "Amit Yadav",
         "location": "Noida, India",
         "tag": "Vehicle Transportation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_10.jpg"
       },
       {
         "rating": 5,
@@ -551,7 +585,7 @@
         "name": "Neha Kapoor",
         "location": "Faridabad, India",
         "tag": "Home Relocation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_08.jpg"
       },
       {
         "rating": 5,
@@ -559,7 +593,7 @@
         "name": "Vikram Singh",
         "location": "Ghaziabad, India",
         "tag": "Warehouse Shifting",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_19.jpg"
       },
       {
         "rating": 5,
@@ -567,7 +601,7 @@
         "name": "Sneha Patel",
         "location": "Bengaluru, India",
         "tag": "Car Transportation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_15.jpg"
       },
       {
         "rating": 5,
@@ -575,7 +609,7 @@
         "name": "Karan Malhotra",
         "location": "Chandigarh, India",
         "tag": "Home Relocation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_22.jpg"
       },
       {
         "rating": 5,
@@ -583,7 +617,7 @@
         "name": "Ananya Roy",
         "location": "Kolkata, India",
         "tag": "Office Relocation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_16.jpg"
       },
       {
         "rating": 5,
@@ -591,7 +625,7 @@
         "name": "Deepak Joshi",
         "location": "Pune, India",
         "tag": "Vehicle Transportation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_14.jpg"
       },
       {
         "rating": 5,
@@ -599,7 +633,7 @@
         "name": "Pooja Hegde",
         "location": "Hyderabad, India",
         "tag": "Home Relocation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_02.jpg"
       },
       {
         "rating": 5,
@@ -607,7 +641,7 @@
         "name": "Suresh Nambiar",
         "location": "Chennai, India",
         "tag": "Warehouse Shifting",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_11.jpg"
       },
       {
         "rating": 5,
@@ -615,7 +649,7 @@
         "name": "Meera Shah",
         "location": "Ahmedabad, India",
         "tag": "Car Transportation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_21.jpg"
       },
       {
         "rating": 5,
@@ -623,7 +657,7 @@
         "name": "Rohan Gupta",
         "location": "Lucknow, India",
         "tag": "Home Relocation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_13.jpg"
       },
       {
         "rating": 5,
@@ -631,7 +665,7 @@
         "name": "Shalini Pandey",
         "location": "Indore, India",
         "tag": "Office Relocation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_24.jpg"
       },
       {
         "rating": 5,
@@ -639,7 +673,7 @@
         "name": "Manish Tiwari",
         "location": "Bangalore, India",
         "tag": "Vehicle Transportation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_07.jpg"
       },
       {
         "rating": 5,
@@ -647,7 +681,7 @@
         "name": "Divya Rathi",
         "location": "Jaipur, India",
         "tag": "Home Relocation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_18.jpg"
       },
       {
         "rating": 5,
@@ -655,7 +689,7 @@
         "name": "Alok Kumar",
         "location": "Patna, India",
         "tag": "Warehouse Shifting",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_23.jpg"
       },
       {
         "rating": 5,
@@ -663,7 +697,7 @@
         "name": "Ritu Saxena",
         "location": "Bhopal, India",
         "tag": "Car Transportation",
-        "image": "/images/Hero.png"
+        "image": "/images/move-next_05.jpg"
       }
     ]
   },
@@ -692,7 +726,7 @@
     "submitButton": "Send Message",
     "recaptchaAlert": "Please verify that you are not a robot.",
     "successMessage": "Message Sent Successfully!",
-    "backgroundImage": "/images/Hero.png",
+    "backgroundImage": "/images/move-next_12.jpg",
     "infoSubtitle": "OUR CONTACT DETAIL",
     "infoTitlePart1": "Need Any",
     "infoTitleHighlight": "Assistance?",
@@ -746,7 +780,7 @@
       "If you are going to use a passage.",
       "Lorem ipsum generators on the tend to repeat."
     ],
-    "sideImage": "/images/Hero.png",
+    "sideImage": "/images/move-next_21.jpg",
     "sideImageAlt": "Transportation team"
   },
   "serviceDetails": {
@@ -762,13 +796,13 @@
       { "name": "Packing & Unpacking", "slug": "packing-unpacking" }
     ],
     "help": {
-      "image": "/images/Hero.png",
+      "image": "/images/move-next_05.jpg",
       "imageAlt": "Transport Services",
       "title": "Find Top-Rated Transport Services",
       "callText": "Need Help? Call Now",
-      "phone": "+155-920-6677"
+      "phone": "+1 00000 00000"
     },
-    "mainImage": "/images/Hero.png",
+    "mainImage": "/images/move-next_14.jpg",
     "introParagraphs": [
       "Our {title} offer comprehensive solutions for all your shipping needs, ensuring your cargo is transported efficiently and safely across the seas, giving you peace of mind and the best results for your business. With our {title}, we handle all aspects of your sea shipping needs, from documentation to delivery. With our {title}, we handle all aspects of your sea shipping needs.",
       "With our {title}, we handle all aspects of your sea shipping needs, from documentation to delivery, ensuring your goods arrive on time and in excellent condition, allowing you to focus on your core business operations, helping you navigate the complexities of international trade."
@@ -781,14 +815,14 @@
       "Despite its scale, modern shipping companies are increasingly."
     ],
     "galleryImages": [
-      { "src": "/images/Hero.png", "alt": "Cargo Ship Top View" },
-      { "src": "/images/Hero.png", "alt": "Cargo Ship Front View" }
+      { "src": "/images/move-next_19.jpg", "alt": "Cargo Ship Top View" },
+      { "src": "/images/move-next_11.jpg", "alt": "Cargo Ship Front View" }
     ],
     "middleParagraphs": [
       "Freight forwarders often offer consolidated cargo services, which combine smaller shipments from multiple companies into full containers for specific destinations. This offers cost advantages similar to FCL but without needing a full container yourself.",
       "This is a cost-effective option for smaller shipments. Your goods are consolidated with other shippers' cargo to fill a container. This can take longer as it involves additional han"
     ],
-    "videoImage": "/images/Hero.png",
+    "videoImage": "/images/move-next_03.jpg",
     "videoImageAlt": "Video Placeholder",
     "closingParagraphs": [
       "Freight forwarders often offer consolidated cargo services, which combine smaller shipments from multiple companies into full containers for specific destinations. This offers cost advantages similar to FCL but without needing a full container yourself.",
@@ -812,10 +846,10 @@
     ],
     "followTitle": "Follow Me",
     "socials": [
-      { "platform": "facebook", "url": "#" },
-      { "platform": "instagram", "url": "#" },
-      { "platform": "linkedin", "url": "#" },
-      { "platform": "youtube", "url": "#" }
+      { "platform": "facebook", "url": "https://www.facebook.com/" },
+      { "platform": "instagram", "url": "https://www.instagram.com/" },
+      { "platform": "linkedin", "url": "https://www.linkedin.com/" },
+      { "platform": "youtube", "url": "https://www.youtube.com/" }
     ],
     "button": "Get in Touch",
     "personalInfoTitle": "Personal Information",

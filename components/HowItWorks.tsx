@@ -27,7 +27,7 @@ export default function HowItWorks() {
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="relative overflow-hidden bg-[#fdfbf9] py-16 sm:py-20 lg:py-24">
+    <section className="relative overflow-hidden bg-[#fdfbf9] py-10 sm:py-14">
       <div className="pointer-events-none absolute -left-40 top-1/3 h-[420px] w-[420px] rounded-full border-[60px] border-orange-100/50" />
       <div className="pointer-events-none absolute -right-32 bottom-10 h-[320px] w-[320px] rounded-full bg-orange-50/70" />
       <Truck

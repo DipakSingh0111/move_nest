@@ -49,7 +49,7 @@ export default function QuoteSection() {
   };
 
   return (
-    <section className="bg-[#faf8f6] py-16 px-4 sm:px-6 lg:px-8 font-sans">
+    <section className="bg-[#faf8f6] py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-[85rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
         {/* Left Column: Image & Dark Feature Card */}
         <Reveal direction="left" className="lg:col-span-5 bg-[#0c2340] rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between">

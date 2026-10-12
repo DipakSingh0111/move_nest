@@ -59,7 +59,7 @@ export default function CounterSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full py-20 lg:py-24 overflow-hidden bg-gray-900"
+      className="relative w-full py-10 sm:py-14 overflow-hidden bg-gray-900"
     >
       {/* Background Image with Dark Overlay */}
       <div className="absolute inset-0 z-0">

@@ -5,14 +5,14 @@ export default function Topbar() {
   const { topbar } = data;
 
   return (
-    <div className="hidden lg:block bg-[#0c4040] text-white text-sm font-sans tracking-wide">
-      <div className="max-w-[85rem] mx-auto py-3 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center">
+    <div className="hidden lg:block bg-[#0c4040] text-white text-[15px] font-sans tracking-wide">
+      <div className="max-w-[85rem] mx-auto py-3.5 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center">
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
         {/* Address */}
         <div className="flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
+            className="h-[18px] w-[18px]"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -38,7 +38,7 @@ export default function Topbar() {
         <div className="flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
+            className="h-[18px] w-[18px]"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -59,7 +59,7 @@ export default function Topbar() {
         <div className="flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-4 w-4"
+            className="h-[18px] w-[18px]"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -77,13 +77,13 @@ export default function Topbar() {
 
       <div className="flex items-center gap-4 mt-2 md:mt-0">
         <span className="text-gray-200">{topbar.followText}</span>
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           {/* Facebook */}
-          <a href={topbar.socials[0].url} className="hover:text-gray-300">
+          <a href={topbar.socials[0].url} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="transition-colors hover:text-[#ff5100]">
             <svg
               fill="currentColor"
               viewBox="0 0 24 24"
-              className="w-4 h-4"
+              className="w-5 h-5"
               aria-hidden="true"
             >
               <path
@@ -94,11 +94,11 @@ export default function Topbar() {
             </svg>
           </a>
           {/* Instagram */}
-          <a href={topbar.socials[1].url} className="hover:text-gray-300">
+          <a href={topbar.socials[1].url} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="transition-colors hover:text-[#ff5100]">
             <svg
               fill="currentColor"
               viewBox="0 0 24 24"
-              className="w-4 h-4"
+              className="w-5 h-5"
               aria-hidden="true"
             >
               <path
@@ -109,11 +109,11 @@ export default function Topbar() {
             </svg>
           </a>
           {/* LinkedIn */}
-          <a href={topbar.socials[2].url} className="hover:text-gray-300">
+          <a href={topbar.socials[2].url} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-[#ff5100]">
             <svg
               fill="currentColor"
               viewBox="0 0 24 24"
-              className="w-4 h-4"
+              className="w-[18px] h-[18px]"
               aria-hidden="true"
             >
               <path
@@ -124,11 +124,11 @@ export default function Topbar() {
             </svg>
           </a>
           {/* Youtube */}
-          <a href={topbar.socials[3].url} className="hover:text-gray-300">
+          <a href={topbar.socials[3].url} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="transition-colors hover:text-[#ff5100]">
             <svg
               fill="currentColor"
               viewBox="0 0 24 24"
-              className="w-5 h-5"
+              className="w-6 h-6"
               aria-hidden="true"
             >
               <path

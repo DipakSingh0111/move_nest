@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Mail, Phone, Zap } from "lucide-react";
 import data from "../data/move-nest.json";
 import { Reveal } from "./common/Motion";
@@ -9,8 +10,8 @@ export default function TransportCTA() {
       <Reveal
         direction="zoom"
         className="
-          relative mx-auto min-h-[370px] max-w-[85rem]
-          overflow-hidden rounded-[26px]
+          relative mx-auto min-h-[260px] sm:min-h-[280px] max-w-[85rem]
+          overflow-hidden rounded-[24px]
           bg-[#003743]
           shadow-sm
         "
@@ -29,17 +30,17 @@ export default function TransportCTA() {
         <div className="absolute inset-0 bg-[#003743]/35" />
 
         {/* Content */}
-        <Reveal direction="left" delay={0.2} className="relative z-10 flex min-h-[370px] flex-col justify-center px-8 py-12 sm:px-12 lg:px-[84px]">
+        <Reveal direction="left" delay={0.2} className="relative z-10 flex min-h-[260px] sm:min-h-[280px] flex-col justify-center px-6 py-8 sm:px-10 lg:px-14">
           {/* Small Heading */}
-          <div className="mb-5 flex items-center gap-2">
-            <Zap size={21} fill="#ff6333" className="text-[#ff6333]" />
+          <div className="mb-3 flex items-center gap-2">
+            <Zap size={18} fill="#ff6333" className="text-[#ff6333]" />
 
             <span
               className="
-                text-sm font-bold uppercase tracking-[1.5px]
+                text-xs font-bold uppercase tracking-[1.5px]
                 text-[#ff6333] underline decoration-1
                 underline-offset-4
-                sm:text-base
+                sm:text-sm
               "
             >
               {ctaBanner.subtitle}
@@ -49,11 +50,11 @@ export default function TransportCTA() {
           {/* Main Heading */}
           <h2
             className="
-              max-w-[760px]
-              text-3xl font-bold leading-[1.25]
+              max-w-[700px]
+              text-2xl font-bold leading-[1.2]
               tracking-tight text-white
-              sm:text-4xl
-              lg:text-[48px]
+              sm:text-3xl
+              lg:text-[38px]
             "
           >
             {ctaBanner.titleLine1}
@@ -62,12 +63,13 @@ export default function TransportCTA() {
           </h2>
 
           {/* Button */}
-          <button
+          <Link
+            href={ctaBanner.buttonUrl || "/contactUs"}
             className="
-              mt-8 w-fit rounded-md
+              mt-5 w-fit rounded-md
               bg-[#ff6333]
-              px-8 py-4
-              text-sm font-semibold uppercase
+              px-6 py-3
+              text-xs font-semibold uppercase
               text-white
               shadow-[0_8px_25px_rgba(255,99,51,0.25)]
               transition-all duration-300
@@ -75,11 +77,11 @@ export default function TransportCTA() {
               hover:bg-white
               hover:text-[#ff6333]
               hover:shadow-[0_12px_30px_rgba(255,255,255,0.18)]
-              sm:px-9 sm:py-5 sm:text-base
+              sm:px-7 sm:py-3.5 sm:text-sm
             "
           >
             {ctaBanner.button}
-          </button>
+          </Link>
         </Reveal>
 
         {/* RIGHT CONTACT CARDS */}
@@ -153,7 +155,7 @@ function ContactCard({
         hover:border-[#ff6333]/40
         hover:bg-[#183f47]/90
         hover:shadow-[0_15px_40px_rgba(0,0,0,0.2)]
-        ${mobile ? "gap-4 px-5 py-4" : "gap-5 px-6 py-4"}
+        ${mobile ? "gap-3 px-4 py-2.5" : "gap-4 px-5 py-2.5"}
       `}
     >
       {/* Icon */}
@@ -163,7 +165,7 @@ function ContactCard({
           rounded-full text-[#ff6333]
           transition-transform duration-300
           group-hover:scale-110
-          ${mobile ? "h-12 w-12" : "h-12 w-12"}
+          ${mobile ? "h-10 w-10" : "h-10 w-10"}
         `}
       >
         {icon}

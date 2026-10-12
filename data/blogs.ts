@@ -2,7 +2,7 @@ export const blogs = [
   {
     date: "12",
     month: "Sep 2025",
-    image: "/images/Hero.png", // Yeh image aapke public folder mein honi chahiye
+    image: "/images/move-next_13.jpg", // Yeh image aapke public folder mein honi chahiye
     title: "10 Essential Packing Tips for a Hassle-Free Move",
     slug: "10-essential-packing-tips",
     description:
@@ -11,7 +11,7 @@ export const blogs = [
   {
     date: "08",
     month: "Sep 2025",
-    image: "/images/Hero.png",
+    image: "/images/move-next_01.jpg",
     title: "How to Choose the Right Moving Company",
     slug: "how-to-choose-right-moving-company",
     description:
@@ -20,7 +20,7 @@ export const blogs = [
   {
     date: "05",
     month: "Sep 2025",
-    image: "/images/Hero.png",
+    image: "/images/move-next_18.jpg",
     title: "Room-by-Room Moving Checklist for Your Home",
     slug: "room-by-room-moving-checklist",
     description:
@@ -29,7 +29,7 @@ export const blogs = [
   {
     date: "01",
     month: "Sep 2025",
-    image: "/images/Hero.png",
+    image: "/images/move-next_16.jpg",
     title: "Protecting Fragile Items During Transportation",
     slug: "protecting-fragile-items",
     description:
@@ -38,7 +38,7 @@ export const blogs = [
   {
     date: "28",
     month: "Aug 2025",
-    image: "/images/Hero.png",
+    image: "/images/move-next_06.jpg",
     title: "Tips for Moving with Pets",
     slug: "moving-with-pets",
     description:
@@ -47,7 +47,7 @@ export const blogs = [
   {
     date: "21",
     month: "Aug 2025",
-    image: "/images/Hero.png",
+    image: "/images/move-next_20.jpg",
     title: "The Ultimate Guide to Office Relocation",
     slug: "office-relocation-guide",
     description:
