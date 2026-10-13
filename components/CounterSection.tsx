@@ -135,8 +135,8 @@ function CounterItem({
   return (
     <>
       {/* Circular White Icon Badge */}
-      <div className="w-20 h-20 bg-white rounded-full shadow-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
-        <Icon className="w-7 h-7 text-[#f57c00]" />
+      <div className="w-24 h-24 bg-white rounded-full shadow-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+        <Icon className="w-10 h-10 text-[#f57c00]" />
       </div>
 
       {/* Animated Number in Orange */}

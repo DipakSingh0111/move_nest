@@ -77,43 +77,36 @@ export default function ServicesSection({ data }: { data?: ServicesData }) {
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
 
-                    {/* BOTTOM CURVE OVERLAY */}
+                    {/* BOTTOM ARCH OVERLAY (raised in center) */}
                     <div className="absolute bottom-[-1px] left-0 w-full text-white">
                       <svg
-                        viewBox="0 0 400 40"
+                        viewBox="0 0 400 50"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
-                        className="w-full"
+                        className="h-[50px] w-full"
                         preserveAspectRatio="none"
                       >
                         <path
-                          d="M0 40L400 40V0C315 0 250 40 200 40C150 40 85 0 0 0V40Z"
+                          d="M0 50L400 50V40C340 40 300 38 270 24C245 12 225 0 200 0C175 0 155 12 130 24C100 38 60 40 0 40V50Z"
                           fill="currentColor"
                         />
                       </svg>
                     </div>
 
-                    {/* ICON BADGE */}
-                    <div className="absolute bottom-3 left-1/2 flex h-14 w-14 -translate-x-1/2 items-center justify-center rounded-full bg-white text-[#ff4a17] shadow-[0_5px_15px_rgba(0,0,0,0.08)]">
-                      <Icon size={26} strokeWidth={2} />
+                    {/* ICON */}
+                    <div className="absolute bottom-2 left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center text-[#e8212b]">
+                      <Icon size={30} strokeWidth={1.8} />
                     </div>
                   </div>
 
                   {/* CONTENT */}
-                  <div className="flex flex-1 flex-col px-4 pb-6 pt-5">
-                    <h3 className="mb-3 text-xl font-bold text-[#062c3d] sm:text-2xl">
+                  <div className="flex flex-1 flex-col px-2 pb-3 pt-4">
+                    <h3 className="mb-2 text-xl font-bold text-[#062c3d]">
                       {service.title}
                     </h3>
-                    <p className="mb-7 text-sm leading-relaxed text-gray-500 sm:text-base">
+                    <p className="text-sm leading-relaxed text-gray-500 sm:text-base">
                       {service.description}
                     </p>
-
-                    <div className="mt-auto">
-                      <span className="inline-flex items-center gap-2 rounded-full bg-[#ff4a17] px-6 py-2.5 text-sm font-semibold text-white transition-colors duration-300 group-hover:bg-[#062c3d]">
-                        {readMoreText}
-                        <ArrowRight size={16} strokeWidth={2.5} />
-                      </span>
-                    </div>
                   </div>
                 </Link>
               </StaggerItem>

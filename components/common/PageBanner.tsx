@@ -31,7 +31,11 @@ export default function PageBanner({
   const content = data ?? getMoveNestSection("PageBanners")?.variants?.MoveNestPageBanners1;
   const homeLabel = content?.homeLabel || "Home";
   const breadcrumbLabel = content?.breadcrumbLabel || "Breadcrumb";
-  const bannerImage = image || content?.defaultImage || "/images/Hero.png";
+  const candidate = image || content?.defaultImage;
+  const bannerImage =
+    candidate && !candidate.startsWith("/images/banners/")
+      ? candidate
+      : "/images/Hero.png";
 
   const crumbs: Crumb[] = breadcrumbs?.length
     ? breadcrumbs

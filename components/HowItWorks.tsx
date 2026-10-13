@@ -144,9 +144,9 @@ export default function HowItWorks({ data }: { data?: WorkingProcessData }) {
                             : "bg-[#faf5f0]"
                         }`}
                       >
-                        <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white shadow-sm">
+                        <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full bg-white shadow-sm">
                           {Icon && (
-                            <Icon size={28} strokeWidth={1.7} className="text-[#f4511e]" />
+                            <Icon size={40} strokeWidth={1.7} className="text-[#f4511e]" />
                           )}
                         </div>
 
