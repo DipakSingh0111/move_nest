@@ -23,7 +23,7 @@ export default function HeroSection({ data }: { data?: HeroBannerData }) {
   const secondaryButtonHref = content.secondaryButton?.href || (content as any).secondaryButtonUrl || "/service";
 
   return (
-    <section className="relative w-full min-h-[600px] lg:min-h-[600px] flex items-center overflow-hidden bg-white">
+    <section className="relative w-full min-h-[460px] sm:min-h-[500px] md:min-h-[540px] lg:min-h-[580px] xl:min-h-[620px] flex items-center overflow-hidden bg-white">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -31,31 +31,32 @@ export default function HeroSection({ data }: { data?: HeroBannerData }) {
           alt={imageAlt}
           fill
           priority
-          className="object-cover object-center"
+          sizes="100vw"
+          className="object-cover object-[center_right] sm:object-center"
         />
       </div>
       <div
         className="absolute inset-0 z-10 pointer-events-none"
         style={{
           background:
-            "linear-gradient(90deg, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.90) 35%, rgba(255,255,255,0.6) 55%, rgba(255,255,255,0) 75%)",
+            "linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.92) 42%, rgba(255,255,255,0.72) 65%, rgba(255,255,255,0.15) 88%, rgba(255,255,255,0) 100%)",
         }}
       />
 
       {/* Content Container */}
-      <div className="relative z-20 max-w-[85rem] mx-auto px-4 md:px-8 w-full py-10">
+      <div className="relative z-20 max-w-[85rem] mx-auto px-4 sm:px-6 md:px-8 w-full py-8 sm:py-10 md:py-12 lg:py-14">
         <div className="max-w-xl lg:max-w-2xl">
           {/* Badge */}
-          <Reveal direction="left" className="flex items-center gap-2 mb-4">
-            <span className="w-6 h-1.5 bg-[#f59e0b] rounded-full inline-block"></span>
-            <span className="text-xs sm:text-sm font-bold tracking-widest text-gray-800 uppercase">
+          <Reveal direction="left" className="flex items-center gap-2 mb-2.5 sm:mb-3.5">
+            <span className="w-5 sm:w-6 h-1 sm:h-1.5 bg-[#f59e0b] rounded-full inline-block"></span>
+            <span className="text-[11px] sm:text-xs md:text-sm font-bold tracking-widest text-gray-800 uppercase">
               {content.badge}
             </span>
           </Reveal>
 
           {/* Main Heading */}
           <Reveal delay={0.15}>
-            <h1 className="text-4xl sm:text-4xl lg:text-5xl font-extrabold text-[#0B2525] tracking-tight leading-[1.15] mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[46px] xl:text-[52px] font-extrabold text-[#0B2525] tracking-tight leading-[1.12] sm:leading-[1.14] mb-3 sm:mb-4">
               {titlePart1} <br />
               <span className="text-[#f59e0b]">{titleHighlight}</span> <br />
               {titlePart2}
@@ -64,22 +65,22 @@ export default function HeroSection({ data }: { data?: HeroBannerData }) {
 
           {/* Subtitle / Paragraph */}
           <Reveal delay={0.3}>
-            <p className="text-base sm:text-lg text-gray-700 leading-relaxed mb-8 font-medium">
+            <p className="text-xs sm:text-sm md:text-base lg:text-[17px] text-gray-700 leading-relaxed mb-5 sm:mb-6 md:mb-7 font-medium max-w-xl">
               {content.description}
             </p>
           </Reveal>
 
           {/* CTA Buttons */}
-          <Reveal delay={0.45} className="flex flex-wrap items-center gap-4">
+          <Reveal delay={0.45} className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 pb-2">
             {/* Primary Button */}
             <Link
               href={primaryButtonHref}
-              className="inline-flex items-center gap-3 bg-[#f59e0b] hover:bg-[#d9822b] text-gray-900 font-bold px-7 py-3.5 rounded-full shadow-md transition-all duration-300"
+              className="inline-flex items-center gap-2 sm:gap-2.5 bg-[#f59e0b] hover:bg-[#d9822b] text-gray-900 font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm md:text-base shadow-md transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
             >
               {primaryButtonLabel}
-              <span className="w-7 h-7 bg-white rounded-full flex items-center justify-center text-gray-900 shadow-sm">
+              <span className="w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full flex items-center justify-center text-gray-900 shadow-sm shrink-0">
                 <svg
-                  className="w-4 h-4"
+                  className="w-3 h-3 sm:w-3.5 sm:h-3.5"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.5"
@@ -97,11 +98,11 @@ export default function HeroSection({ data }: { data?: HeroBannerData }) {
             {/* Secondary Button */}
             <Link
               href={secondaryButtonHref}
-              className="inline-flex items-center gap-2 bg-transparent hover:bg-gray-100/60 border border-gray-700 text-gray-900 font-semibold px-7 py-3.5 rounded-full transition-all duration-300"
+              className="inline-flex items-center gap-1.5 sm:gap-2 bg-transparent hover:bg-gray-100/60 border border-gray-700 text-gray-900 font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm md:text-base transition-all duration-300"
             >
               {secondaryButtonLabel}
               <svg
-                className="w-4 h-4"
+                className="w-3 h-3 sm:w-3.5 sm:h-3.5"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2.5"
