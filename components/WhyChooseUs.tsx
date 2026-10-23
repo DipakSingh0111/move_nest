@@ -33,21 +33,18 @@ export default function WhyChooseUs({ data }: { data?: WhyChooseUsData }) {
 
   return (
     <section className="relative overflow-hidden bg-[#faf8f6] py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans">
-      {/* Decorative Background Blur Circles */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-orange-100/60 rounded-full blur-3xl pointer-events-none" />
+<div className="absolute top-10 left-1/2 -translate-x-1/2 w-96 h-96 bg-orange-100/60 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-orange-100/50 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-[85rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        {/* Left Column: Text & Features */}
-        <motion.div
+<motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="lg:col-span-6 space-y-8"
         >
-          {/* Section Header */}
-          <div className="space-y-3">
+<div className="space-y-3">
             <div className="flex items-center space-x-2">
               <span className="w-1 h-4 bg-orange-600 rounded-full inline-block" />
               <span className="text-orange-600 font-semibold tracking-wider text-xs sm:text-sm uppercase">
@@ -64,9 +61,7 @@ export default function WhyChooseUs({ data }: { data?: WhyChooseUsData }) {
               {description}
             </p>
           </div>
-
-          {/* Feature List */}
-          <div className="space-y-6">
+<div className="space-y-6">
             {featuresList.map((item: any, index: number) => (
               <motion.div
                 key={index}
@@ -76,8 +71,7 @@ export default function WhyChooseUs({ data }: { data?: WhyChooseUsData }) {
                 transition={{ duration: 0.4, delay: index * 0.15 }}
                 className="flex items-start space-x-4 group"
               >
-                {/* Icon Box */}
-                <div className="w-14 h-14 rounded-2xl bg-orange-50 border border-orange-100 flex items-center justify-center shrink-0 shadow-sm group-hover:bg-orange-600 group-hover:text-white transition-all duration-300">
+<div className="w-14 h-14 rounded-2xl bg-orange-50 border border-orange-100 flex items-center justify-center shrink-0 shadow-sm group-hover:bg-orange-600 group-hover:text-white transition-all duration-300">
                   {iconMap[item.icon] ? (
                     React.cloneElement(iconMap[item.icon] as React.ReactElement<{ className?: string }>, {
                       className:
@@ -87,9 +81,7 @@ export default function WhyChooseUs({ data }: { data?: WhyChooseUsData }) {
                     <Home className="w-6 h-6 text-orange-600 group-hover:text-white transition-colors duration-300" />
                   )}
                 </div>
-
-                {/* Text Content */}
-                <div>
+<div>
                   <h3 className="text-lg font-bold text-slate-900 mb-1">
                     {item.title}
                   </h3>
@@ -101,26 +93,21 @@ export default function WhyChooseUs({ data }: { data?: WhyChooseUsData }) {
             ))}
           </div>
         </motion.div>
-
-        {/* Right Column: Image & Floating Badge */}
-        <motion.div
+<motion.div
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="lg:col-span-6 relative flex justify-center lg:justify-end"
         >
-          {/* Main Image Container */}
-          <div className="relative w-full max-w-xl aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-slate-200">
+<div className="relative w-full max-w-xl aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-slate-200">
             <img
               src={imgSrc}
               alt={imgAlt}
               className="w-full h-full object-cover object-center"
             />
           </div>
-
-          {/* Floating Orange Badge Overlay */}
-          <motion.div
+<motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -136,9 +123,7 @@ export default function WhyChooseUs({ data }: { data?: WhyChooseUsData }) {
             </h4>
             <div className="w-12 h-1 bg-white/40 rounded-full mt-3" />
           </motion.div>
-
-          {/* Decorative Dot Grid Pattern */}
-          <div className="absolute top-4 right-4 hidden sm:grid grid-cols-4 gap-1.5 opacity-40 pointer-events-none">
+<div className="absolute top-4 right-4 hidden sm:grid grid-cols-4 gap-1.5 opacity-40 pointer-events-none">
             {[...Array(16)].map((_, i) => (
               <div key={i} className="w-1.5 h-1.5 rounded-full bg-orange-600" />
             ))}

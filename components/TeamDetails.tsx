@@ -71,10 +71,8 @@ export default function TeamDetailsComponent({
   return (
     <section className="bg-white py-10 sm:py-14 font-sans">
       <div className="max-w-[85rem] mx-auto px-4 md:px-8">
-        {/* Top Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-8 mb-16">
-          {/* Col 1: Image */}
-          <Reveal direction="left" className="relative w-full h-[400px] sm:h-[450px] lg:h-[500px] rounded-[32px] overflow-hidden bg-slate-100 shadow-lg">
+<div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr_1fr] gap-8 mb-16">
+<Reveal direction="left" className="relative w-full h-[400px] sm:h-[450px] lg:h-[500px] rounded-[32px] overflow-hidden bg-slate-100 shadow-lg">
             <Image
               src={member.image}
               alt={member.name}
@@ -82,9 +80,7 @@ export default function TeamDetailsComponent({
               className="object-cover object-top"
             />
           </Reveal>
-
-          {/* Col 2: Info */}
-          <Reveal delay={0.15} className="flex flex-col justify-center px-4 lg:px-8 space-y-6">
+<Reveal delay={0.15} className="flex flex-col justify-center px-4 lg:px-8 space-y-6">
             <div>
               <span className="inline-block bg-orange-100 text-[#ff6333] text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider mb-4">
                 {teamDetails.badge}
@@ -114,9 +110,7 @@ export default function TeamDetailsComponent({
               })}
             </div>
           </Reveal>
-
-          {/* Col 3: Contact Box */}
-          <Reveal direction="right" delay={0.3} className="bg-white border border-gray-100 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.05)] flex flex-col h-full">
+<Reveal direction="right" delay={0.3} className="bg-white border border-gray-100 rounded-3xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.05)] flex flex-col h-full">
             <h3 className="text-xl font-bold text-[#002b36] mb-6">{teamDetails.contactTitle}</h3>
             
             <div className="space-y-5 flex-1">
@@ -163,12 +157,8 @@ export default function TeamDetailsComponent({
             </div>
           </Reveal>
         </div>
-
-        {/* Lower Details Section */}
-        <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          
-          {/* Personal Information */}
-          <StaggerItem className="bg-slate-50 rounded-3xl p-8">
+<Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<StaggerItem className="bg-slate-50 rounded-3xl p-8">
             <h3 className="text-xl font-bold text-[#002b36] mb-6">{teamDetails.personalInfoTitle}</h3>
             <ul className="space-y-4">
               {teamDetails.personalInfo?.map((info, i) => {
@@ -188,9 +178,7 @@ export default function TeamDetailsComponent({
               })}
             </ul>
           </StaggerItem>
-
-          {/* Skills & Expertise */}
-          <StaggerItem className="bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_5px_30px_rgba(0,0,0,0.03)]">
+<StaggerItem className="bg-white rounded-3xl p-8 border border-gray-100 shadow-[0_5px_30px_rgba(0,0,0,0.03)]">
             <h3 className="text-xl font-bold text-[#002b36] mb-8">{teamDetails.skillsTitle}</h3>
             
             <div className="space-y-6">
@@ -207,9 +195,7 @@ export default function TeamDetailsComponent({
               ))}
             </div>
           </StaggerItem>
-
-          {/* Certifications */}
-          <StaggerItem className="bg-slate-50 rounded-3xl p-8">
+<StaggerItem className="bg-slate-50 rounded-3xl p-8">
             <h3 className="text-xl font-bold text-[#002b36] mb-6">{teamDetails.certificationsTitle}</h3>
             
             <div className="space-y-6">

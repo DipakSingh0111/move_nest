@@ -50,9 +50,7 @@ export default function HeroFeatures({ data }: HeroFeaturesProps) {
                     <div className="h-20 flex items-center justify-center mb-1">
                       {renderIcon(item.icon)}
                     </div>
-
-                    {/* Title */}
-                    <h3 className="text-[#071d24] font-bold text-[17px] sm:text-[18px] tracking-tight leading-snug">
+<h3 className="text-[#071d24] font-bold text-[17px] sm:text-[18px] tracking-tight leading-snug">
                       {item.title}
                     </h3>
                   </StaggerItem>
@@ -103,12 +101,9 @@ function renderIcon(type: string) {
           <path d="M47 26.5H52.5L54.5 32H47V26.5Z" fill="#ffffff" />
 
           <rect x="57" y="35" width="3" height="4" rx="1" fill="#ff5e14" />
-
-          {/* Rear Wheel */}
-          <circle cx="27" cy="42" r="6" fill="#0a2228" />
+<circle cx="27" cy="42" r="6" fill="#0a2228" />
           <circle cx="27" cy="42" r="3" fill="#ffffff" />
-          {/* Front Wheel */}
-          <circle cx="51" cy="42" r="6" fill="#0a2228" />
+<circle cx="51" cy="42" r="6" fill="#0a2228" />
           <circle cx="51" cy="42" r="3" fill="#ffffff" />
         </svg>
       );
@@ -123,16 +118,14 @@ function renderIcon(type: string) {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Shield base */}
-          <path
+<path
             d="M32 7L48 13.5V28C48 39.8 41.2 50.5 32 55C22.8 50.5 16 39.8 16 28V13.5L32 7Z"
             fill="#ff5e14"
             stroke="#0a2228"
             strokeWidth="3.5"
             strokeLinejoin="round"
           />
-          {/* White checkmark */}
-          <path
+<path
             d="M25 29L30 34L39 23"
             stroke="#ffffff"
             strokeWidth="4"
@@ -183,8 +176,7 @@ function renderIcon(type: string) {
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Dark blue outer ring */}
-          <circle
+<circle
             cx="32"
             cy="32"
             r="23"

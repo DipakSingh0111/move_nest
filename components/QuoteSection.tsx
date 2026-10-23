@@ -101,10 +101,8 @@ export default function QuoteSection({ data }: { data?: GetQuoteData }) {
   return (
     <section className="bg-[#faf8f6] py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-[85rem] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-        {/* Left Column: Image & Dark Feature Card */}
-        <Reveal direction="left" className="lg:col-span-5 bg-[#0c2340] rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between">
-          {/* Top Image Container */}
-          <div className="relative w-full h-[520px] sm:h-[580px] bg-slate-200">
+<Reveal direction="left" className="lg:col-span-5 bg-[#0c2340] rounded-3xl overflow-hidden shadow-xl flex flex-col justify-between">
+<div className="relative w-full h-[520px] sm:h-[580px] bg-slate-200">
             <Image
               src={imageSrc}
               alt={imageAlt}
@@ -113,9 +111,7 @@ export default function QuoteSection({ data }: { data?: GetQuoteData }) {
               className="object-cover object-center"
             />
           </div>
-
-          {/* Bottom Content Area */}
-          <div className="p-5 sm:p-6 space-y-3 text-white flex-1 flex flex-col justify-between">
+<div className="p-5 sm:p-6 space-y-3 text-white flex-1 flex flex-col justify-between">
             <div className="space-y-1.5">
               <h3 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
                 {titlePart1}{" "}
@@ -125,9 +121,7 @@ export default function QuoteSection({ data }: { data?: GetQuoteData }) {
                 {description}
               </p>
             </div>
-
-            {/* Feature Badges Grid */}
-            <Stagger className="grid grid-cols-4 gap-2 pt-2.5 border-t border-slate-700/60 text-center" delay={0.3}>
+<Stagger className="grid grid-cols-4 gap-2 pt-2.5 border-t border-slate-700/60 text-center" delay={0.3}>
               {featuresList.map((feature: any, idx: number) => (
                 <StaggerItem key={idx} direction="zoom" className="flex flex-col items-center space-y-1">
                   <div className="w-8 h-8 rounded-full bg-orange-500/10 border border-orange-500/30 flex items-center justify-center text-[#ff5100]">
@@ -144,9 +138,7 @@ export default function QuoteSection({ data }: { data?: GetQuoteData }) {
             </Stagger>
           </div>
         </Reveal>
-
-        {/* Right Column: Quote Form Card */}
-        <Reveal direction="right" delay={0.15} className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-slate-100 shadow-xl space-y-6">
+<Reveal direction="right" delay={0.15} className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-slate-100 shadow-xl space-y-6">
           <div className="space-y-2">
             <div className="inline-flex items-center space-x-2 text-xs font-bold text-[#ff5100] tracking-widest uppercase">
               <span>{formSubtitle}</span>

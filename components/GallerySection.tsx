@@ -26,7 +26,6 @@ export default function GallerySection({ data }: { data?: GalleryData }) {
   const nextLabel = content.labels?.next || (content as any).nextLabel || "Next image";
   const counterSeparator = content.labels?.counterSeparator || (content as any).counterSeparator || "/";
 
-  // Keyboard navigation support (Esc to close, Left/Right arrows to navigate)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedIndex === null) return;
@@ -56,8 +55,7 @@ export default function GallerySection({ data }: { data?: GalleryData }) {
   return (
     <section className="bg-white py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-[85rem] mx-auto space-y-10">
-        {/* Section Header */}
-        <Reveal className="text-center space-y-3">
+<Reveal className="text-center space-y-3">
           <div className="inline-flex items-center space-x-2 text-xs font-bold text-[#ff5100] tracking-widest uppercase">
             <span className="w-6 h-[2px] bg-[#ff5100]"></span>
             <span>{badge}</span>
@@ -72,9 +70,7 @@ export default function GallerySection({ data }: { data?: GalleryData }) {
             {description}
           </p>
         </Reveal>
-
-        {/* Image Grid */}
-        <Stagger className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5" stagger={0.08}>
+<Stagger className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5" stagger={0.08}>
           {galleryImages.map((img: any, index: number) => (
             <StaggerItem key={img.id || index} direction="zoom">
               <div
@@ -88,9 +84,7 @@ export default function GallerySection({ data }: { data?: GalleryData }) {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 33vw, 25vw"
                   className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
                 />
-
-                {/* Hover Dark Overlay with Icon */}
-                <div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
+<div className="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
                   <div className="w-10 h-10 rounded-full bg-white/90 text-[#ff5100] flex items-center justify-center mb-2 shadow-lg transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300">
                     <Maximize2 className="w-5 h-5" />
                   </div>
@@ -106,9 +100,7 @@ export default function GallerySection({ data }: { data?: GalleryData }) {
           ))}
         </Stagger>
       </div>
-
-      {/* Lightbox Modal on Image Click */}
-      <AnimatePresence>
+<AnimatePresence>
         {selectedIndex !== null && (
           <motion.div
             key="lightbox"
@@ -118,26 +110,21 @@ export default function GallerySection({ data }: { data?: GalleryData }) {
             transition={{ duration: 0.25 }}
             className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
           >
-            {/* Close Button */}
-            <button
+<button
               onClick={() => setSelectedIndex(null)}
               className="absolute top-5 right-5 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-2.5 rounded-full transition-colors z-50"
               aria-label={closeLabel}
             >
               <X className="w-6 h-6" />
             </button>
-
-            {/* Previous Button */}
-            <button
+<button
               onClick={handlePrev}
               className="absolute left-4 sm:left-8 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors z-50"
               aria-label={previousLabel}
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
-
-            {/* Main Displayed Image Container */}
-            <div className="relative max-w-5xl max-h-[85vh] w-full h-full flex flex-col items-center justify-center">
+<div className="relative max-w-5xl max-h-[85vh] w-full h-full flex flex-col items-center justify-center">
               <motion.div
                 key={selectedIndex}
                 initial={{ opacity: 0, scale: 0.92 }}
@@ -153,9 +140,7 @@ export default function GallerySection({ data }: { data?: GalleryData }) {
                   className="object-contain"
                 />
               </motion.div>
-
-              {/* Bottom Caption & Counter */}
-              <div className="mt-4 text-center text-white space-y-1">
+<div className="mt-4 text-center text-white space-y-1">
                 <h3 className="text-lg font-bold">
                   {galleryImages[selectedIndex].title}
                 </h3>
@@ -165,9 +150,7 @@ export default function GallerySection({ data }: { data?: GalleryData }) {
                 </p>
               </div>
             </div>
-
-            {/* Next Button */}
-            <button
+<button
               onClick={handleNext}
               className="absolute right-4 sm:right-8 text-white/80 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-colors z-50"
               aria-label={nextLabel}

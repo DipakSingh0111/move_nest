@@ -33,7 +33,6 @@ export default function TestimonialsSection({ data }: { data?: TestimonialsData 
   const prevLabel = page.labels?.previous || "Previous";
   const nextLabel = page.labels?.next || "Next";
 
-  // Get current page slice
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentTestimonials = allTestimonials.slice(
@@ -50,27 +49,19 @@ export default function TestimonialsSection({ data }: { data?: TestimonialsData 
   return (
     <section className="bg-[#faf8f6] py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans relative overflow-hidden">
       <div className="max-w-[85rem] mx-auto space-y-10 relative z-10">
-        {/* Header Section */}
-        <Reveal className="text-center space-y-3">
-          {/* Top Pill Tag */}
-          <div className="inline-flex items-center bg-orange-100/80 text-[#ff5100] px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase">
+<Reveal className="text-center space-y-3">
+<div className="inline-flex items-center bg-orange-100/80 text-[#ff5100] px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase">
             <span>{badge}</span>
           </div>
-
-          {/* Main Title */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+<h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
             {titlePart1}{" "}
             <span className="text-[#ff5100]">{titleHighlight}</span>
           </h2>
-
-          {/* Subtitle */}
-          <p className="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
+<p className="text-slate-600 text-xs sm:text-sm max-w-2xl mx-auto leading-relaxed">
             {description}
           </p>
         </Reveal>
-
-        {/* Cards Grid */}
-        <Stagger
+<Stagger
           key={currentPage}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           stagger={0.08}
@@ -82,8 +73,7 @@ export default function TestimonialsSection({ data }: { data?: TestimonialsData 
               className="bg-white rounded-3xl p-6 border border-slate-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(255,81,0,0.08)] hover:border-orange-200 transition-[box-shadow,border-color] duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Top Quote Icon & Ratings */}
-                <div className="flex items-center justify-between mb-4">
+<div className="flex items-center justify-between mb-4">
                   <Quote className="w-8 h-8 text-[#ff5100] rotate-180 fill-[#ff5100]/10" />
                   <div className="flex items-center space-x-1">
                     {[...Array(item.rating || 5)].map((_, i) => (
@@ -94,15 +84,11 @@ export default function TestimonialsSection({ data }: { data?: TestimonialsData 
                     ))}
                   </div>
                 </div>
-
-                {/* Review Paragraph */}
-                <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
+<p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
                   {item.review}
                 </p>
               </div>
-
-              {/* Bottom Author Info */}
-              <div className="flex items-center justify-between pt-4 border-t border-slate-50">
+<div className="flex items-center justify-between pt-4 border-t border-slate-50">
                 <div className="flex items-center space-x-3">
                   <div className="relative w-11 h-11 rounded-full overflow-hidden shrink-0 border border-slate-100 bg-slate-100">
                     {item.image && (
@@ -125,20 +111,15 @@ export default function TestimonialsSection({ data }: { data?: TestimonialsData 
                     </div>
                   </div>
                 </div>
-
-                {/* Service Tag */}
-                <span className="bg-orange-50 text-[#ff5100] border border-orange-100 px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide shrink-0">
+<span className="bg-orange-50 text-[#ff5100] border border-orange-100 px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide shrink-0">
                   {item.tag}
                 </span>
               </div>
             </StaggerItem>
           ))}
         </Stagger>
-
-        {/* Working Pagination Bar */}
-        <div className="flex items-center justify-center space-x-2 pt-4">
-          {/* Previous Button */}
-          <button
+<div className="flex items-center justify-center space-x-2 pt-4">
+<button
             onClick={() => handlePageChange(currentPage - 1)}
             disabled={currentPage === 1}
             aria-label={prevLabel}
@@ -150,9 +131,7 @@ export default function TestimonialsSection({ data }: { data?: TestimonialsData 
           >
             <ChevronLeft className="w-4 h-4" />
           </button>
-
-          {/* Page Numbers */}
-          {[...Array(totalPages)].map((_, i) => {
+{[...Array(totalPages)].map((_, i) => {
             const pageNum = i + 1;
             const isActive = pageNum === currentPage;
             return (
@@ -169,9 +148,7 @@ export default function TestimonialsSection({ data }: { data?: TestimonialsData 
               </button>
             );
           })}
-
-          {/* Next Button */}
-          <button
+<button
             onClick={() => handlePageChange(currentPage + 1)}
             disabled={currentPage === totalPages}
             aria-label={nextLabel}

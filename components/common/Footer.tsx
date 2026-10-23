@@ -29,7 +29,6 @@ export default function Footer({ data }: { data?: FooterData }) {
     { platform: "youtube", url: "https://www.youtube.com/" },
   ];
 
-  // Quick Links exactly matching the screenshot
   const quickLinks = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
@@ -40,7 +39,6 @@ export default function Footer({ data }: { data?: FooterData }) {
     { label: "Contact Us", href: "/contactUs" },
   ];
 
-  // Services list exactly matching the screenshot
   const servicesList = footer.services && footer.services.length > 0 ? footer.services : [
     "Home Shifting",
     "Office Relocation",
@@ -51,53 +49,41 @@ export default function Footer({ data }: { data?: FooterData }) {
     "Loading & Unloading",
   ];
 
-  // Split address into two lines if contains comma
   const addressParts = address.split(", ");
   const addressLine1 = addressParts[0] ? `${addressParts[0]},` : address;
   const addressLine2 = addressParts.slice(1).join(", ") || "";
 
   return (
     <footer className="relative overflow-hidden bg-[#071d24] text-white">
-      {/* Background Image with smooth gradient overlay revealing the truck & boxes on the right */}
-      <div
+<div
         className="absolute inset-0 bg-cover bg-right sm:bg-center bg-no-repeat"
         style={{
           backgroundImage: `url('${footer.backgroundImage || "/images/move-next_14.jpg"}')`,
         }}
       />
-
-      {/* Dark Teal / Navy Gradient Overlay */}
-      <div
+<div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
             "linear-gradient(90deg, rgba(7, 26, 33, 0.98) 0%, rgba(7, 26, 33, 0.95) 52%, rgba(7, 26, 33, 0.76) 78%, rgba(7, 26, 33, 0.42) 100%)",
         }}
       />
-
-      {/* Main Content Area */}
-      <div className="relative z-10 mx-auto max-w-[85rem] px-4 md:px-8 pt-14 pb-12 sm:pt-16 sm:pb-14 lg:pt-20 lg:pb-16">
+<div className="relative z-10 mx-auto max-w-[85rem] px-4 md:px-8 pt-14 pb-12 sm:pt-16 sm:pb-14 lg:pt-20 lg:pb-16">
         <Stagger
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.3fr_0.8fr_1fr_1.3fr] gap-10 lg:gap-8 items-start"
         >
-          {/* Column 1: Brand Info & Socials */}
-          <StaggerItem className="space-y-6">
-            {/* Logo */}
-            <div>
+<StaggerItem className="space-y-6">
+<div>
               <img
                 src={logoSrc}
                 alt={logoAlt}
                 className="h-auto w-[210px] md:w-[245px] max-w-full object-contain"
               />
             </div>
-
-            {/* Description */}
-            <p className="text-[14px] sm:text-[15px] leading-[1.8] text-white/80 max-w-[340px]">
+<p className="text-[14px] sm:text-[15px] leading-[1.8] text-white/80 max-w-[340px]">
               {footer.description}
             </p>
-
-            {/* Social Media Circular Buttons */}
-            <div className="flex items-center gap-3 pt-1">
+<div className="flex items-center gap-3 pt-1">
               {socials.map((social, idx) => {
                 const platform = (social.platform || "").toLowerCase();
                 return (
@@ -118,9 +104,7 @@ export default function Footer({ data }: { data?: FooterData }) {
               })}
             </div>
           </StaggerItem>
-
-          {/* Column 2: Quick Links */}
-          <StaggerItem>
+<StaggerItem>
             <h3 className="text-xl font-bold tracking-tight text-white">
               {quickLinksTitle}
             </h3>
@@ -144,9 +128,7 @@ export default function Footer({ data }: { data?: FooterData }) {
               ))}
             </ul>
           </StaggerItem>
-
-          {/* Column 3: Our Services */}
-          <StaggerItem>
+<StaggerItem>
             <h3 className="text-xl font-bold tracking-tight text-white">
               {servicesTitle}
             </h3>
@@ -173,17 +155,14 @@ export default function Footer({ data }: { data?: FooterData }) {
               })}
             </ul>
           </StaggerItem>
-
-          {/* Column 4: Contact Information */}
-          <StaggerItem>
+<StaggerItem>
             <h3 className="text-xl font-bold tracking-tight text-white">
               {contactTitle}
             </h3>
             <div className="h-[3px] w-8 rounded-full bg-[#ff5100] mt-2 mb-6" />
 
             <div className="space-y-5">
-              {/* Phone */}
-              <div className="flex items-start gap-3.5">
+<div className="flex items-start gap-3.5">
                 <div className="w-12 h-12 rounded-full bg-[#ff5100] text-white flex items-center justify-center shrink-0 shadow-[0_4px_16px_rgba(255,81,0,0.3)]">
                   <Phone size={19} className="fill-current text-white" />
                 </div>
@@ -199,9 +178,7 @@ export default function Footer({ data }: { data?: FooterData }) {
                   </a>
                 </div>
               </div>
-
-              {/* Email */}
-              <div className="flex items-start gap-3.5">
+<div className="flex items-start gap-3.5">
                 <div className="w-12 h-12 rounded-full bg-[#ff5100] text-white flex items-center justify-center shrink-0 shadow-[0_4px_16px_rgba(255,81,0,0.3)]">
                   <Mail size={19} className="text-white" />
                 </div>
@@ -217,9 +194,7 @@ export default function Footer({ data }: { data?: FooterData }) {
                   </a>
                 </div>
               </div>
-
-              {/* Location */}
-              <div className="flex items-start gap-3.5">
+<div className="flex items-start gap-3.5">
                 <div className="w-12 h-12 rounded-full bg-[#ff5100] text-white flex items-center justify-center shrink-0 shadow-[0_4px_16px_rgba(255,81,0,0.3)]">
                   <MapPin size={19} className="text-white" />
                 </div>
@@ -238,9 +213,7 @@ export default function Footer({ data }: { data?: FooterData }) {
                   </p>
                 </div>
               </div>
-
-              {/* Working Hours */}
-              <div className="flex items-start gap-3.5">
+<div className="flex items-start gap-3.5">
                 <div className="w-12 h-12 rounded-full bg-[#ff5100] text-white flex items-center justify-center shrink-0 shadow-[0_4px_16px_rgba(255,81,0,0.3)]">
                   <Clock3 size={19} className="text-white" />
                 </div>
@@ -259,9 +232,7 @@ export default function Footer({ data }: { data?: FooterData }) {
           </StaggerItem>
         </Stagger>
       </div>
-
-      {/* Bottom Copyright Bar */}
-      <div className="relative z-10 border-t border-white/10">
+<div className="relative z-10 border-t border-white/10">
         <div className="mx-auto max-w-[85rem] px-4 md:px-8 py-5">
           <p className="text-sm text-white/75 text-left">
             {footer.copyright || "© 2025 MoveNest Packers & Movers. All Rights Reserved."}

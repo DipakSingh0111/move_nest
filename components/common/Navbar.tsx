@@ -20,8 +20,7 @@ export default function Navbar({ data }: { data?: HeaderData }) {
   return (
     <nav className="bg-white shadow-sm font-sans relative z-50">
       <div className="max-w-[85rem] mx-auto py-3 px-4 md:px-8 flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center">
+<div className="flex items-center">
           <Link href="/">
             <Image
               src={content.logo.image}
@@ -33,9 +32,7 @@ export default function Navbar({ data }: { data?: HeaderData }) {
             />
           </Link>
         </div>
-
-        {/* Navigation Links */}
-        <div className="hidden lg:flex items-center gap-6 xl:gap-8">
+<div className="hidden lg:flex items-center gap-6 xl:gap-8">
           {links.map((link, index) => {
             const href = link.href || (link as any).url || "/";
             const isActive = pathname === href;
@@ -59,9 +56,7 @@ export default function Navbar({ data }: { data?: HeaderData }) {
             );
           })}
         </div>
-
-        {/* CTA Button */}
-        {cta && (
+{cta && (
           <div className="hidden md:block">
             <Link
               href={cta.href || (cta as any).url || "/get-a-quote"}
@@ -71,9 +66,7 @@ export default function Navbar({ data }: { data?: HeaderData }) {
             </Link>
           </div>
         )}
-
-        {/* Mobile Menu Button */}
-        <div className="lg:hidden flex items-center">
+<div className="lg:hidden flex items-center">
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="text-[#0c4040] hover:text-[#F97316] p-2 focus:outline-none"
@@ -105,9 +98,7 @@ export default function Navbar({ data }: { data?: HeaderData }) {
           </button>
         </div>
       </div>
-
-      {/* Mobile Navigation Dropdown */}
-      <AnimatePresence>
+<AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}

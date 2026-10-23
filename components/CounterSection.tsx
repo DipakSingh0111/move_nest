@@ -7,7 +7,6 @@ import type { StatsData } from "@/types/movenest.types";
 import { getMoveNestSection } from "@/lib/movenest";
 import { Stagger, StaggerItem } from "./common/Motion";
 
-// Custom Hook for smooth animated counter
 function useCounter(end: number, duration = 2000, startAnimation = false) {
   const [count, setCount] = useState(0);
 
@@ -36,7 +35,6 @@ export default function CounterSection({ data }: { data?: StatsData }) {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
-  // Trigger counter animation when scrolled into view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -68,20 +66,16 @@ export default function CounterSection({ data }: { data?: StatsData }) {
       ref={sectionRef}
       className="relative w-full py-10 sm:py-14 overflow-hidden bg-gray-900"
     >
-      {/* Background Image with Dark Overlay */}
-      <div className="absolute inset-0 z-0">
+<div className="absolute inset-0 z-0">
         <Image
           src={bgImage}
           alt={bgAlt}
           fill
           className="object-cover object-center"
         />
-        {/* Dark Blue-Gray Gradient Overlay for rich contrast */}
-        <div className="absolute inset-0 bg-[#0B2525]/85 backdrop-brightness-75"></div>
+<div className="absolute inset-0 bg-[#0B2525]/85 backdrop-brightness-75"></div>
       </div>
-
-      {/* Content Container */}
-      <div className="relative z-10 max-w-[85rem] mx-auto px-4 md:px-8">
+<div className="relative z-10 max-w-[85rem] mx-auto px-4 md:px-8">
         <Stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-4 items-center">
           {statsList.map((item, index) => (
             <StaggerItem
@@ -96,9 +90,7 @@ export default function CounterSection({ data }: { data?: StatsData }) {
                 icon={item.icon}
                 start={isVisible}
               />
-
-              {/* Vertical Divider Line matching the reference image */}
-              {index < statsList.length - 1 && (
+{index < statsList.length - 1 && (
                 <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-[1px] h-24 bg-white/30"></div>
               )}
             </StaggerItem>
@@ -134,19 +126,14 @@ function CounterItem({
 
   return (
     <>
-      {/* Circular White Icon Badge */}
-      <div className="w-24 h-24 bg-white rounded-full shadow-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
+<div className="w-24 h-24 bg-white rounded-full shadow-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110">
         <Icon className="w-10 h-10 text-[#f57c00]" />
       </div>
-
-      {/* Animated Number in Orange */}
-      <h3 className="text-4xl sm:text-5xl font-extrabold text-[#f57c00] tracking-tight mb-2">
+<h3 className="text-4xl sm:text-5xl font-extrabold text-[#f57c00] tracking-tight mb-2">
         {count.toLocaleString()}
         {suffix}
       </h3>
-
-      {/* Label in White */}
-      <p className="text-white font-semibold text-base sm:text-lg tracking-wide">
+<p className="text-white font-semibold text-base sm:text-lg tracking-wide">
         {label}
       </p>
     </>

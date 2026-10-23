@@ -39,8 +39,7 @@ export default function ServicesSection({ data }: { data?: ServicesData }) {
   return (
     <section className="bg-[#f9fafa] py-10 sm:py-14">
       <div className="mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
-        {/* HEADING SECTION */}
-        <Reveal className="mb-8 sm:mb-10 flex flex-col items-center text-center">
+<Reveal className="mb-8 sm:mb-10 flex flex-col items-center text-center">
           <div className="mb-2.5 flex items-center gap-3">
             <span className="h-[2px] w-10 bg-[#ff4a17]" />
             <span className="text-sm font-bold uppercase tracking-wider text-[#ff4a17]">
@@ -57,9 +56,7 @@ export default function ServicesSection({ data }: { data?: ServicesData }) {
             {description}
           </p>
         </Reveal>
-
-        {/* SERVICES GRID */}
-        <Stagger className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+<Stagger className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {servicesList.map((service, index) => {
             const Icon = iconMap[service.icon] || Package;
             return (
@@ -68,17 +65,14 @@ export default function ServicesSection({ data }: { data?: ServicesData }) {
                   href={`/service-details/${service.slug}`}
                   className="group relative flex h-full flex-col overflow-hidden rounded-[24px] bg-white p-4 shadow-[0_10px_40px_rgba(0,0,0,0.04)] transition-shadow duration-300 hover:shadow-[0_15px_50px_rgba(255,74,23,0.1)] cursor-pointer"
                 >
-                  {/* IMAGE CONTAINER */}
-                  <div className="relative h-[220px] w-full overflow-hidden rounded-[20px]">
+<div className="relative h-[220px] w-full overflow-hidden rounded-[20px]">
                     <Image
                       src={service.image}
                       alt={service.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                     />
-
-                    {/* BOTTOM ARCH OVERLAY (raised in center) */}
-                    <div className="absolute bottom-[-1px] left-0 w-full text-white">
+<div className="absolute bottom-[-1px] left-0 w-full text-white">
                       <svg
                         viewBox="0 0 400 50"
                         fill="none"
@@ -92,15 +86,11 @@ export default function ServicesSection({ data }: { data?: ServicesData }) {
                         />
                       </svg>
                     </div>
-
-                    {/* ICON */}
-                    <div className="absolute bottom-2 left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center text-[#e8212b]">
+<div className="absolute bottom-2 left-1/2 flex h-10 w-10 -translate-x-1/2 items-center justify-center text-[#e8212b]">
                       <Icon size={30} strokeWidth={1.8} />
                     </div>
                   </div>
-
-                  {/* CONTENT */}
-                  <div className="flex flex-1 flex-col px-2 pb-3 pt-4">
+<div className="flex flex-1 flex-col px-2 pb-3 pt-4">
                     <h3 className="mb-2 text-xl font-bold text-[#062c3d]">
                       {service.title}
                     </h3>

@@ -55,9 +55,7 @@ export default function PageBanner({
           className="object-cover object-center"
         />
       )}
-
-      {/* dark teal overlay */}
-      <div
+<div
         aria-hidden="true"
         style={{ opacity: overlay }}
         className="absolute inset-0 bg-gradient-to-r from-[#0a262c] via-[#0a262c]/80 to-[#0a262c]/40"

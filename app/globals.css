@@ -14,3 +14,44 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.hero-section {
+  --hero-scale: 1;
+  min-height: calc(580px * var(--hero-scale));
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .hero-section {
+    --hero-scale: 0.9;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .hero-section {
+    --hero-scale: 1;
+  }
+}
+
+@media (min-width: 1440px) and (max-width: 1599px) {
+  .hero-section {
+    --hero-scale: 1.1;
+  }
+}
+
+@media (min-width: 1600px) {
+  .hero-section {
+    --hero-scale: 1.25;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero-section {
+    min-height: clamp(460px, 72vh, 540px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section .hero-content {
+    zoom: var(--hero-scale);
+  }
+}

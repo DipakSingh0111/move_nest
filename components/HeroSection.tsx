@@ -9,22 +9,35 @@ export default function HeroSection({ data }: { data?: HeroBannerData }) {
 
   if (!content) return null;
 
-  const imageSrc = typeof content.image === "string" ? content.image : content.image?.src || "/images/Hero.png";
-  const imageAlt = typeof content.image === "string" ? "MoveNest Packers & Movers" : content.image?.alt || "MoveNest Packers & Movers";
+  const imageSrc =
+    typeof content.image === "string" ? content.image : content.image?.src || "/images/Hero.png";
+  const imageAlt =
+    typeof content.image === "string"
+      ? "MoveNest Packers & Movers"
+      : content.image?.alt || "MoveNest Packers & Movers";
 
-  const titlePart1 = content.heading?.main || (content as any).titlePart1 || "Your Trusted";
-  const titleHighlight = content.heading?.highlight || (content as any).titleHighlight || "Packers & Movers";
-  const titlePart2 = content.heading?.end || (content as any).titlePart2 || "for a Better Tomorrow";
+  const legacy = content as HeroBannerData & {
+    titlePart1?: string;
+    titleHighlight?: string;
+    titlePart2?: string;
+    primaryButton?: string;
+    primaryButtonUrl?: string;
+    secondaryButton?: string;
+    secondaryButtonUrl?: string;
+  };
 
-  const primaryButtonLabel = content.primaryButton?.label || (content as any).primaryButton || "Get a Quote";
-  const primaryButtonHref = content.primaryButton?.href || (content as any).primaryButtonUrl || "/get-a-quote";
+  const titlePart1 = content.heading?.main || legacy.titlePart1 || "Your Trusted";
+  const titleHighlight = content.heading?.highlight || legacy.titleHighlight || "Packers & Movers";
+  const titlePart2 = content.heading?.end || legacy.titlePart2 || "for a Better Tomorrow";
 
-  const secondaryButtonLabel = content.secondaryButton?.label || (content as any).secondaryButton || "Our Services";
-  const secondaryButtonHref = content.secondaryButton?.href || (content as any).secondaryButtonUrl || "/service";
+  const primaryButtonLabel = content.primaryButton?.label || legacy.primaryButton || "Get a Quote";
+  const primaryButtonHref = content.primaryButton?.href || legacy.primaryButtonUrl || "/get-a-quote";
+
+  const secondaryButtonLabel = content.secondaryButton?.label || legacy.secondaryButton || "Our Services";
+  const secondaryButtonHref = content.secondaryButton?.href || legacy.secondaryButtonUrl || "/service";
 
   return (
-    <section className="relative w-full min-h-[460px] sm:min-h-[500px] md:min-h-[540px] lg:min-h-[580px] xl:min-h-[620px] flex items-center overflow-hidden bg-white">
-      {/* Background Image */}
+    <section className="hero-section relative w-full flex items-center overflow-hidden bg-white">
       <div className="absolute inset-0 z-0">
         <Image
           src={imageSrc}
@@ -32,7 +45,7 @@ export default function HeroSection({ data }: { data?: HeroBannerData }) {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_right] sm:object-center"
+          className="object-cover object-[center_right] lg:object-center"
         />
       </div>
       <div
@@ -43,76 +56,61 @@ export default function HeroSection({ data }: { data?: HeroBannerData }) {
         }}
       />
 
-      {/* Content Container */}
-      <div className="relative z-20 max-w-[85rem] mx-auto px-4 sm:px-6 md:px-8 w-full py-8 sm:py-10 md:py-12 lg:py-14">
-        <div className="max-w-xl lg:max-w-2xl">
-          {/* Badge */}
-          <Reveal direction="left" className="flex items-center gap-2 mb-2.5 sm:mb-3.5">
-            <span className="w-5 sm:w-6 h-1 sm:h-1.5 bg-[#f59e0b] rounded-full inline-block"></span>
-            <span className="text-[11px] sm:text-xs md:text-sm font-bold tracking-widest text-gray-800 uppercase">
+      <div className="relative z-20 mx-auto w-full max-w-[85rem] px-4 py-8 sm:px-6 sm:py-10 md:px-8 md:py-12 lg:py-[calc(3.5rem*var(--hero-scale))]">
+        <div className="hero-content max-w-xl lg:max-w-2xl">
+          <Reveal direction="left" className="mb-2.5 flex items-center gap-2 sm:mb-3.5">
+            <span className="inline-block h-1 w-5 rounded-full bg-[#f59e0b] sm:h-1.5 sm:w-6" />
+            <span className="text-[11px] font-bold uppercase tracking-widest text-gray-800 sm:text-xs md:text-sm">
               {content.badge}
             </span>
           </Reveal>
 
-          {/* Main Heading */}
           <Reveal delay={0.15}>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[46px] xl:text-[52px] font-extrabold text-[#0B2525] tracking-tight leading-[1.12] sm:leading-[1.14] mb-3 sm:mb-4">
+            <h1 className="mb-3 text-2xl font-extrabold leading-[1.12] tracking-tight text-[#0B2525] sm:mb-4 sm:text-3xl sm:leading-[1.14] md:text-4xl lg:text-[46px] xl:text-[52px]">
               {titlePart1} <br />
               <span className="text-[#f59e0b]">{titleHighlight}</span> <br />
               {titlePart2}
             </h1>
           </Reveal>
 
-          {/* Subtitle / Paragraph */}
           <Reveal delay={0.3}>
-            <p className="text-xs sm:text-sm md:text-base lg:text-[17px] text-gray-700 leading-relaxed mb-5 sm:mb-6 md:mb-7 font-medium max-w-xl">
+            <p className="mb-5 max-w-xl text-xs font-medium leading-relaxed text-gray-700 sm:mb-6 sm:text-sm md:mb-7 md:text-base lg:text-[17px]">
               {content.description}
             </p>
           </Reveal>
 
-          {/* CTA Buttons */}
-          <Reveal delay={0.45} className="flex flex-wrap items-center gap-2.5 sm:gap-3.5 pb-2">
-            {/* Primary Button */}
+          <Reveal delay={0.45} className="flex flex-wrap items-center gap-2.5 pb-2 sm:gap-3.5">
             <Link
               href={primaryButtonHref}
-              className="inline-flex items-center gap-2 sm:gap-2.5 bg-[#f59e0b] hover:bg-[#d9822b] text-gray-900 font-bold px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm md:text-base shadow-md transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0"
+              className="inline-flex transform items-center gap-2 rounded-full bg-[#f59e0b] px-4 py-2.5 text-xs font-bold text-gray-900 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#d9822b] active:translate-y-0 sm:gap-2.5 sm:px-6 sm:py-3 sm:text-sm md:text-base"
             >
               {primaryButtonLabel}
-              <span className="w-5 h-5 sm:w-6 sm:h-6 bg-white rounded-full flex items-center justify-center text-gray-900 shadow-sm shrink-0">
+              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-white text-gray-900 shadow-sm sm:h-6 sm:w-6">
                 <svg
-                  className="w-3 h-3 sm:w-3.5 sm:h-3.5"
+                  className="h-3 w-3 sm:h-3.5 sm:w-3.5"
                   fill="none"
                   stroke="currentColor"
                   strokeWidth="2.5"
                   viewBox="0 0 24 24"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M9 5l7 7-7 7"
-                  />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                 </svg>
               </span>
             </Link>
 
-            {/* Secondary Button */}
             <Link
               href={secondaryButtonHref}
-              className="inline-flex items-center gap-1.5 sm:gap-2 bg-transparent hover:bg-gray-100/60 border border-gray-700 text-gray-900 font-semibold px-4 sm:px-6 py-2.5 sm:py-3 rounded-full text-xs sm:text-sm md:text-base transition-all duration-300"
+              className="inline-flex items-center gap-1.5 rounded-full border border-gray-700 bg-transparent px-4 py-2.5 text-xs font-semibold text-gray-900 transition-all duration-300 hover:bg-gray-100/60 sm:gap-2 sm:px-6 sm:py-3 sm:text-sm md:text-base"
             >
               {secondaryButtonLabel}
               <svg
-                className="w-3 h-3 sm:w-3.5 sm:h-3.5"
+                className="h-3 w-3 sm:h-3.5 sm:w-3.5"
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2.5"
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M9 5l7 7-7 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
               </svg>
             </Link>
           </Reveal>

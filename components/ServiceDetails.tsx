@@ -36,11 +36,8 @@ export default function ServiceDetails({
     <section className="bg-white py-10 sm:py-14 font-sans">
       <div className="max-w-[85rem] mx-auto px-4 md:px-8">
         <div className="flex flex-col lg:flex-row gap-10">
-          
-          {/* Left Sidebar */}
-          <div className="w-full lg:w-[320px] shrink-0 space-y-10">
-            {/* Services List Box */}
-            <Reveal direction="left" className="bg-[#f8f9fa] p-8 rounded-2xl">
+<div className="w-full lg:w-[320px] shrink-0 space-y-10">
+<Reveal direction="left" className="bg-[#f8f9fa] p-8 rounded-2xl">
               <h3 className="text-xl font-bold text-[#002b36] mb-6">{serviceDetails.sidebarTitle}</h3>
               <div className="space-y-3">
                 {serviceDetails.sidebarServices?.map((service, idx) => {
@@ -62,9 +59,7 @@ export default function ServiceDetails({
                 })}
               </div>
             </Reveal>
-
-            {/* Help CTA Box */}
-            <Reveal direction="left" delay={0.15} className="rounded-2xl overflow-hidden shadow-lg bg-gradient-to-b from-[#ff6333] to-[#e64f22] text-white text-center">
+<Reveal direction="left" delay={0.15} className="rounded-2xl overflow-hidden shadow-lg bg-gradient-to-b from-[#ff6333] to-[#e64f22] text-white text-center">
               <div className="relative h-48 w-full bg-slate-200">
                 <Image
                   src={helpImageSrc}
@@ -73,8 +68,7 @@ export default function ServiceDetails({
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-[#002b36]/20"></div>
-                {/* Curved orange overlay at bottom of image */}
-                <svg className="absolute -bottom-1 left-0 w-full h-12 text-[#ff6333]" preserveAspectRatio="none" viewBox="0 0 1440 320" fill="currentColor">
+<svg className="absolute -bottom-1 left-0 w-full h-12 text-[#ff6333]" preserveAspectRatio="none" viewBox="0 0 1440 320" fill="currentColor">
                   <path d="M0,192L48,181.3C96,171,192,149,288,149.3C384,149,480,171,576,170.7C672,171,768,149,864,133.3C960,117,1056,107,1152,112C1248,117,1344,139,1392,149.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
                 </svg>
               </div>
@@ -95,9 +89,7 @@ export default function ServiceDetails({
               </div>
             </Reveal>
           </div>
-
-          {/* Right Main Content */}
-          <div className="flex-1 space-y-8">
+<div className="flex-1 space-y-8">
             <Reveal direction="zoom" className="relative w-full h-[400px] sm:h-[450px] rounded-2xl overflow-hidden">
               <Image
                 src={mainImageSrc}

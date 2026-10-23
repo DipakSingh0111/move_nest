@@ -45,10 +45,8 @@ export default function AboutUsSection({ data, showButton = true }: AboutUsProps
     <section className="relative w-full py-10 sm:py-14 bg-white overflow-hidden font-sans">
       <div className="max-w-[85rem] mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-12 xl:gap-16 items-center">
-          {/* LEFT SIDE: Images */}
-          <Reveal direction="left" className="relative w-full max-w-xl mx-auto lg:mx-0 lg:max-w-none pt-2 sm:pt-4 pl-4 sm:pl-8">
-            {/* Decorative Dot Matrix in Bottom-Left Background */}
-            <div className="absolute -bottom-8 -left-2 grid grid-cols-5 gap-2.5 opacity-60 pointer-events-none z-0">
+<Reveal direction="left" className="relative w-full max-w-xl mx-auto lg:mx-0 lg:max-w-none pt-2 sm:pt-4 pl-4 sm:pl-8">
+<div className="absolute -bottom-8 -left-2 grid grid-cols-5 gap-2.5 opacity-60 pointer-events-none z-0">
               {Array.from({ length: 30 }).map((_, i) => (
                 <div
                   key={i}
@@ -56,9 +54,7 @@ export default function AboutUsSection({ data, showButton = true }: AboutUsProps
                 ></div>
               ))}
             </div>
-
-            {/* Main Background Image Container */}
-            <div className="relative rounded-3xl overflow-hidden shadow-sm bg-white p-2 border border-gray-100 z-10 w-[90%]">
+<div className="relative rounded-3xl overflow-hidden shadow-sm bg-white p-2 border border-gray-100 z-10 w-[90%]">
               <div className="relative w-full h-[450px] sm:h-[500px] rounded-2xl overflow-hidden bg-gray-100">
                 <Image
                   src={mainImageSrc}
@@ -69,9 +65,7 @@ export default function AboutUsSection({ data, showButton = true }: AboutUsProps
                 />
               </div>
             </div>
-
-            {/* Top Right Orange Ribbon */}
-            <Reveal direction="right" delay={0.4} className="absolute top-12 right-0 sm:-right-4 z-20">
+<Reveal direction="right" delay={0.4} className="absolute top-12 right-0 sm:-right-4 z-20">
               <div className="relative bg-[#f97316] text-white pl-5 pr-8 py-3.5 rounded-l-xl rounded-tr-xl shadow-lg flex items-center gap-3">
                 <div className="w-6 h-6 flex items-center justify-center shrink-0">
                   <svg
@@ -91,14 +85,10 @@ export default function AboutUsSection({ data, showButton = true }: AboutUsProps
                 <span className="font-semibold text-[15px] sm:text-[17px] tracking-wide whitespace-nowrap">
                   {expValue} {expLabel}
                 </span>
-
-                {/* Ribbon Fold Triangle */}
-                <div className="absolute -bottom-3 right-0 w-0 h-0 border-t-[12px] border-t-[#c2410c] border-r-[12px] border-r-transparent"></div>
+<div className="absolute -bottom-3 right-0 w-0 h-0 border-t-[12px] border-t-[#c2410c] border-r-[12px] border-r-transparent"></div>
               </div>
             </Reveal>
-
-            {/* Overlapping Bottom-Right Floating Image */}
-            <Float className="absolute -bottom-12 right-0 sm:-right-8 z-30">
+<Float className="absolute -bottom-12 right-0 sm:-right-8 z-30">
               <Reveal direction="zoom" delay={0.6} className="bg-white p-2.5 rounded-2xl shadow-xl border border-gray-100 w-64 sm:w-80">
                 <div className="relative rounded-xl overflow-hidden h-36 sm:h-48 bg-gray-100">
                   <Image
@@ -116,33 +106,24 @@ export default function AboutUsSection({ data, showButton = true }: AboutUsProps
               </Reveal>
             </Float>
           </Reveal>
-
-          {/* RIGHT SIDE: Content & Features */}
-          <Reveal direction="right" className="pt-10 lg:pt-0 lg:pl-6">
-            {/* Section Tag */}
-            <div className="flex items-center gap-3 mb-4">
+<Reveal direction="right" className="pt-10 lg:pt-0 lg:pl-6">
+<div className="flex items-center gap-3 mb-4">
               <span className="w-8 h-[3px] bg-[#f97316] inline-block"></span>
               <span className="text-[13px] font-bold tracking-widest text-[#0c4040] uppercase">
                 {badge}
               </span>
             </div>
-
-            {/* Main Heading */}
-            <h2 className="text-[28px] sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[42px] font-extrabold text-[#0c4040] tracking-tight leading-[1.2] mb-6">
+<h2 className="text-[28px] sm:text-3xl md:text-4xl lg:text-[34px] xl:text-[42px] font-extrabold text-[#0c4040] tracking-tight leading-[1.2] mb-6">
               <span className="inline-block whitespace-nowrap">
                 {titlePart1}
               </span>{" "}
               <br />
               {titleConnector} <span className="text-[#f97316]">{titleHighlight}</span>
             </h2>
-
-            {/* Paragraph */}
-            <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed mb-4">
+<p className="text-gray-600 text-[15px] sm:text-base leading-relaxed mb-4">
               {description}
             </p>
-
-            {/* Feature Boxes Grid */}
-            <Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 mb-10">
+<Stagger className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-8 mb-10">
               {features.map((feature: any, idx: number) => (
                 <StaggerItem key={idx} className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#fff7ed] text-[#f97316] flex items-center justify-center shrink-0">
@@ -167,9 +148,7 @@ export default function AboutUsSection({ data, showButton = true }: AboutUsProps
                 </StaggerItem>
               ))}
             </Stagger>
-
-            {/* CTA Button */}
-            {showButton && (
+{showButton && (
               <div>
                 <Link
                   href={buttonHref}

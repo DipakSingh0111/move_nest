@@ -32,8 +32,7 @@ export default function TransportCTA({ data }: { data?: CtaBannerData }) {
           shadow-sm
         "
       >
-        {/* Background Image */}
-        <div
+<div
           className="
             absolute inset-0 bg-cover bg-center bg-no-repeat
           "
@@ -41,14 +40,9 @@ export default function TransportCTA({ data }: { data?: CtaBannerData }) {
             backgroundImage: `url('${bgImage}')`,
           }}
         />
-
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-[#003743]/35" />
-
-        {/* Content */}
-        <Reveal direction="left" delay={0.2} className="relative z-10 flex min-h-[260px] sm:min-h-[280px] flex-col justify-center px-6 py-8 sm:px-10 lg:px-14">
-          {/* Small Heading */}
-          <div className="mb-3 flex items-center gap-2">
+<div className="absolute inset-0 bg-[#003743]/35" />
+<Reveal direction="left" delay={0.2} className="relative z-10 flex min-h-[260px] sm:min-h-[280px] flex-col justify-center px-6 py-8 sm:px-10 lg:px-14">
+<div className="mb-3 flex items-center gap-2">
             <Zap size={18} fill="#ff6333" className="text-[#ff6333]" />
 
             <span
@@ -62,9 +56,7 @@ export default function TransportCTA({ data }: { data?: CtaBannerData }) {
               {badge}
             </span>
           </div>
-
-          {/* Main Heading */}
-          <h2
+<h2
             className="
               max-w-[700px]
               text-2xl font-bold leading-[1.2]
@@ -77,9 +69,7 @@ export default function TransportCTA({ data }: { data?: CtaBannerData }) {
             <br />
             {titleLine2}
           </h2>
-
-          {/* Button */}
-          <Link
+<Link
             href={buttonHref}
             className="
               mt-5 w-fit rounded-md
@@ -99,9 +89,7 @@ export default function TransportCTA({ data }: { data?: CtaBannerData }) {
             {buttonLabel}
           </Link>
         </Reveal>
-
-        {/* RIGHT CONTACT CARDS */}
-        <div
+<div
           className="
             absolute right-8 top-1/2 z-20
             hidden w-[360px]
@@ -111,23 +99,18 @@ export default function TransportCTA({ data }: { data?: CtaBannerData }) {
             xl:right-20
           "
         >
-          {/* Phone */}
-          <ContactCard
+<ContactCard
             icon={<Phone size={32} strokeWidth={1.8} />}
             title={phoneTitle}
             value={phone}
           />
-
-          {/* Email */}
-          <ContactCard
+<ContactCard
             icon={<Mail size={32} strokeWidth={1.8} />}
             title={emailTitle}
             value={email}
           />
         </div>
-
-        {/* Mobile Contact Cards */}
-        <div className="relative z-20 flex flex-col gap-4 px-6 pb-8 lg:hidden">
+<div className="relative z-20 flex flex-col gap-4 px-6 pb-8 lg:hidden">
           <ContactCard
             icon={<Phone size={32} strokeWidth={1.8} />}
             title={phoneTitle}
@@ -174,8 +157,7 @@ function ContactCard({
         ${mobile ? "gap-3 px-4 py-2.5" : "gap-4 px-5 py-2.5"}
       `}
     >
-      {/* Icon */}
-      <div
+<div
         className={`
           flex shrink-0 items-center justify-center
           rounded-full text-[#ff6333]
@@ -186,9 +168,7 @@ function ContactCard({
       >
         {icon}
       </div>
-
-      {/* Text */}
-      <div className="min-w-0">
+<div className="min-w-0">
         <p
           className={`
             font-semibold text-[#ff6333]

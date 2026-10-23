@@ -10,7 +10,6 @@ import { getMoveNestSection } from "@/lib/movenest";
 export default function FaqSection({ data }: { data?: FaqData }) {
   const content = data ?? getMoveNestSection("Faq")?.variants?.MoveNestFaq1;
 
-  // Open the second FAQ (index 1) by default
   const [openIndex, setOpenIndex] = useState<number | null>(1);
 
   if (!content) return null;
@@ -32,8 +31,7 @@ export default function FaqSection({ data }: { data?: FaqData }) {
   return (
     <section className="bg-[#faf8f6] py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans relative overflow-hidden">
       <div className="max-w-[85rem] mx-auto space-y-12 relative z-10">
-        {/* Header Section */}
-        <motion.div
+<motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -56,11 +54,8 @@ export default function FaqSection({ data }: { data?: FaqData }) {
             {description}
           </p>
         </motion.div>
-
-        {/* Grid Container */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-          {/* Left Column: Image & Floating Badge */}
-          <motion.div
+<div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -100,9 +95,7 @@ export default function FaqSection({ data }: { data?: FaqData }) {
               </div>
             </motion.div>
           </motion.div>
-
-          {/* Right Column: Accordion List with Smooth Motion */}
-          <motion.div
+<motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}

@@ -11,8 +11,7 @@ export default function Topbar({ data }: { data?: TopbarData }) {
     <div className="hidden lg:block bg-[#0c4040] text-white text-[15px] font-sans tracking-wide">
       <div className="max-w-[85rem] mx-auto py-3.5 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center">
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
-          {/* Address */}
-          <div className="flex items-center gap-2">
+<div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-[18px] w-[18px]"
@@ -36,9 +35,7 @@ export default function Topbar({ data }: { data?: TopbarData }) {
           </div>
 
           <span className="text-gray-400 hidden md:inline">|</span>
-
-          {/* Phone */}
-          <div className="flex items-center gap-2">
+<div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-[18px] w-[18px]"
@@ -57,9 +54,7 @@ export default function Topbar({ data }: { data?: TopbarData }) {
           </div>
 
           <span className="text-gray-400 hidden md:inline">|</span>
-
-          {/* Email */}
-          <div className="flex items-center gap-2">
+<div className="flex items-center gap-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-[18px] w-[18px]"

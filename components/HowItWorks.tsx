@@ -55,8 +55,7 @@ export default function HowItWorks({ data }: { data?: WorkingProcessData }) {
 
       <div className="relative mx-auto max-w-[85rem] px-4 md:px-8">
         <div className="grid items-start gap-12 lg:grid-cols-[1fr_1fr] lg:gap-14">
-          {/* LEFT */}
-          <Reveal direction="left">
+<Reveal direction="left">
             <div className="mb-3 flex items-center gap-3">
               <span className="h-[5px] w-14 rounded-full bg-[#f4511e]" />
               <span className="text-sm font-bold uppercase tracking-wider text-[#f4511e]">
@@ -111,9 +110,7 @@ export default function HowItWorks({ data }: { data?: WorkingProcessData }) {
               </div>
             </div>
           </Reveal>
-
-          {/* RIGHT */}
-          <div className="relative">
+<div className="relative">
             <div className="absolute bottom-[60px] left-[28px] top-[60px] hidden border-l-2 border-dashed border-slate-300 sm:block" />
 
             <Stagger className="space-y-5" stagger={0.15}>

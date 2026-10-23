@@ -66,7 +66,6 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
     "Warehouse & Storage Services",
   ];
 
-
   const phone = topbar?.phone || "+1 00000 00000";
   const email = topbar?.email || "info@xyz.com";
   const address = topbar?.address || "123 Market St, San Francisco, CA 94105, USA";
@@ -118,10 +117,8 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
   return (
     <section className="bg-[#faf8f6] py-10 sm:py-14 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-[85rem] mx-auto space-y-12">
-        {/* Main Grid: Left Form & Right Info Card */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-          {/* Left Column: Contact Form */}
-          <Reveal direction="left" className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-slate-100 shadow-xl space-y-6">
+<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+<Reveal direction="left" className="lg:col-span-7 bg-white rounded-3xl p-6 sm:p-10 border border-slate-100 shadow-xl space-y-6">
             <div className="space-y-2">
               <div className="inline-flex items-center space-x-2 text-xs font-bold text-[#ff5100] tracking-widest uppercase">
                 <span className="w-6 h-[2px] bg-[#ff5100]"></span>
@@ -134,11 +131,8 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
                 {formDescription}
               </p>
             </div>
-
-            {/* Form */}
-            <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Name & Email */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<form onSubmit={handleSubmit} className="space-y-4">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="relative">
                   <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
@@ -165,9 +159,7 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
                   />
                 </div>
               </div>
-
-              {/* Phone & Moving Service */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="relative">
                   <Phone className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
@@ -197,9 +189,7 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
                   </select>
                 </div>
               </div>
-
-              {/* Moving From & Moving To */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="relative">
                   <MapPin className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                   <input
@@ -226,9 +216,7 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
                   />
                 </div>
               </div>
-
-              {/* Preferred Moving Date */}
-              <div className="relative">
+<div className="relative">
                 <Calendar className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <input
                   type="date"
@@ -239,9 +227,7 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
                   className="w-full pl-10 pr-4 py-3 text-xs sm:text-sm bg-slate-50/50 border border-slate-200 rounded-xl text-slate-700 focus:bg-white focus:outline-none focus:border-[#ff5100] transition-colors"
                 />
               </div>
-
-              {/* Additional Details */}
-              <div className="relative">
+<div className="relative">
                 <FileText className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
                 <textarea
                   name="additionalDetails"
@@ -252,11 +238,8 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
                   className="w-full pl-10 pr-4 py-3 text-xs sm:text-sm bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:border-[#ff5100] transition-colors"
                 />
               </div>
-
-              {/* reCAPTCHA & Submit Row */}
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
-                {/* Simulated reCAPTCHA box */}
-                <div className="flex items-center space-x-3 bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-xl w-full sm:w-auto">
+<div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-2">
+<div className="flex items-center space-x-3 bg-slate-50 border border-slate-200 px-4 py-2.5 rounded-xl w-full sm:w-auto">
                   <input
                     type="checkbox"
                     name="recaptcha"
@@ -280,9 +263,7 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
                     </span>
                   </div>
                 </div>
-
-                {/* Send Message Button */}
-                <button
+<button
                   type="submit"
                   className="w-full sm:w-auto bg-[#ff5100] hover:bg-[#e04700] text-white py-3.5 px-8 rounded-full font-bold text-sm flex items-center justify-center space-x-3 shadow-lg shadow-orange-500/20 transition-all duration-300"
                 >
@@ -294,9 +275,7 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
               </div>
             </form>
           </Reveal>
-
-          {/* Right Column: Dark Assistance Card */}
-          <Reveal direction="right" delay={0.15} className="lg:col-span-5 h-full">
+<Reveal direction="right" delay={0.15} className="lg:col-span-5 h-full">
             <div
               className="h-full bg-[#0c2340] rounded-3xl p-6 sm:p-8 text-white flex flex-col justify-between shadow-xl relative overflow-hidden bg-cover bg-center"
               style={{
@@ -317,11 +296,8 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
                     {infoDescription}
                   </p>
                 </div>
-
-                {/* Contact Info Items */}
-                <Stagger className="space-y-5 pt-2" delay={0.3}>
-                  {/* Call Us */}
-                  <StaggerItem direction="right" className="flex items-start space-x-4">
+<Stagger className="space-y-5 pt-2" delay={0.3}>
+<StaggerItem direction="right" className="flex items-start space-x-4">
                     <div className="w-11 h-11 rounded-2xl bg-[#ff5100] text-white flex items-center justify-center shrink-0 shadow-md">
                       <PhoneCall className="w-5 h-5" />
                     </div>
@@ -334,9 +310,7 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
                       </p>
                     </div>
                   </StaggerItem>
-
-                  {/* Email Us */}
-                  <StaggerItem direction="right" className="flex items-start space-x-4">
+<StaggerItem direction="right" className="flex items-start space-x-4">
                     <div className="w-11 h-11 rounded-2xl bg-[#ff5100] text-white flex items-center justify-center shrink-0 shadow-md">
                       <Mail className="w-5 h-5" />
                     </div>
@@ -349,9 +323,7 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
                       </p>
                     </div>
                   </StaggerItem>
-
-                  {/* Our Location */}
-                  <StaggerItem direction="right" className="flex items-start space-x-4">
+<StaggerItem direction="right" className="flex items-start space-x-4">
                     <div className="w-11 h-11 rounded-2xl bg-[#ff5100] text-white flex items-center justify-center shrink-0 shadow-md">
                       <LocationIcon className="w-5 h-5" />
                     </div>
@@ -366,9 +338,7 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
                   </StaggerItem>
                 </Stagger>
               </div>
-
-              {/* Social Media Footer */}
-              <div className="pt-8 mt-8 flex items-center space-x-4 relative z-10">
+<div className="pt-8 mt-8 flex items-center space-x-4 relative z-10">
                 <span className="text-sm font-medium text-white">
                   {socialTitle}
                 </span>
@@ -394,9 +364,7 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
             </div>
           </Reveal>
         </div>
-
-        {/* Bottom Google Map Section with Floating Location Box */}
-        <Reveal className="relative w-full h-[400px] sm:h-[450px] rounded-3xl overflow-hidden shadow-xl border border-slate-200">
+<Reveal className="relative w-full h-[400px] sm:h-[450px] rounded-3xl overflow-hidden shadow-xl border border-slate-200">
           <iframe
             title={map.title || "MoveNest Location Map"}
             src={map.embedUrl || "https://maps.google.com/maps?q=San%20Francisco&t=&z=13&ie=UTF8&iwloc=&output=embed"}
@@ -408,9 +376,7 @@ export default function ContactSection({ data }: { data?: ContactPageData }) {
             referrerPolicy="no-referrer-when-downgrade"
             className="w-full h-full grayscale-[20%] contrast-[105%]"
           ></iframe>
-
-          {/* Floating Location Card Overlay on Map */}
-          <Reveal direction="down" delay={0.4} className="absolute top-6 left-6 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-2xl border border-slate-100 max-w-xs sm:max-w-sm space-y-2">
+<Reveal direction="down" delay={0.4} className="absolute top-6 left-6 bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-2xl shadow-2xl border border-slate-100 max-w-xs sm:max-w-sm space-y-2">
             <div className="flex items-start space-x-3">
               <div className="w-9 h-9 rounded-xl bg-orange-100 text-[#ff5100] flex items-center justify-center shrink-0">
                 <MapPin className="w-5 h-5" />

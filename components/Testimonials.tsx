@@ -74,8 +74,7 @@ export default function TestimonialsSection({ data }: { data?: TestimonialsData 
     <section className="relative w-full py-10 sm:py-14 bg-[#f8f9fa] overflow-hidden">
       <div className="max-w-[85rem] mx-auto px-4 md:px-8">
         <div className="flex flex-col lg:flex-row items-stretch rounded-3xl overflow-hidden shadow-2xl">
-          {/* LEFT – fixed image */}
-          <Reveal direction="left" className="w-full lg:w-1/2 relative min-h-[350px] lg:min-h-[400px]">
+<Reveal direction="left" className="w-full lg:w-1/2 relative min-h-[350px] lg:min-h-[400px]">
             <Image
               src={imageSrc}
               alt={imageAlt}
@@ -92,9 +91,7 @@ export default function TestimonialsSection({ data }: { data?: TestimonialsData 
               </p>
             </div>
           </Reveal>
-
-          {/* RIGHT – review slider */}
-          <Reveal
+<Reveal
             direction="right"
             className="w-full lg:w-1/2 bg-[#021d26] text-white p-8 lg:p-12 relative flex flex-col justify-center"
           >
@@ -116,9 +113,7 @@ export default function TestimonialsSection({ data }: { data?: TestimonialsData 
                 {titlePart1} <br />
                 <span className="text-[#ff5e14]">{titleHighlight}</span>
               </h2>
-
-              {/* Sliding content */}
-              <div className="relative overflow-hidden min-h-[260px] sm:min-h-[230px]">
+<div className="relative overflow-hidden min-h-[260px] sm:min-h-[230px]">
                 <AnimatePresence mode="wait" custom={direction} initial={false}>
                   <motion.div
                     key={index}
@@ -162,9 +157,7 @@ export default function TestimonialsSection({ data }: { data?: TestimonialsData 
                   </motion.div>
                 </AnimatePresence>
               </div>
-
-              {/* Controls */}
-              <div className="mt-6 flex items-center justify-between">
+<div className="mt-6 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   {reviews.map((r, i) => (
                     <button
