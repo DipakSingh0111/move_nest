@@ -1,7 +1,6 @@
 import PageBanner from "@/components/common/PageBanner";
-import CtaBanner from "@/components/CtaBanner";
-import ServicesSection from "@/components/ServicesSection";
-import WhyChooseUs from "@/components/WhyChooseUs";
+import CtaBanner from "@/components/common/CtaBanner";
+import ServicesSection from "@/components/services/ServicesSection";
 import { getMoveNestSections } from "@/lib/movenest";
 
 export default function ServicesPage() {
@@ -16,7 +15,6 @@ export default function ServicesPage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Our Services" }]}
       />
       <ServicesSection data={sections.Services?.variants?.MoveNestServices1} />
-      <WhyChooseUs data={sections.WhyChooseUs?.variants?.MoveNestWhyChooseUs1} />
       <CtaBanner data={sections.CtaBanner?.variants?.MoveNestCtaBanner1} />
     </>
   );

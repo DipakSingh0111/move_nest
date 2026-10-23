@@ -583,18 +583,22 @@
               "list": [
                 {
                   "title": "Affordable Pricing",
+                  "lines": ["Affordable", "Pricing"],
                   "icon": "Truck"
                 },
                 {
-                  "title": "Safe & Secure",
+                  "title": "Safe & Secure Handling",
+                  "lines": ["Safe & Secure", "Handling"],
                   "icon": "ShieldCheck"
                 },
                 {
                   "title": "On-Time Delivery",
-                  "icon": "Clock"
+                  "lines": ["On-Time", "Delivery"],
+                  "icon": "Package"
                 },
                 {
                   "title": "Professional Team",
+                  "lines": ["Professional", "Team"],
                   "icon": "Users"
                 }
               ],
@@ -756,6 +760,7 @@
                 "highlight": "Gallery"
               },
               "description": "Take a look at some of our recent moving projects. From home relocations to office moves, we handle every move with care and professionalism.",
+              "itemsPerPage": 6,
               "labels": {
                 "counterSeparator": "of",
                 "close": "Close image modal",
@@ -1094,6 +1099,9 @@
                   "highlight": "Assistance?"
                 },
                 "description": "Our team is always ready to help you with your moving requirements. Reach out to us through any of the below channels.",
+                "phones": ["+1 00000 00000"],
+                "emails": ["info@xyz.com"],
+                "address": "123 Market St, San Francisco, CA 94105, USA",
                 "labels": {
                   "call": "Call Us",
                   "email": "Email Us",
@@ -1103,10 +1111,10 @@
               },
               "map": {
                 "title": "Google Map San Francisco Location",
-                "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d-122.3989386846818!3d37.79469507975549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80858064bfd4e167%3A0xc5458ce3dd40bd!2sMarket%20St%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2susa!4v1650000000000!5m2!1sen!2susa",
-                "cardTitle": "123 Market St, San Francisco, CA 94105, USA",
+                "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086154660938!2d-122.40137262357366!3d37.79364697197757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807d2a0c8f7f%3A0x6f0c8d1c0c0c0c0c!2s123%20Market%20St%2C%20San%20Francisco%2C%20CA%2094105!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus",
+                "cardTitle": "San Francisco, CA, USA",
                 "linkText": "View on Google Maps",
-                "linkUrl": "https://maps.google.com"
+                "linkUrl": "https://maps.google.com/?q=123+Market+St,+San+Francisco,+CA+94105,+USA"
               }
             }
           }
@@ -1114,7 +1122,7 @@
         "Team": {
           "variants": {
             "MoveNestTeam1": {
-              "badge": "OUR EXPERTS",
+              "badge": "OUR TEAM",
               "heading": {
                 "main": "Meet Our",
                 "highlight": "Team"
@@ -1180,7 +1188,8 @@
                   }
                 ],
                 "button": {
-                  "label": "Get in Touch"
+                  "label": "Get in Touch",
+                  "href": "/get-a-quote"
                 },
                 "personalInfoTitle": "Personal Information",
                 "personalInfo": [
@@ -1274,6 +1283,11 @@
               "cta": {
                 "label": "View More Blogs",
                 "href": "/blog"
+              },
+              "pagination": {
+                "itemsPerPage": 6,
+                "previous": "Previous",
+                "next": "Next"
               },
               "details": {
                 "authorLabel": "Admin",

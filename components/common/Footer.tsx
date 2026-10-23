@@ -35,6 +35,7 @@ export default function Footer({ data }: { data?: FooterData }) {
     { label: "Our Services", href: "/service" },
     { label: "Gallery", href: "/gallery" },
     { label: "Blog", href: "/blog" },
+    { label: "Testimonials", href: "/testimonials" },
     { label: "FAQ", href: "/faq" },
     { label: "Contact Us", href: "/contactUs" },
   ];
@@ -95,10 +96,10 @@ export default function Footer({ data }: { data?: FooterData }) {
                     aria-label={social.platform}
                     className="w-10 h-10 rounded-full bg-white/10 hover:bg-[#ff5100] text-white flex items-center justify-center transition-all duration-300 shadow-sm"
                   >
-                    {platform.includes("facebook") && <FaFacebookF className="w-4 h-4" />}
-                    {platform.includes("instagram") && <FaInstagram className="w-4 h-4" />}
-                    {platform.includes("linkedin") && <FaLinkedinIn className="w-4 h-4" />}
-                    {platform.includes("youtube") && <FaYoutube className="w-4 h-4" />}
+                    {platform.includes("facebook") && <FaFacebookF className="h-6 w-6" />}
+                    {platform.includes("instagram") && <FaInstagram className="h-6 w-6" />}
+                    {platform.includes("linkedin") && <FaLinkedinIn className="h-6 w-6" />}
+                    {platform.includes("youtube") && <FaYoutube className="h-6 w-6" />}
                   </a>
                 );
               })}
@@ -140,7 +141,7 @@ export default function Footer({ data }: { data?: FooterData }) {
                 return (
                   <li key={service}>
                     <Link
-                      href={`/service-details/${slug}`}
+                      href={`/service/${slug}`}
                       className="group inline-flex items-center gap-2.5 text-[15px] text-white/85 transition-colors duration-200 hover:text-[#ff5100]"
                     >
                       <ChevronRight
@@ -164,7 +165,7 @@ export default function Footer({ data }: { data?: FooterData }) {
             <div className="space-y-5">
 <div className="flex items-start gap-3.5">
                 <div className="w-12 h-12 rounded-full bg-[#ff5100] text-white flex items-center justify-center shrink-0 shadow-[0_4px_16px_rgba(255,81,0,0.3)]">
-                  <Phone size={19} className="fill-current text-white" />
+                  <Phone size={24} className="fill-current text-white" />
                 </div>
                 <div>
                   <p className="text-xs text-white/70 font-medium mb-0.5">
@@ -180,7 +181,7 @@ export default function Footer({ data }: { data?: FooterData }) {
               </div>
 <div className="flex items-start gap-3.5">
                 <div className="w-12 h-12 rounded-full bg-[#ff5100] text-white flex items-center justify-center shrink-0 shadow-[0_4px_16px_rgba(255,81,0,0.3)]">
-                  <Mail size={19} className="text-white" />
+                  <Mail size={24} className="text-white" />
                 </div>
                 <div>
                   <p className="text-xs text-white/70 font-medium mb-0.5">
@@ -234,7 +235,7 @@ export default function Footer({ data }: { data?: FooterData }) {
       </div>
 <div className="relative z-10 border-t border-white/10">
         <div className="mx-auto max-w-[85rem] px-4 md:px-8 py-5">
-          <p className="text-sm text-white/75 text-left">
+          <p className="text-center text-sm text-white/75">
             {footer.copyright || "© 2025 MoveNest Packers & Movers. All Rights Reserved."}
           </p>
         </div>

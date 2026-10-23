@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import Topbar from "@/components/common/Topbar";
 import Navbar from "@/components/common/Navbar";
@@ -8,14 +8,10 @@ import { Suspense } from "react";
 import { MotionProvider } from "@/components/common/Motion";
 import { getMoveNestSections } from "@/lib/movenest";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -23,15 +19,18 @@ export const metadata: Metadata = {
   description: "Safe, secure and hassle-free packing and moving services",
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const sections = getMoveNestSections();
 
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
+    <html lang="en" className={`${poppins.variable} h-full antialiased`}>
+      <body className={`${poppins.className} flex min-h-full flex-col overflow-x-clip bg-white text-slate-900`}>
         <MotionProvider>
           <header className="sticky top-0 z-50 flex flex-col shadow-sm">
             <Topbar data={sections.Topbar?.variants?.MoveNestTopbar1} />

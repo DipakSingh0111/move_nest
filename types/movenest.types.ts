@@ -283,6 +283,7 @@ export interface GalleryData {
   badge: string;
   heading: SectionHeading;
   description: string;
+  itemsPerPage?: number;
   labels: {
     counterSeparator: string;
     close: string;
@@ -361,6 +362,9 @@ export interface ContactPageData {
     badge: string;
     heading: SectionHeading;
     description: string;
+    phones?: string[];
+    emails?: string[];
+    address?: string;
     labels: {
       call: string;
       email: string;
@@ -394,6 +398,7 @@ export interface TeamMemberDetails {
   socials: SocialLink[];
   button: {
     label: string;
+    href?: string;
   };
   personalInfoTitle: string;
   personalInfo: {
@@ -449,6 +454,11 @@ export interface BlogNewsData {
   authorLabel: string;
   readMore: string;
   cta: LinkItem;
+  pagination?: {
+    itemsPerPage?: number;
+    previous?: string;
+    next?: string;
+  };
   details?: BlogDetailsData;
 }
 

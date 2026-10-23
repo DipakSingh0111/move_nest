@@ -1,5 +1,5 @@
 import PageBanner from "@/components/common/PageBanner";
-import GallerySection from "@/components/GallerySection";
+import GallerySection from "@/components/gallery/GallerySection";
 import { getMoveNestSections } from "@/lib/movenest";
 
 export default function GalleryPage() {

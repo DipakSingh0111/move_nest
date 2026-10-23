@@ -1,5 +1,5 @@
 import PageBanner from "@/components/common/PageBanner";
-import LatestBlogSection from "@/components/LatestBlog";
+import LatestBlogSection from "@/components/blog/LatestBlog";
 import { getMoveNestSections } from "@/lib/movenest";
 
 export default function BlogPage() {
@@ -13,7 +13,11 @@ export default function BlogPage() {
         image="/images/banners/services.jpg"
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Blogs" }]}
       />
-      <LatestBlogSection data={sections.BlogNews?.variants?.MoveNestBlogNews1} />
+      <LatestBlogSection
+        data={sections.BlogNews?.variants?.MoveNestBlogNews1}
+        paginate
+        itemsPerPage={6}
+      />
     </>
   );
 }

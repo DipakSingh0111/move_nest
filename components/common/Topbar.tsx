@@ -91,7 +91,7 @@ export default function Topbar({ data }: { data?: TopbarData }) {
                     <svg
                       fill="currentColor"
                       viewBox="0 0 24 24"
-                      className="w-5 h-5"
+                      className="h-6 w-6"
                       aria-hidden="true"
                     >
                       <path
@@ -105,7 +105,7 @@ export default function Topbar({ data }: { data?: TopbarData }) {
                     <svg
                       fill="currentColor"
                       viewBox="0 0 24 24"
-                      className="w-5 h-5"
+                      className="h-6 w-6"
                       aria-hidden="true"
                     >
                       <path
@@ -119,7 +119,7 @@ export default function Topbar({ data }: { data?: TopbarData }) {
                     <svg
                       fill="currentColor"
                       viewBox="0 0 24 24"
-                      className="w-[18px] h-[18px]"
+                      className="h-6 w-6"
                       aria-hidden="true"
                     >
                       <path

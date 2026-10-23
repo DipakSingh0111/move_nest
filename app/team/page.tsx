@@ -1,5 +1,5 @@
 import PageBanner from "@/components/common/PageBanner";
-import ServiceExperts from "@/components/ServiceExperts";
+import ServiceExperts from "@/components/team/ServiceExperts";
 import { getMoveNestSections } from "@/lib/movenest";
 
 export default function TeamPage() {

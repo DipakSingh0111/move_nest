@@ -2,7 +2,7 @@ export const blogs = [
   {
     date: "12",
     month: "Sep 2025",
-    image: "/images/move-next_13.jpg", // Yeh image aapke public folder mein honi chahiye
+    image: "/images/move-next_13.jpg",
     title: "10 Essential Packing Tips for a Hassle-Free Move",
     slug: "10-essential-packing-tips",
     description:
@@ -52,5 +52,59 @@ export const blogs = [
     slug: "office-relocation-guide",
     description:
       "Moving your business? Ensure minimal downtime and smooth transition with this comprehensive guide.",
-  }
+  },
+  {
+    date: "15",
+    month: "Aug 2025",
+    image: "/images/move-next_14.jpg",
+    title: "How to Declutter Before You Move",
+    slug: "declutter-before-you-move",
+    description:
+      "Lighten the load and save money by sorting what to keep, donate, sell or discard before packing day.",
+  },
+  {
+    date: "10",
+    month: "Aug 2025",
+    image: "/images/move-next_08.jpg",
+    title: "Local vs Long-Distance Moving: What to Expect",
+    slug: "local-vs-long-distance-moving",
+    description:
+      "Understand the key differences in cost, timing and planning between local and interstate moves.",
+  },
+  {
+    date: "04",
+    month: "Aug 2025",
+    image: "/images/move-next_05.jpg",
+    title: "Smart Storage Solutions During Relocation",
+    slug: "smart-storage-solutions",
+    description:
+      "Need temporary storage? Learn when short-term and long-term options make sense for your move.",
+  },
+  {
+    date: "28",
+    month: "Jul 2025",
+    image: "/images/move-next_03.jpg",
+    title: "Moving Day Timeline: Hour-by-Hour Plan",
+    slug: "moving-day-timeline",
+    description:
+      "A practical schedule so movers, family and last-minute tasks stay coordinated on moving day.",
+  },
+  {
+    date: "20",
+    month: "Jul 2025",
+    image: "/images/move-next_11.jpg",
+    title: "How to Pack a Kitchen Without the Chaos",
+    slug: "how-to-pack-a-kitchen",
+    description:
+      "From appliances to glassware, follow this kitchen packing order to avoid breakage and clutter.",
+  },
+  {
+    date: "12",
+    month: "Jul 2025",
+    image: "/images/move-next_19.jpg",
+    title: "Insurance and Claims: Protecting Your Belongings",
+    slug: "insurance-and-claims-guide",
+    description:
+      "Know your coverage options and how to document items so claims are easier if something goes wrong.",
+  },
 ];

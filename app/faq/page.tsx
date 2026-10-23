@@ -1,8 +1,8 @@
 import PageBanner from "@/components/common/PageBanner";
-import FaqSection from "@/components/FaqSection";
+import FaqSection from "@/components/faq/FaqSection";
 import { getMoveNestSections } from "@/lib/movenest";
 
-export default function FAQPage() {
+export default function FaqPage() {
   const sections = getMoveNestSections();
 
   return (

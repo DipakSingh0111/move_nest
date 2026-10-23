@@ -1,8 +1,8 @@
-import AboutUs from "@/components/common/AboutUs";
+import AboutUs from "@/components/about/AboutUs";
 import PageBanner from "@/components/common/PageBanner";
-import HowItWorks from "@/components/HowItWorks";
-import OurApproach from "@/components/OurApproach";
-import WhyChooseUs from "@/components/WhyChooseUs";
+import HowItWorks from "@/components/about/HowItWorks";
+import OurApproach from "@/components/about/OurApproach";
+import WhyChooseUs from "@/components/about/WhyChooseUs";
 import { getMoveNestSections } from "@/lib/movenest";
 
 export default function AboutPage() {

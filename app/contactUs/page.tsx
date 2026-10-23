@@ -1,5 +1,5 @@
 import PageBanner from "@/components/common/PageBanner";
-import ContactSection from "@/components/ContactSection";
+import ContactSection from "@/components/contact/ContactSection";
 import { getMoveNestSections } from "@/lib/movenest";
 
 export default function ContactUsPage() {

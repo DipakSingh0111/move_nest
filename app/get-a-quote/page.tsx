@@ -1,5 +1,6 @@
 import PageBanner from "@/components/common/PageBanner";
-import QuoteSection from "@/components/QuoteSection";
+import QuoteSection from "@/components/quote/QuoteSection";
+import CtaBanner from "@/components/common/CtaBanner";
 import { getMoveNestSections } from "@/lib/movenest";
 
 export default function GetAQuotePage() {
@@ -14,6 +15,7 @@ export default function GetAQuotePage() {
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Get A Quote" }]}
       />
       <QuoteSection data={sections.GetQuote?.variants?.MoveNestGetQuote1} />
+      <CtaBanner data={sections.CtaBanner?.variants?.MoveNestCtaBanner1} />
     </>
   );
 }
