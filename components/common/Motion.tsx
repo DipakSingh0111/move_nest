@@ -48,8 +48,9 @@ export function Reveal({
       className={className}
       initial={{ opacity: 0, ...offset(direction, distance) }}
       whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
-      viewport={{ once: true, amount }}
+      viewport={{ once: true, amount: Math.min(amount, 0.15), margin: "0px 0px -40px 0px" }}
       transition={{ duration, delay, ease }}
+      style={{ willChange: "opacity, transform" }}
     >
       {children}
     </motion.div>

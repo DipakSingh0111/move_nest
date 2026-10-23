@@ -13,45 +13,103 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 .hero-section {
-  --hero-scale: 1;
-  min-height: calc(580px * var(--hero-scale));
+  position: relative;
+  width: 100%;
+  min-height: clamp(28rem, 62vh, 40rem);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #fff;
 }
 
-@media (min-width: 1024px) and (max-width: 1279px) {
-  .hero-section {
-    --hero-scale: 0.9;
-  }
+.hero-section .hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
 
-@media (min-width: 1280px) and (max-width: 1439px) {
-  .hero-section {
-    --hero-scale: 1;
-  }
+.hero-section .hero-media img {
+  object-fit: cover !important;
+  object-position: 70% center !important;
 }
 
-@media (min-width: 1440px) and (max-width: 1599px) {
-  .hero-section {
-    --hero-scale: 1.1;
-  }
+.hero-section .hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.96) 28%,
+    rgba(255, 255, 255, 0.82) 48%,
+    rgba(255, 255, 255, 0.35) 68%,
+    rgba(255, 255, 255, 0) 88%
+  );
 }
 
-@media (min-width: 1600px) {
-  .hero-section {
-    --hero-scale: 1.25;
-  }
+.hero-section .hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 85rem;
+  margin-inline: auto;
+  padding: clamp(2.5rem, 5vw, 4.5rem) clamp(1rem, 3vw, 2rem);
 }
 
-@media (max-width: 1023px) {
-  .hero-section {
-    min-height: clamp(460px, 72vh, 540px);
-  }
+.hero-section .hero-content {
+  width: 100%;
+  max-width: min(36rem, 100%);
+  color: #0b2525;
+}
+
+.hero-section .hero-badge {
+  font-size: clamp(0.7rem, 1.1vw, 0.875rem);
+}
+
+.hero-section .hero-title {
+  font-size: clamp(1.75rem, 3.6vw, 3.25rem);
+  line-height: 1.15;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+.hero-section .hero-desc {
+  font-size: clamp(0.875rem, 1.35vw, 1.125rem);
+}
+
+.hero-section .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+}
+
+.hero-section .hero-btn {
+  font-size: clamp(0.8125rem, 1.2vw, 1rem);
+  padding: 0.7rem 1.35rem;
 }
 
 @media (min-width: 1024px) {
+  .hero-section {
+    min-height: clamp(32rem, 68vh, 42rem);
+  }
+
   .hero-section .hero-content {
-    zoom: var(--hero-scale);
+    max-width: min(40rem, 52%);
+  }
+
+  .hero-section .hero-media img {
+    object-position: 75% center !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-section .hero-content {
+    max-width: min(42rem, 48%);
   }
 }

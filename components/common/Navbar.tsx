@@ -16,19 +16,22 @@ export default function Navbar({ data }: { data?: HeaderData }) {
 
   const links = content.menu || [];
   const cta = content.cta;
+  const logoSrc = content.logo?.image || "/images/logo.png";
+  const logoAlt = content.logo?.alt || "MoveNest Logo";
 
   return (
     <nav className="bg-white shadow-sm font-sans relative z-50">
-      <div className="max-w-[85rem] mx-auto py-3 px-4 md:px-8 flex items-center justify-between">
-<div className="flex items-center">
-          <Link href="/">
+      <div className="max-w-[85rem] mx-auto py-3 px-4 md:px-8 flex items-center justify-between gap-4">
+        <div className="flex items-center min-w-0">
+          <Link href="/" className="inline-flex items-center shrink-0">
             <Image
-              src={content.logo.image}
-              alt={content.logo.alt}
-              width={250}
-              height={70}
-              className="w-[200px] md:w-[250px] h-auto object-contain"
+              src={logoSrc}
+              alt={logoAlt}
+              width={280}
+              height={66}
+              className="h-12 w-auto object-contain object-left sm:h-14"
               priority
+              unoptimized
             />
           </Link>
         </div>

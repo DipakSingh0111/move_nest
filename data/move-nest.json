@@ -69,7 +69,7 @@
                 "text": "Move",
                 "highlight": "Nest",
                 "subtext": "PACKERS & MOVERS",
-                "image": "/images/logo-image.png",
+                "image": "/images/logo.png",
                 "alt": "MoveNest Logo"
               },
               "whiteLogo": {
@@ -142,7 +142,7 @@
                 "highlight": "Nest",
                 "subtext": "PACKERS & MOVERS",
                 "image": "/images/logo.png",
-                "alt": "MoveNest Logo"
+                "alt": "MoveNest Packers & Movers"
               },
               "menu": [
                 {
@@ -422,7 +422,7 @@
             "MoveNestWorkingProcess1": {
               "image": {
                 "src": "/images/relocation_photo.png",
-                "alt": "Couple carrying moving boxes"
+                "alt": "Couple carrying cardboard boxes during a move"
               },
               "badge": "HOW IT WORKS",
               "heading": {
