@@ -4,6 +4,7 @@ import "./globals.css";
 import Topbar from "@/components/common/Topbar";
 import Navbar from "@/components/common/Navbar";
 import FooterSection from "@/components/common/Footer";
+import ScrollToTop from "@/components/common/ScrollToTop";
 import { Suspense } from "react";
 import { MotionProvider } from "@/components/common/Motion";
 import { getMoveNestSections } from "@/lib/movenest";
@@ -32,6 +33,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${poppins.variable} h-full antialiased`}>
       <body className={`${poppins.className} flex min-h-full flex-col overflow-x-clip bg-white text-slate-900`}>
         <MotionProvider>
+          <Suspense fallback={null}>
+            <ScrollToTop />
+          </Suspense>
           <header className="sticky top-0 z-50 flex flex-col shadow-sm">
             <Topbar data={sections.Topbar?.variants?.MoveNestTopbar1} />
             <Suspense fallback={null}>

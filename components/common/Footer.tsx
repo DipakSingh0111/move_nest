@@ -116,6 +116,10 @@ export default function Footer({ data }: { data?: FooterData }) {
                 <li key={link.label}>
                   <Link
                     href={link.href}
+                    scroll
+                    onClick={() => {
+                      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                    }}
                     className="group inline-flex items-center gap-2.5 text-[15px] text-white/85 transition-colors duration-200 hover:text-[#ff5100]"
                   >
                     <ChevronRight
@@ -142,6 +146,10 @@ export default function Footer({ data }: { data?: FooterData }) {
                   <li key={service}>
                     <Link
                       href={`/service/${slug}`}
+                      scroll
+                      onClick={() => {
+                        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+                      }}
                       className="group inline-flex items-center gap-2.5 text-[15px] text-white/85 transition-colors duration-200 hover:text-[#ff5100]"
                     >
                       <ChevronRight

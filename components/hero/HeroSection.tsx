@@ -50,7 +50,7 @@ export default function HeroSection({ data }: { data?: HeroBannerData }) {
   const titlePart2 = content.heading?.end || legacy.titlePart2 || "for a Better Tomorrow";
 
   return (
-    <section className="relative isolate flex w-full min-h-[clamp(22rem,55vw,30rem)] items-center overflow-hidden bg-white sm:min-h-[clamp(22rem,48vh,30rem)] lg:min-h-[clamp(26rem,52vh,34rem)] min-[1440px]:min-h-[clamp(28rem,54vh,36rem)]">
+    <section className="relative isolate flex w-full min-h-[clamp(22rem,55vw,30rem)] items-center overflow-hidden bg-white sm:min-h-[clamp(22rem,48vh,30rem)] lg:h-[calc(100dvh-7.5rem)] lg:min-h-[calc(100dvh-7.5rem)]">
       <div className="absolute inset-0 z-0">
         <Image
           src={imageSrc}
